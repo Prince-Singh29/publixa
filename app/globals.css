@@ -1,26 +1,62 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
+  letter-spacing: -0.015em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
+
+/* Full-width container utilities for robust responsive privacy documents */
+.privacy-container {
+  width: 100%;
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Large legible body typography for legal text */
+.privacy-prose p {
+  font-size: 1.0625rem; /* 17px */
+  line-height: 1.75;
+  color: #3D2315;
+}
+
+.privacy-prose h2 {
+  font-size: 1.625rem; /* 26px */
+  font-weight: 800;
+  letter-spacing: -0.025em;
+  color: #1A0F0A;
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+}
+
+.privacy-prose h3 {
+  font-size: 1.25rem; /* 20px */
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: #1A0F0A;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.privacy-prose ul {
+  font-size: 1.0625rem;
+  line-height: 1.75;
+  color: #3D2315;
+}
+
+/* Hide scrollbar for horizontal screenshot galleries */
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
