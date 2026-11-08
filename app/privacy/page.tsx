@@ -34,15 +34,17 @@ export default function MasterPrivacyPolicyPage() {
   }, [apps]);
 
   const filteredApps = useMemo(() => {
-    return apps.filter((app) => {
-      const q = searchTerm.toLowerCase().trim();
-      const matchesSearch =
-        !q ||
-        app.name.toLowerCase().includes(q) ||
-        app.packageName.toLowerCase().includes(q);
-      const matchesCat = selectedCategory === 'All' || app.category === selectedCategory;
-      return matchesSearch && matchesCat;
-    });
+    return apps
+      .filter((app) => {
+        const q = searchTerm.toLowerCase().trim();
+        const matchesSearch =
+          !q ||
+          app.name.toLowerCase().includes(q) ||
+          app.packageName.toLowerCase().includes(q);
+        const matchesCat = selectedCategory === 'All' || app.category === selectedCategory;
+        return matchesSearch && matchesCat;
+      })
+      .sort((a, b) => a.name.localeCompare(b.name, undefined, { sensitivity: 'base' }));
   }, [apps, searchTerm, selectedCategory]);
 
   return (

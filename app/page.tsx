@@ -19,7 +19,7 @@ export default function HomePage() {
   const apps = getAllApps();
 
   return (
-    <div className="w-full bg-[#FFFAF6] min-h-screen text-[#1A0F0A] overflow-x-hidden">
+    <div className="w-full bg-[#FFFAF6] min-h-screen text-[#1A0F0A] overflow-x-hidden" suppressHydrationWarning>
       {/* 1. HERO SECTION - Styled like bizcraftapps.com */}
       <section
         id="home-hero"
@@ -83,9 +83,9 @@ export default function HomePage() {
             </div>
 
             {/* Metrics Bar */}
-            <div className="pt-10 border-t border-[#F0DFD5] w-full grid grid-cols-2 sm:grid-cols-4 gap-6 text-center">
+            <div className="pt-10 border-t border-[#F0DFD5] w-full grid grid-cols-2 sm:grid-cols-4 gap-6 text-center" suppressHydrationWarning>
               <div>
-                <div className="text-2xl sm:text-3xl font-black text-[#1A0F0A]">{apps.length} Verified</div>
+                <div className="text-2xl sm:text-3xl font-black text-[#1A0F0A]">{`${apps.length} Verified`}</div>
                 <div className="text-xs font-semibold text-[#8C7A70] uppercase mt-1">Published Apps</div>
               </div>
               <div>
@@ -94,7 +94,7 @@ export default function HomePage() {
               </div>
               <div>
                 <div className="text-2xl sm:text-3xl font-black text-[#1A0F0A]">Play Protect</div>
-                <div className="text-xs font-semibold text-[#8C7A70] uppercase mt-1">Verified & Safe</div>
+                <div className="text-xs font-semibold text-[#8C7A70] uppercase mt-1">Verified &amp; Safe</div>
               </div>
               <div>
                 <div className="text-2xl sm:text-3xl font-black text-[#1A0F0A]">Prince Developer</div>

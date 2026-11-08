@@ -112,7 +112,7 @@ export default async function AppPage({ params }: AppPageProps) {
   ];
 
   return (
-    <div className="w-full bg-[#FFFAF6] min-h-screen text-[#1A0F0A] overflow-x-hidden font-body">
+    <div className="w-full bg-[#FFFAF6] min-h-screen text-[#1A0F0A] overflow-x-hidden font-body" suppressHydrationWarning>
       {/* 1. TOP APP-SPECIFIC NAVBAR - White with warm accents like bizcraftapps */}
       <header className="sticky top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-b border-[rgba(61,35,21,0.10)] transition-all">
         <div className="w-full max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8">
@@ -218,11 +218,11 @@ export default async function AppPage({ params }: AppPageProps) {
               </p>
             </div>
 
-            {/* Installs & Verified Developer Meta Pill */}
+            {/* Platform & Verified Developer Meta Pill */}
             <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6 pt-1">
               <div className="flex items-center gap-2 text-[#4A2E1F] font-semibold text-sm sm:text-base">
-                <Users className="w-5 h-5 text-[#4A2E1F]" />
-                <span>{app.downloads || '100,000+'} installs</span>
+                <Smartphone className="w-5 h-5 text-[#D94F1D]" />
+                <span>Official Android Application</span>
               </div>
               <span className="text-slate-300">•</span>
               <div className="flex items-center gap-1.5 text-emerald-800 font-semibold text-sm sm:text-base">
@@ -231,7 +231,7 @@ export default async function AppPage({ params }: AppPageProps) {
               </div>
             </div>
 
-            {/* Download Button - Bold Orange Pill */}
+            {/* Google Play Button - Bold Orange Pill */}
             <div className="pt-2 flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto">
               {app.playStoreUrl ? (
                 <a
@@ -243,7 +243,7 @@ export default async function AppPage({ params }: AppPageProps) {
                   <svg className="w-6 h-6 shrink-0" fill="currentColor" viewBox="0 0 32 32">
                     <path d="M20.331 14.644l-13.794-13.831 17.55 10.075zM2.938 0c-0.813 0.425-1.356 1.2-1.356 2.206v27.581c0 1.006 0.544 1.781 1.356 2.206l16.038-16zM29.512 14.1l-3.681-2.131-4.106 4.031 4.106 4.031 3.756-2.131c1.125-0.893 1.125-2.906-0.075-3.8zM6.538 31.188l17.55-10.075-3.756-3.756z"/>
                   </svg>
-                  <span>Download Now</span>
+                  <span>Get it on Google Play</span>
                 </a>
               ) : (
                 <div className="px-8 py-4 rounded-full font-heading font-bold text-base bg-slate-200 text-slate-700">
@@ -301,7 +301,7 @@ export default async function AppPage({ params }: AppPageProps) {
                     className="font-heading font-bold text-6xl md:text-7xl mb-4 opacity-25 leading-none select-none"
                     style={{ color: '#D94F1D' }}
                   >
-                    {idx + 1}
+                    {String(idx + 1)}
                   </div>
 
                   <h3 className="font-heading font-bold text-xl text-[#1A0F0A] mb-2 leading-snug">

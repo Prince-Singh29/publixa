@@ -9,3 +9,4 @@ export function assetPath(path?: string | null): string {
   }
   return base ? `${base}/${path}` : `/${path}`;
 }
+

@@ -1,6 +1,1094 @@
 {
   "apps": [
     {
+      "id": "aim-headshot-sensitivity",
+      "slug": "aim-headshot-sensitivity",
+      "name": "Aim Headshot Sensitivity",
+      "packageName": "com.aim.headshot.sensitivity.tool",
+      "category": "Tools",
+      "shortDescription": "Optimize weapon sensitivity, screen DPI, and HUD button layouts, plus generate stylish esports gamertags.",
+      "longDescription": "Aim Headshot Sensitivity by Publixa is a comprehensive gaming utility built for competitive mobile battle royale and FPS enthusiasts. Fine-tune camera speed, scope multipliers, and DPI calibration for perfectly responsive recoil control. Version 3.0 introduces a powerful Pro Stylish Name Generator with 29 authentic Google Fonts, 200+ rare gaming symbols (snipers, crowns, wings), and 65+ esports clan badges with instant 1-tap copy and haptic feedback.",
+      "tagline": "Gaming Sensitivity, DPI & Pro Esports Tag Studio",
+      "icon": "/images/apps/aim-headshot-sensitivity-icon.png",
+      "screenshots": [
+        "/images/apps/aim-headshot-sensitivity-screenshot-1.png",
+        "/images/apps/aim-headshot-sensitivity-screenshot-2.png",
+        "/images/apps/aim-headshot-sensitivity-screenshot-3.png",
+        "/images/apps/aim-headshot-sensitivity-screenshot-4.png",
+        "/images/apps/aim-headshot-sensitivity-screenshot-5.png"
+      ],
+      "features": [
+        "Fine-tuned sensitivity presets and DPI calculator for top battle royale titles",
+        "Custom HUD button layout advisor and fire-button size recommendations",
+        "Pro Gaming Name Studio with 29 authentic fonts and 200+ rare symbols",
+        "Instant 1-tap clipboard copying with tactile haptic confirmation",
+        "Completely safe utility operating strictly within Google Play developer policies"
+      ],
+      "permissions": [
+        {
+          "name": "Vibration / Haptic Feedback",
+          "purpose": "Provides tactile confirmation when copying gaming tags or adjusting sensitivity sliders."
+        },
+        {
+          "name": "Internet & Network State",
+          "purpose": "Used to fetch updated sensitivity presets and verify app integrity."
+        },
+        {
+          "name": "Advertising ID (AD_ID)",
+          "purpose": "Supports free app development through policy-compliant ads."
+        }
+      ],
+      "thirdPartySDKs": [
+        "Google Play Services",
+        "Google AdMob",
+        "Firebase Core"
+      ],
+      "playStoreUrl": "https://play.google.com/store/apps/details?id=com.aim.headshot.sensitivity.tool",
+      "lastUpdated": "2026-03-01",
+      "status": "Published"
+    },
+    {
+      "id": "all-in-one-document-reader",
+      "slug": "all-in-one-document-reader",
+      "name": "All Document Reader & Editor",
+      "packageName": "com.allinonedocumentreader.pdf.doc.docx.xls.xlsx.ppt.pptx.txt.editor.app",
+      "category": "Productivity",
+      "shortDescription": "One single lightweight application to open, view, edit, and organize all major document formats seamlessly.",
+      "longDescription": "All Document Reader & Editor by Publixa is crafted to deliver exceptional utility, maximum convenience, and uncompromising privacy. Whether you are managing everyday workflows or seeking seamless mobile entertainment, All Document Reader & Editor provides an intuitive, ad-friendly, and lightweight experience built adhering strictly to Google Play policy standards.",
+      "tagline": "Unified Office Reader for PDF, Word, Excel & Slides",
+      "icon": "/images/apps/all-in-one-document-reader-icon.png",
+      "screenshots": [
+        "/images/apps/all-in-one-document-reader-screenshot-1.png",
+        "/images/apps/all-in-one-document-reader-screenshot-2.png",
+        "/images/apps/all-in-one-document-reader-screenshot-3.png",
+        "/images/apps/all-in-one-document-reader-screenshot-4.png",
+        "/images/apps/all-in-one-document-reader-screenshot-5.png"
+      ],
+      "features": [
+        "Designed for fast and responsive daily usage",
+        "Clean and modern interface with intuitive controls",
+        "Offline functionality for complete privacy and data security",
+        "Lightweight installation size optimized for all Android devices",
+        "Regular updates with continuous stability enhancements"
+      ],
+      "permissions": [
+        {
+          "name": "Storage (READ_EXTERNAL_STORAGE / WRITE_EXTERNAL_STORAGE)",
+          "purpose": "Locate, display, and save document files selected by the user locally."
+        },
+        {
+          "name": "Manage Storage (MANAGE_EXTERNAL_STORAGE)",
+          "purpose": "Allow comprehensive file organization across user documents."
+        },
+        {
+          "name": "Internet (INTERNET)",
+          "purpose": "Check for software updates."
+        },
+        "android.permission.READ_EXTERNAL_STORAGE (Allows user to select documents)",
+        "android.permission.WRITE_EXTERNAL_STORAGE (Saves exported documents to device)"
+      ],
+      "thirdPartySDKs": [
+        "Google Play Services",
+        "Google AdMob",
+        "Firebase Core"
+      ],
+      "playStoreUrl": "https://play.google.com/store/apps/details?id=com.allinonedocumentreader.pdf.doc.docx.xls.xlsx.ppt.pptx.txt.editor.app",
+      "lastUpdated": "2026-03-01",
+      "status": "Published"
+    },
+    {
+      "id": "all-in-one-tools",
+      "slug": "all-in-one-tools",
+      "name": "All in one ToolBox",
+      "packageName": "com.allinonetools",
+      "category": "Tools",
+      "shortDescription": "Comprehensive multi-utility suite featuring unit converters, daily calculators, checklists, and device tools.",
+      "longDescription": "All in one ToolBox by Publixa is crafted to deliver exceptional utility, maximum convenience, and uncompromising privacy. Whether you are managing everyday workflows or seeking seamless mobile entertainment, All in one ToolBox provides an intuitive, ad-friendly, and lightweight experience built adhering strictly to Google Play policy standards.",
+      "tagline": "Essential Everyday Utility Kit for Android",
+      "icon": "/images/apps/all-in-one-tools-icon.png",
+      "screenshots": [
+        "/images/apps/all-in-one-tools-screenshot-1.png",
+        "/images/apps/all-in-one-tools-screenshot-2.png",
+        "/images/apps/all-in-one-tools-screenshot-3.png",
+        "/images/apps/all-in-one-tools-screenshot-4.png",
+        "/images/apps/all-in-one-tools-screenshot-5.png"
+      ],
+      "features": [
+        "Designed for fast and responsive daily usage",
+        "Clean and modern interface with intuitive controls",
+        "Offline functionality for complete privacy and data security",
+        "Lightweight installation size optimized for all Android devices",
+        "Regular updates with continuous stability enhancements"
+      ],
+      "permissions": [
+        {
+          "name": "Sensors (BODY_SENSORS / ACCELEROMETER)",
+          "purpose": "Calculate spirit level inclination, compass magnetic heading, and motion."
+        },
+        {
+          "name": "Flashlight (CAMERA / FLASHLIGHT)",
+          "purpose": "Activate device LED torch light when triggered by user."
+        },
+        {
+          "name": "Internet (INTERNET)",
+          "purpose": "Check for measurement calibration updates."
+        }
+      ],
+      "thirdPartySDKs": [
+        "Google Play Services",
+        "Google AdMob",
+        "Firebase Core"
+      ],
+      "playStoreUrl": "https://play.google.com/store/apps/details?id=com.allinonetools",
+      "lastUpdated": "2026-03-01",
+      "status": "Published"
+    },
+    {
+      "id": "arrows-escape-puzzle",
+      "slug": "arrows-escape-puzzle",
+      "name": "Arrow Challenge - Puzzle",
+      "packageName": "com.arrows.escape.puzzle.challenge.app",
+      "category": "Casual Games",
+      "shortDescription": "Stimulate your brain with clever arrow routing puzzles, intuitive controls, and calming ambient gameplay.",
+      "longDescription": "Arrow Challenge - Puzzle by Publixa is crafted to deliver exceptional utility, maximum convenience, and uncompromising privacy. Whether you are managing everyday workflows or seeking seamless mobile entertainment, Arrow Challenge - Puzzle provides an intuitive, ad-friendly, and lightweight experience built adhering strictly to Google Play policy standards.",
+      "tagline": "Relaxing Logic & Directional Maze Puzzle",
+      "icon": "/images/apps/arrows-escape-puzzle-icon.png",
+      "screenshots": [
+        "/images/apps/arrows-escape-puzzle-screenshot-1.png",
+        "/images/apps/arrows-escape-puzzle-screenshot-2.png",
+        "/images/apps/arrows-escape-puzzle-screenshot-3.png",
+        "/images/apps/arrows-escape-puzzle-screenshot-4.png",
+        "/images/apps/arrows-escape-puzzle-screenshot-5.png"
+      ],
+      "features": [
+        "Designed for fast and responsive daily usage",
+        "Clean and modern interface with intuitive controls",
+        "Offline functionality for complete privacy and data security",
+        "Lightweight installation size optimized for all Android devices",
+        "Regular updates with continuous stability enhancements"
+      ],
+      "permissions": [
+        {
+          "name": "Internet (INTERNET & ACCESS_NETWORK_STATE)",
+          "purpose": "Check network connectivity and receive puzzle pack updates."
+        },
+        {
+          "name": "Advertising ID (AD_ID)",
+          "purpose": "Deliver rewarded video ads for unlocking solution steps."
+        }
+      ],
+      "thirdPartySDKs": [
+        "Google Play Services",
+        "Google AdMob",
+        "Firebase Core"
+      ],
+      "playStoreUrl": "https://play.google.com/store/apps/details?id=com.arrows.escape.puzzle.challenge.app",
+      "lastUpdated": "2026-03-01",
+      "status": "Published"
+    },
+    {
+      "id": "arrow-puzzle-challenge",
+      "slug": "arrow-puzzle-challenge",
+      "name": "Arrow Puzzle - Challenge",
+      "packageName": "com.arrowpuzzles.app",
+      "category": "Casual Games",
+      "shortDescription": "Guide arrows through intricate logic labyrinths without collisions in this addictive mental workout.",
+      "longDescription": "Arrow Puzzle - Challenge by Publixa is crafted to deliver exceptional utility, maximum convenience, and uncompromising privacy. Built adhering strictly to Google Play developer standards, Arrow Puzzle - Challenge ensures reliable performance with clear offline boundaries.",
+      "tagline": "Strategic Arrow Navigation & Escape Maze",
+      "icon": "/images/apps/arrow-puzzle-challenge-icon.png",
+      "screenshots": [
+        "/images/apps/arrow-puzzle-challenge-screenshot-1.png",
+        "/images/apps/arrow-puzzle-challenge-screenshot-2.png",
+        "/images/apps/arrow-puzzle-challenge-screenshot-3.png",
+        "/images/apps/arrow-puzzle-challenge-screenshot-4.png",
+        "/images/apps/arrow-puzzle-challenge-screenshot-5.png"
+      ],
+      "features": [
+        "Intuitive and easy-to-use interface tailored for mobile productivity",
+        "Fast response times with zero unnecessary background battery drain",
+        "Local on-device processing prioritizing privacy and data integrity",
+        "Regular updates conforming to latest Android SDK and Google Play guidelines"
+      ],
+      "permissions": [
+        {
+          "name": "Storage / Media Access",
+          "purpose": "Required to open, edit, and save user-selected files on the device."
+        },
+        {
+          "name": "Internet & Network State",
+          "purpose": "Used strictly for license verification, critical telemetry, and security checks."
+        }
+      ],
+      "thirdPartySDKs": [
+        "Google Play Services",
+        "Google AdMob",
+        "Firebase Core"
+      ],
+      "playStoreUrl": "https://play.google.com/store/apps/details?id=com.arrowpuzzles.app",
+      "lastUpdated": "2026-03-01",
+      "status": "Published"
+    },
+    {
+      "id": "birthday-reminder",
+      "slug": "birthday-reminder",
+      "name": "Birthday Reminder",
+      "packageName": "com.birthdayReminder.app",
+      "category": "Productivity",
+      "shortDescription": "Keep track of upcoming birthdays and special milestones with customizable countdowns and reminders.",
+      "longDescription": "Birthday Reminder & Countdown by Publixa is crafted to deliver exceptional utility, maximum convenience, and uncompromising privacy. Whether you are managing everyday workflows or seeking seamless mobile entertainment, Birthday Reminder & Countdown provides an intuitive, ad-friendly, and lightweight experience built adhering strictly to Google Play policy standards.",
+      "tagline": "Never Forget a Birthday, Anniversary, or Event",
+      "icon": "/images/apps/birthday-reminder-icon.png",
+      "screenshots": [
+        "/images/apps/birthday-reminder-screenshot-1.png",
+        "/images/apps/birthday-reminder-screenshot-2.png",
+        "/images/apps/birthday-reminder-screenshot-3.png",
+        "/images/apps/birthday-reminder-screenshot-4.png",
+        "/images/apps/birthday-reminder-screenshot-5.png"
+      ],
+      "features": [
+        "Designed for fast and responsive daily usage",
+        "Clean and modern interface with intuitive controls",
+        "Offline functionality for complete privacy and data security",
+        "Lightweight installation size optimized for all Android devices",
+        "Regular updates with continuous stability enhancements"
+      ],
+      "permissions": [
+        {
+          "name": "Alarms & Reminders (SCHEDULE_EXACT_ALARM)",
+          "purpose": "Deliver precise countdown notifications at your chosen time."
+        },
+        {
+          "name": "Boot Completed (RECEIVE_BOOT_COMPLETED)",
+          "purpose": "Restore your scheduled birthday alarms after your phone restarts."
+        },
+        {
+          "name": "Internet (INTERNET)",
+          "purpose": "Check for software stability updates."
+        }
+      ],
+      "thirdPartySDKs": [
+        "Google Play Services",
+        "Google AdMob",
+        "Firebase Core"
+      ],
+      "playStoreUrl": "https://play.google.com/store/apps/details?id=com.birthdayReminder.app",
+      "lastUpdated": "2026-03-01",
+      "status": "Published"
+    },
+    {
+      "id": "bubble-shooter-pop-puzzle",
+      "slug": "bubble-shooter-pop-puzzle",
+      "name": "Bubble Shooter",
+      "packageName": "com.bubblegames.bubbleshoote.app",
+      "category": "Casual Games",
+      "shortDescription": "Aim, match, and blast clusters of colorful bubbles across hundreds of dynamic, fun-filled puzzle levels.",
+      "longDescription": "Bubble Shooter: Pop & Puzzle by Publixa is crafted to deliver exceptional utility, maximum convenience, and uncompromising privacy. Whether you are managing everyday workflows or seeking seamless mobile entertainment, Bubble Shooter: Pop & Puzzle provides an intuitive, ad-friendly, and lightweight experience built adhering strictly to Google Play policy standards.",
+      "tagline": "Classic Bubble Pop & Match-3 Arcade Adventure",
+      "icon": "/images/apps/bubble-shooter-pop-puzzle-icon.png",
+      "screenshots": [
+        "/images/apps/bubble-shooter-pop-puzzle-screenshot-1.png",
+        "/images/apps/bubble-shooter-pop-puzzle-screenshot-2.png",
+        "/images/apps/bubble-shooter-pop-puzzle-screenshot-3.png",
+        "/images/apps/bubble-shooter-pop-puzzle-screenshot-4.png",
+        "/images/apps/bubble-shooter-pop-puzzle-screenshot-5.png"
+      ],
+      "features": [
+        "Designed for fast and responsive daily usage",
+        "Clean and modern interface with intuitive controls",
+        "Offline functionality for complete privacy and data security",
+        "Lightweight installation size optimized for all Android devices",
+        "Regular updates with continuous stability enhancements"
+      ],
+      "permissions": [
+        {
+          "name": "Internet (INTERNET & ACCESS_NETWORK_STATE)",
+          "purpose": "Check network connectivity and load leaderboard updates."
+        },
+        {
+          "name": "Advertising ID (AD_ID)",
+          "purpose": "Deliver non-intrusive contextual ads to support free gaming."
+        }
+      ],
+      "thirdPartySDKs": [
+        "Google Play Services",
+        "Google AdMob",
+        "Firebase Core"
+      ],
+      "playStoreUrl": "https://play.google.com/store/apps/details?id=com.bubblegames.bubbleshoote.app",
+      "lastUpdated": "2026-03-01",
+      "status": "Published"
+    },
+    {
+      "id": "doc-and-docx-reader",
+      "slug": "doc-and-docx-reader",
+      "name": "DOC & DOCX :Read and Edit",
+      "packageName": "com.docxreader.docreader.app",
+      "category": "Productivity",
+      "shortDescription": "View and review Word DOC and DOCX files on the go with zero formatting distortion and complete privacy.",
+      "longDescription": "Doc & Docx Reader by Publixa is crafted to deliver exceptional utility, maximum convenience, and uncompromising privacy. Whether you are managing everyday workflows or seeking seamless mobile entertainment, Doc & Docx Reader provides an intuitive, ad-friendly, and lightweight experience built adhering strictly to Google Play policy standards.",
+      "tagline": "Modern Mobile Word Document Viewer & Manager",
+      "icon": "/images/apps/doc-and-docx-reader-icon.png",
+      "screenshots": [
+        "/images/apps/doc-and-docx-reader-screenshot-1.png",
+        "/images/apps/doc-and-docx-reader-screenshot-2.png",
+        "/images/apps/doc-and-docx-reader-screenshot-3.png",
+        "/images/apps/doc-and-docx-reader-screenshot-4.png",
+        "/images/apps/doc-and-docx-reader-screenshot-5.png"
+      ],
+      "features": [
+        "Designed for fast and responsive daily usage",
+        "Clean and modern interface with intuitive controls",
+        "Offline functionality for complete privacy and data security",
+        "Lightweight installation size optimized for all Android devices",
+        "Regular updates with continuous stability enhancements"
+      ],
+      "permissions": [
+        {
+          "name": "Storage (READ_EXTERNAL_STORAGE / WRITE_EXTERNAL_STORAGE)",
+          "purpose": "Read Word docx files and save bookmarks locally."
+        },
+        {
+          "name": "Manage Storage (MANAGE_EXTERNAL_STORAGE)",
+          "purpose": "Enable users to move, delete, and organize document files into folders."
+        },
+        {
+          "name": "Internet (INTERNET & ACCESS_NETWORK_STATE)",
+          "purpose": "Check network connection and load updates."
+        },
+        "android.permission.READ_EXTERNAL_STORAGE (Allows user to select documents)",
+        "android.permission.WRITE_EXTERNAL_STORAGE (Saves exported documents to device)"
+      ],
+      "thirdPartySDKs": [
+        "Google Play Services",
+        "Google AdMob",
+        "Firebase Core"
+      ],
+      "playStoreUrl": "https://play.google.com/store/apps/details?id=com.docxreader.docreader.app",
+      "lastUpdated": "2026-03-01",
+      "status": "Published"
+    },
+    {
+      "id": "doc-to-pdf-converter",
+      "slug": "doc-to-pdf-converter",
+      "name": "DOC and DOCX to PDF",
+      "packageName": "com.doc.docx.to.pdf.converter.app",
+      "category": "Productivity",
+      "shortDescription": "Convert Microsoft Word documents to professional PDF files rapidly with full offline processing.",
+      "longDescription": "DOC and DOCX to PDF by Publixa is crafted to deliver exceptional utility, maximum convenience, and uncompromising privacy. Whether you are managing everyday workflows or seeking seamless mobile entertainment, DOC and DOCX to PDF provides an intuitive, ad-friendly, and lightweight experience built adhering strictly to Google Play policy standards.",
+      "tagline": "Fast, Offline Word DOC & DOCX to PDF Conversion",
+      "icon": "/images/apps/doc-to-pdf-converter-icon.png",
+      "screenshots": [
+        "/images/apps/doc-to-pdf-converter-screenshot-1.png",
+        "/images/apps/doc-to-pdf-converter-screenshot-2.png",
+        "/images/apps/doc-to-pdf-converter-screenshot-3.png",
+        "/images/apps/doc-to-pdf-converter-screenshot-4.png"
+      ],
+      "features": [
+        "Designed for fast and responsive daily usage",
+        "Clean and modern interface with intuitive controls",
+        "Offline functionality for complete privacy and data security",
+        "Lightweight installation size optimized for all Android devices",
+        "Regular updates with continuous stability enhancements"
+      ],
+      "permissions": [
+        {
+          "name": "Storage Access (READ/WRITE_EXTERNAL_STORAGE)",
+          "purpose": "Open source Word files and save converted PDFs to user storage."
+        },
+        {
+          "name": "Manage External Storage (MANAGE_EXTERNAL_STORAGE)",
+          "purpose": "Save converted documents in designated user directories."
+        },
+        {
+          "name": "Camera (CAMERA)",
+          "purpose": "Allow direct photo scanning of documents before converting to PDF."
+        },
+        {
+          "name": "Internet (INTERNET & ACCESS_NETWORK_STATE)",
+          "purpose": "Verify software licensing and diagnostic updates."
+        },
+        "android.permission.READ_EXTERNAL_STORAGE (Allows user to select documents)",
+        "android.permission.WRITE_EXTERNAL_STORAGE (Saves exported documents to device)"
+      ],
+      "thirdPartySDKs": [
+        "Google Play Services",
+        "Google AdMob",
+        "Firebase Core"
+      ],
+      "playStoreUrl": "https://play.google.com/store/apps/details?id=com.doc.docx.to.pdf.converter.app",
+      "lastUpdated": "2026-03-01",
+      "status": "Published"
+    },
+    {
+      "id": "excel-reader-xls-file",
+      "slug": "excel-reader-xls-file",
+      "name": "Excel Reader : XLS File Edit",
+      "packageName": "com.xlsxreader.excelreader.app",
+      "category": "Productivity",
+      "shortDescription": "Open, calculate, and inspect complex Excel XLS/XLSX workbooks with fluid zooming and clear table layout.",
+      "longDescription": "Excel Reader : XLS File by Publixa is crafted to deliver exceptional utility, maximum convenience, and uncompromising privacy. Whether you are managing everyday workflows or seeking seamless mobile entertainment, Excel Reader : XLS File provides an intuitive, ad-friendly, and lightweight experience built adhering strictly to Google Play policy standards.",
+      "tagline": "High-Performance Spreadsheet & Table Inspector",
+      "icon": "/images/apps/excel-reader-xls-file-icon.png",
+      "screenshots": [
+        "/images/apps/excel-reader-xls-file-screenshot-1.png",
+        "/images/apps/excel-reader-xls-file-screenshot-2.png",
+        "/images/apps/excel-reader-xls-file-screenshot-3.png",
+        "/images/apps/excel-reader-xls-file-screenshot-4.png",
+        "/images/apps/excel-reader-xls-file-screenshot-5.png"
+      ],
+      "features": [
+        "Designed for fast and responsive daily usage",
+        "Clean and modern interface with intuitive controls",
+        "Offline functionality for complete privacy and data security",
+        "Lightweight installation size optimized for all Android devices",
+        "Regular updates with continuous stability enhancements"
+      ],
+      "permissions": [
+        {
+          "name": "Storage (READ_EXTERNAL_STORAGE / WRITE_EXTERNAL_STORAGE)",
+          "purpose": "Open spreadsheets and save worksheets locally."
+        },
+        {
+          "name": "Manage External Storage (MANAGE_EXTERNAL_STORAGE)",
+          "purpose": "Organize workbooks across storage."
+        },
+        {
+          "name": "Internet (INTERNET)",
+          "purpose": "Check for security patches."
+        },
+        "android.permission.READ_EXTERNAL_STORAGE (Allows user to select documents)",
+        "android.permission.WRITE_EXTERNAL_STORAGE (Saves exported documents to device)"
+      ],
+      "thirdPartySDKs": [
+        "Google Play Services",
+        "Google AdMob",
+        "Firebase Core"
+      ],
+      "playStoreUrl": "https://play.google.com/store/apps/details?id=com.xlsxreader.excelreader.app",
+      "lastUpdated": "2026-03-01",
+      "status": "Published"
+    },
+    {
+      "id": "excel-to-pdf-converter",
+      "slug": "excel-to-pdf-converter",
+      "name": "EXCEL TO PDF",
+      "packageName": "com.excel.xls.to.pdf.converter.app",
+      "category": "Productivity",
+      "shortDescription": "Transform complex Excel sheets and workbooks into clean, printable PDF documents directly on device.",
+      "longDescription": "EXCEL TO PDF Converter by Publixa is crafted to deliver exceptional utility, maximum convenience, and uncompromising privacy. Whether you are managing everyday workflows or seeking seamless mobile entertainment, EXCEL TO PDF Converter provides an intuitive, ad-friendly, and lightweight experience built adhering strictly to Google Play policy standards.",
+      "tagline": "Convert XLS & XLSX Spreadsheets to PDF Instantly",
+      "icon": "/images/apps/excel-to-pdf-converter-icon.png",
+      "screenshots": [
+        "/images/apps/excel-to-pdf-converter-screenshot-1.png",
+        "/images/apps/excel-to-pdf-converter-screenshot-2.png",
+        "/images/apps/excel-to-pdf-converter-screenshot-3.png"
+      ],
+      "features": [
+        "Designed for fast and responsive daily usage",
+        "Clean and modern interface with intuitive controls",
+        "Offline functionality for complete privacy and data security",
+        "Lightweight installation size optimized for all Android devices",
+        "Regular updates with continuous stability enhancements"
+      ],
+      "permissions": [
+        {
+          "name": "Storage Access (READ/WRITE_EXTERNAL_STORAGE)",
+          "purpose": "Access spreadsheet files and save rendered PDFs to phone storage."
+        },
+        {
+          "name": "Manage External Storage (MANAGE_EXTERNAL_STORAGE)",
+          "purpose": "Save converted documents in user-specified folders."
+        },
+        {
+          "name": "Camera (CAMERA)",
+          "purpose": "Scan paper spreadsheets or receipts directly to attach with table conversions."
+        },
+        {
+          "name": "Internet (INTERNET & ACCESS_NETWORK_STATE)",
+          "purpose": "Check for security and app updates."
+        },
+        "android.permission.READ_EXTERNAL_STORAGE (Allows user to select documents)",
+        "android.permission.WRITE_EXTERNAL_STORAGE (Saves exported documents to device)"
+      ],
+      "thirdPartySDKs": [
+        "Google Play Services",
+        "Google AdMob",
+        "Firebase Core"
+      ],
+      "playStoreUrl": "https://play.google.com/store/apps/details?id=com.excel.xls.to.pdf.converter.app",
+      "lastUpdated": "2026-03-01",
+      "status": "Published"
+    },
+    {
+      "id": "expense-checklist",
+      "slug": "expense-checklist",
+      "name": "Expense Checklist",
+      "packageName": "com.expense.checklist",
+      "category": "Productivity",
+      "shortDescription": "Simple and intuitive expense organizer to manage recurring bills, daily outlays, and budget goals.",
+      "longDescription": "Expense Checklist by Publixa is crafted to deliver exceptional utility, maximum convenience, and uncompromising privacy. Built adhering strictly to Google Play developer standards, Expense Checklist ensures reliable performance with clear offline boundaries.",
+      "tagline": "Daily Budget & Personal Expense Tracker",
+      "icon": "/images/apps/expense-checklist-icon.png",
+      "screenshots": [
+        "/images/apps/expense-checklist-screenshot-1.png",
+        "/images/apps/expense-checklist-screenshot-2.png",
+        "/images/apps/expense-checklist-screenshot-3.png",
+        "/images/apps/expense-checklist-screenshot-4.png",
+        "/images/apps/expense-checklist-screenshot-5.png"
+      ],
+      "features": [
+        "Intuitive and easy-to-use interface tailored for mobile productivity",
+        "Fast response times with zero unnecessary background battery drain",
+        "Local on-device processing prioritizing privacy and data integrity",
+        "Regular updates conforming to latest Android SDK and Google Play guidelines"
+      ],
+      "permissions": [
+        {
+          "name": "Storage / Media Access",
+          "purpose": "Required to open, edit, and save user-selected files on the device."
+        },
+        {
+          "name": "Internet & Network State",
+          "purpose": "Used strictly for license verification, critical telemetry, and security checks."
+        }
+      ],
+      "thirdPartySDKs": [
+        "Google Play Services",
+        "Google AdMob",
+        "Firebase Core"
+      ],
+      "playStoreUrl": "https://play.google.com/store/apps/details?id=com.expense.checklist",
+      "lastUpdated": "2026-03-01",
+      "status": "Published"
+    },
+    {
+      "id": "fff-diamond-guide",
+      "slug": "fff-diamond-guide",
+      "name": "FFF Daimond and Guide",
+      "packageName": "com.ffdiamond.app",
+      "category": "Tools",
+      "shortDescription": "Discover expert loadout tips, character tactics, weapon statistics, and companion guides for mobile gaming.",
+      "longDescription": "FFF Daimond and Guide by Publixa is crafted to deliver exceptional utility, maximum convenience, and uncompromising privacy. Built adhering strictly to Google Play developer standards, FFF Daimond and Guide ensures reliable performance with clear offline boundaries.",
+      "tagline": "Gaming Tips, Strategies & Companion Guide",
+      "icon": "/images/apps/fff-diamond-guide-icon.png",
+      "screenshots": [
+        "/images/apps/fff-diamond-guide-screenshot-1.png",
+        "/images/apps/fff-diamond-guide-screenshot-2.png",
+        "/images/apps/fff-diamond-guide-screenshot-3.png",
+        "/images/apps/fff-diamond-guide-screenshot-4.png",
+        "/images/apps/fff-diamond-guide-screenshot-5.png"
+      ],
+      "features": [
+        "Intuitive and easy-to-use interface tailored for mobile productivity",
+        "Fast response times with zero unnecessary background battery drain",
+        "Local on-device processing prioritizing privacy and data integrity",
+        "Regular updates conforming to latest Android SDK and Google Play guidelines"
+      ],
+      "permissions": [
+        {
+          "name": "Storage / Media Access",
+          "purpose": "Required to open, edit, and save user-selected files on the device."
+        },
+        {
+          "name": "Internet & Network State",
+          "purpose": "Used strictly for license verification, critical telemetry, and security checks."
+        }
+      ],
+      "thirdPartySDKs": [
+        "Google Play Services",
+        "Google AdMob",
+        "Firebase Core"
+      ],
+      "playStoreUrl": "https://play.google.com/store/apps/details?id=com.ffdiamond.app",
+      "lastUpdated": "2026-03-01",
+      "status": "Published"
+    },
+    {
+      "id": "ghostx-vpn",
+      "slug": "ghostx-vpn",
+      "name": "GhostX VPN",
+      "packageName": "com.GhostXVPN.app",
+      "category": "Tools",
+      "shortDescription": "Ultra-fast proxy servers designed to defend your digital privacy and secure public Wi-Fi hotspots.",
+      "longDescription": "GhostX VPN by Publixa is crafted to deliver exceptional utility, maximum convenience, and uncompromising privacy. Built adhering strictly to Google Play developer standards, GhostX VPN ensures reliable performance with clear offline boundaries.",
+      "tagline": "Stealth Virtual Private Network & Encryption Tunnel",
+      "icon": "/images/apps/ghostx-vpn-icon.png",
+      "screenshots": [
+        "/images/apps/ghostx-vpn-screenshot-1.png",
+        "/images/apps/ghostx-vpn-screenshot-2.png",
+        "/images/apps/ghostx-vpn-screenshot-3.png",
+        "/images/apps/ghostx-vpn-screenshot-4.png",
+        "/images/apps/ghostx-vpn-screenshot-5.png"
+      ],
+      "features": [
+        "Intuitive and easy-to-use interface tailored for mobile productivity",
+        "Fast response times with zero unnecessary background battery drain",
+        "Local on-device processing prioritizing privacy and data integrity",
+        "Regular updates conforming to latest Android SDK and Google Play guidelines"
+      ],
+      "permissions": [
+        {
+          "name": "Storage / Media Access",
+          "purpose": "Required to open, edit, and save user-selected files on the device."
+        },
+        {
+          "name": "Internet & Network State",
+          "purpose": "Used strictly for license verification, critical telemetry, and security checks."
+        }
+      ],
+      "thirdPartySDKs": [
+        "Google Play Services",
+        "Google AdMob",
+        "Firebase Core"
+      ],
+      "playStoreUrl": "https://play.google.com/store/apps/details?id=com.GhostXVPN.app",
+      "lastUpdated": "2026-03-01",
+      "status": "Published"
+    },
+    {
+      "id": "grocery-checklist",
+      "slug": "grocery-checklist",
+      "name": "Grocery Checklist",
+      "packageName": "com.GroceryChecklist.app",
+      "category": "Productivity",
+      "shortDescription": "Build organized grocery checklists categorized by aisle so you never miss an ingredient at the store.",
+      "longDescription": "Grocery Checklist by Publixa is crafted to deliver exceptional utility, maximum convenience, and uncompromising privacy. Built adhering strictly to Google Play developer standards, Grocery Checklist ensures reliable performance with clear offline boundaries.",
+      "tagline": "Smart Shopping List & Pantry Organizer",
+      "icon": "/images/apps/grocery-checklist-icon.png",
+      "screenshots": [
+        "/images/apps/grocery-checklist-screenshot-1.png",
+        "/images/apps/grocery-checklist-screenshot-2.png",
+        "/images/apps/grocery-checklist-screenshot-3.png",
+        "/images/apps/grocery-checklist-screenshot-4.png",
+        "/images/apps/grocery-checklist-screenshot-5.png"
+      ],
+      "features": [
+        "Intuitive and easy-to-use interface tailored for mobile productivity",
+        "Fast response times with zero unnecessary background battery drain",
+        "Local on-device processing prioritizing privacy and data integrity",
+        "Regular updates conforming to latest Android SDK and Google Play guidelines"
+      ],
+      "permissions": [
+        {
+          "name": "Storage / Media Access",
+          "purpose": "Required to open, edit, and save user-selected files on the device."
+        },
+        {
+          "name": "Internet & Network State",
+          "purpose": "Used strictly for license verification, critical telemetry, and security checks."
+        }
+      ],
+      "thirdPartySDKs": [
+        "Google Play Services",
+        "Google AdMob",
+        "Firebase Core"
+      ],
+      "playStoreUrl": "https://play.google.com/store/apps/details?id=com.GroceryChecklist.app",
+      "lastUpdated": "2026-03-01",
+      "status": "Published"
+    },
+    {
+      "id": "id-and-passport-photo-maker",
+      "slug": "id-and-passport-photo-maker",
+      "name": "ID & Passport Photo Maker",
+      "packageName": "com.idcardmaker.passportphotomaker",
+      "category": "Productivity",
+      "shortDescription": "Create custom ID cards, student badges, staff passes, and passport-size photo layouts directly on your phone.",
+      "longDescription": "ID & Passport Photo Maker is a simple and powerful design app for creating custom ID cards, badges, passes, and passport-size photo layouts directly on your phone. Whether you need a student card, staff badge, library card, event pass, or a Schengen/US Visa passport photo sheet, you can start with a ready-made template or design from a blank canvas with complete on-device privacy.",
+      "tagline": "Custom ID Card Maker, Badge Designer & Passport Photo Studio",
+      "icon": "/images/apps/id-and-passport-photo-maker-icon.png",
+      "screenshots": [
+        "/images/apps/id-and-passport-photo-maker-screenshot-1.png",
+        "/images/apps/id-and-passport-photo-maker-screenshot-2.png",
+        "/images/apps/id-and-passport-photo-maker-screenshot-3.png",
+        "/images/apps/id-and-passport-photo-maker-screenshot-4.png",
+        "/images/apps/id-and-passport-photo-maker-screenshot-5.png"
+      ],
+      "features": [
+        "95+ customizable ID card templates for students, staff, libraries, and events",
+        "Passport & pass-size photo studio supporting US/Visa, India, Schengen & custom sizes",
+        "Multi-photo print layout creator (1, 2, 4, 6, 8 photos on 4x6 print sheets)",
+        "Built-in Card Studio with custom backgrounds, barcodes, QR codes & signatures",
+        "100% on-device photo cropping and high-resolution export ready for printing"
+      ],
+      "permissions": [
+        {
+          "name": "Camera Access (CAMERA)",
+          "purpose": "Used only when capturing live photos for custom ID cards or passport photo layouts."
+        },
+        {
+          "name": "Storage & Media Access (READ_MEDIA_IMAGES)",
+          "purpose": "Required to pick photos from device gallery and save exported print sheets locally."
+        },
+        {
+          "name": "Internet & Network State",
+          "purpose": "Used strictly for license verification, Google AdMob, and crash telemetry."
+        }
+      ],
+      "thirdPartySDKs": [
+        "Google Play Services",
+        "Google AdMob",
+        "Firebase Core"
+      ],
+      "playStoreUrl": "https://play.google.com/store/apps/details?id=com.idcardmaker.passportphotomaker",
+      "lastUpdated": "2026-03-01",
+      "status": "Published"
+    },
+    {
+      "id": "liquid-color-sort",
+      "slug": "liquid-color-sort",
+      "name": "Liquid Color Sort",
+      "packageName": "com.liquidcolorsort.app",
+      "category": "Casual Games",
+      "shortDescription": "Test your logic and color coordination by pouring and sorting colorful liquids into matching test tubes.",
+      "longDescription": "Liquid Color Sort Puzzle by Publixa is crafted to deliver exceptional utility, maximum convenience, and uncompromising privacy. Whether you are managing everyday workflows or seeking seamless mobile entertainment, Liquid Color Sort Puzzle provides an intuitive, ad-friendly, and lightweight experience built adhering strictly to Google Play policy standards.",
+      "tagline": "Satisfying Water Sorting Brain Teaser",
+      "icon": "/images/apps/liquid-color-sort-icon.png",
+      "screenshots": [
+        "/images/apps/liquid-color-sort-screenshot-1.png",
+        "/images/apps/liquid-color-sort-screenshot-2.png",
+        "/images/apps/liquid-color-sort-screenshot-3.png",
+        "/images/apps/liquid-color-sort-screenshot-4.png",
+        "/images/apps/liquid-color-sort-screenshot-5.png"
+      ],
+      "features": [
+        "Designed for fast and responsive daily usage",
+        "Clean and modern interface with intuitive controls",
+        "Offline functionality for complete privacy and data security",
+        "Lightweight installation size optimized for all Android devices",
+        "Regular updates with continuous stability enhancements"
+      ],
+      "permissions": [
+        {
+          "name": "Internet (INTERNET & ACCESS_NETWORK_STATE)",
+          "purpose": "Load leaderboard scores and deliver optional rewarded hints."
+        },
+        {
+          "name": "Advertising ID (AD_ID)",
+          "purpose": "Serve rewarded videos for level skips and hint tokens."
+        }
+      ],
+      "thirdPartySDKs": [
+        "Google Play Services",
+        "Google AdMob",
+        "Firebase Core"
+      ],
+      "playStoreUrl": "https://play.google.com/store/apps/details?id=com.liquidcolorsort.app",
+      "lastUpdated": "2026-03-01",
+      "status": "Published"
+    },
+    {
+      "id": "kids-piano-guitar-drums",
+      "slug": "kids-piano-guitar-drums",
+      "name": "Music World: Piano & More",
+      "packageName": "com.kidspiano.guitadrumsmusicgame",
+      "category": "Casual Games",
+      "shortDescription": "Vibrant musical instrument playground featuring piano keys, drum pads, xylophone, and catchy melodies.",
+      "longDescription": "Music World: Piano & More by Publixa is crafted to deliver exceptional utility, maximum convenience, and uncompromising privacy. Whether you are managing everyday workflows or seeking seamless mobile entertainment, Music World: Piano & More provides an intuitive, ad-friendly, and lightweight experience built adhering strictly to Google Play policy standards.",
+      "tagline": "Play Piano, Drums, Guitar & Musical Mini-Games",
+      "icon": "/images/apps/kids-piano-guitar-drums-icon.png",
+      "screenshots": [
+        "/images/apps/kids-piano-guitar-drums-screenshot-1.png",
+        "/images/apps/kids-piano-guitar-drums-screenshot-2.png",
+        "/images/apps/kids-piano-guitar-drums-screenshot-3.png",
+        "/images/apps/kids-piano-guitar-drums-screenshot-4.png",
+        "/images/apps/kids-piano-guitar-drums-screenshot-5.png"
+      ],
+      "features": [
+        "Designed for fast and responsive daily usage",
+        "Clean and modern interface with intuitive controls",
+        "Offline functionality for complete privacy and data security",
+        "Lightweight installation size optimized for all Android devices",
+        "Regular updates with continuous stability enhancements"
+      ],
+      "permissions": [
+        {
+          "name": "Audio Recording (RECORD_AUDIO)",
+          "purpose": "Allow users to record live microphone singing or piano accompaniment onto audio tracks."
+        },
+        {
+          "name": "Internet (INTERNET)",
+          "purpose": "Download new instrument sound packs and scale libraries."
+        }
+      ],
+      "thirdPartySDKs": [
+        "Google Play Services",
+        "Google AdMob",
+        "Firebase Core"
+      ],
+      "playStoreUrl": "https://play.google.com/store/apps/details?id=com.kidspiano.guitadrumsmusicgame",
+      "lastUpdated": "2026-03-01",
+      "status": "Published"
+    },
+    {
+      "id": "nebula-vpn",
+      "slug": "nebula-vpn",
+      "name": "Nebula VPN",
+      "packageName": "com.nebulaVPN.app",
+      "category": "Tools",
+      "shortDescription": "Safeguard your Wi-Fi connections, protect network privacy, and browse with encrypted tunneling.",
+      "longDescription": "Nebula VPN - Secure Proxy by Publixa is crafted to deliver exceptional utility, maximum convenience, and uncompromising privacy. Whether you are managing everyday workflows or seeking seamless mobile entertainment, Nebula VPN - Secure Proxy provides an intuitive, ad-friendly, and lightweight experience built adhering strictly to Google Play policy standards.",
+      "tagline": "Encrypted High-Speed Tunnel & Private Proxy",
+      "icon": "/images/apps/nebula-vpn-icon.png",
+      "screenshots": [
+        "/images/apps/nebula-vpn-screenshot-1.png",
+        "/images/apps/nebula-vpn-screenshot-2.png",
+        "/images/apps/nebula-vpn-screenshot-3.png",
+        "/images/apps/nebula-vpn-screenshot-4.png",
+        "/images/apps/nebula-vpn-screenshot-5.png"
+      ],
+      "features": [
+        "Designed for fast and responsive daily usage",
+        "Clean and modern interface with intuitive controls",
+        "Offline functionality for complete privacy and data security",
+        "Lightweight installation size optimized for all Android devices",
+        "Regular updates with continuous stability enhancements"
+      ],
+      "permissions": [
+        {
+          "name": "Network & Internet (INTERNET / ACCESS_NETWORK_STATE)",
+          "purpose": "Establish secure encrypted VPN tunnels and connect to proxy routing servers."
+        },
+        {
+          "name": "VPN Service (BIND_VPN_SERVICE)",
+          "purpose": "Create operating-system level encrypted network tunnels for device traffic."
+        }
+      ],
+      "thirdPartySDKs": [
+        "Google Play Services",
+        "Google AdMob",
+        "Firebase Core"
+      ],
+      "playStoreUrl": "https://play.google.com/store/apps/details?id=com.nebulaVPN.app",
+      "lastUpdated": "2026-03-01",
+      "status": "Published"
+    },
+    {
+      "id": "net-go-vpn",
+      "slug": "net-go-vpn",
+      "name": "Net Go VPN",
+      "packageName": "com.netgovpn",
+      "category": "Tools",
+      "shortDescription": "Secure your connection with modern WireGuard tunneling, worldwide servers, and zero-log private browsing.",
+      "longDescription": "Net Go VPN by Publixa provides fast, reliable, and end-to-end encrypted internet access powered by modern WireGuard and OpenVPN protocols. Protect your public Wi-Fi sessions, guard against tracking, and enjoy ultra-fast 10 Gbps proxy nodes across global locations. Designed with a strict zero-activity-log architecture and full Android 15+ 16 KB page-size support, Net Go VPN prioritizes user anonymity and battery-efficient networking.",
+      "tagline": "Fast & Encrypted WireGuard VPN Tunnel",
+      "icon": "/images/apps/net-go-vpn-icon.png",
+      "screenshots": [
+        "/images/apps/net-go-vpn-screenshot-1.png",
+        "/images/apps/net-go-vpn-screenshot-2.png",
+        "/images/apps/net-go-vpn-screenshot-3.png",
+        "/images/apps/net-go-vpn-screenshot-4.png",
+        "/images/apps/net-go-vpn-screenshot-5.png"
+      ],
+      "features": [
+        "Lightning-fast connection speeds powered by modern WireGuard tunneling",
+        "Global network of high-speed servers with 1-tap instant connection",
+        "Strict zero-logs policy: no browsing activity or connection logs recorded",
+        "Engineered with 16 KB page-size support for modern Android 15+ devices",
+        "Intelligent split tunneling and automatic kill-switch protection"
+      ],
+      "permissions": [
+        {
+          "name": "VPN Service (BIND_VPN_SERVICE)",
+          "purpose": "Establishes secure, encrypted local and remote VPN tunneling for device network traffic."
+        },
+        {
+          "name": "Internet & Network State",
+          "purpose": "Required to connect to secure remote VPN nodes and monitor connectivity changes."
+        },
+        {
+          "name": "Notifications (POST_NOTIFICATIONS)",
+          "purpose": "Displays ongoing VPN connection status and quick-disconnect controls in system tray."
+        }
+      ],
+      "thirdPartySDKs": [
+        "Google Play Services",
+        "Google AdMob",
+        "Firebase Core"
+      ],
+      "playStoreUrl": "https://play.google.com/store/apps/details?id=com.netgovpn",
+      "lastUpdated": "2026-03-01",
+      "status": "Published"
+    },
+    {
+      "id": "paper-ai-pdf-tts",
+      "slug": "paper-ai-pdf-tts",
+      "name": "Paper AI PDF - APP (TTS)",
+      "packageName": "com.paperknifeapp",
+      "category": "Productivity",
+      "shortDescription": "Turn lengthy PDFs, articles, and documents into natural human audio so you can listen while multitasking.",
+      "longDescription": "Paper AI PDF - APP (TTS) by Publixa is crafted to deliver exceptional utility, maximum convenience, and uncompromising privacy. Built adhering strictly to Google Play developer standards, Paper AI PDF - APP (TTS) ensures reliable performance with clear offline boundaries.",
+      "tagline": "Listen to Documents with AI Text-to-Speech Voice",
+      "icon": "/images/apps/paper-ai-pdf-tts-icon.png",
+      "screenshots": [
+        "/images/apps/paper-ai-pdf-tts-screenshot-1.png",
+        "/images/apps/paper-ai-pdf-tts-screenshot-2.png",
+        "/images/apps/paper-ai-pdf-tts-screenshot-3.png",
+        "/images/apps/paper-ai-pdf-tts-screenshot-4.png",
+        "/images/apps/paper-ai-pdf-tts-screenshot-5.png"
+      ],
+      "features": [
+        "Intuitive and easy-to-use interface tailored for mobile productivity",
+        "Fast response times with zero unnecessary background battery drain",
+        "Local on-device processing prioritizing privacy and data integrity",
+        "Regular updates conforming to latest Android SDK and Google Play guidelines"
+      ],
+      "permissions": [
+        {
+          "name": "Storage / Media Access",
+          "purpose": "Required to open, edit, and save user-selected files on the device."
+        },
+        {
+          "name": "Internet & Network State",
+          "purpose": "Used strictly for license verification, critical telemetry, and security checks."
+        }
+      ],
+      "thirdPartySDKs": [
+        "Google Play Services",
+        "Google AdMob",
+        "Firebase Core"
+      ],
+      "playStoreUrl": "https://play.google.com/store/apps/details?id=com.paperknifeapp",
+      "lastUpdated": "2026-03-01",
+      "status": "Published"
+    },
+    {
+      "id": "paperflow-pdf-tools",
+      "slug": "paperflow-pdf-tools",
+      "name": "PaperFlow PDF Tools",
+      "packageName": "com.paperknifepdf",
+      "category": "Productivity",
+      "shortDescription": "Powerful all-in-one PDF utility station to compress file size, combine chapters, and password-protect pages.",
+      "longDescription": "PaperFlow PDF Tools by Publixa is crafted to deliver exceptional utility, maximum convenience, and uncompromising privacy. Built adhering strictly to Google Play developer standards, PaperFlow PDF Tools ensures reliable performance with clear offline boundaries.",
+      "tagline": "Merge, Split, Compress & Secure PDF Documents",
+      "icon": "/images/apps/paperflow-pdf-tools-icon.png",
+      "screenshots": [
+        "/images/apps/paperflow-pdf-tools-screenshot-1.png",
+        "/images/apps/paperflow-pdf-tools-screenshot-2.png",
+        "/images/apps/paperflow-pdf-tools-screenshot-3.png",
+        "/images/apps/paperflow-pdf-tools-screenshot-4.png",
+        "/images/apps/paperflow-pdf-tools-screenshot-5.png"
+      ],
+      "features": [
+        "Intuitive and easy-to-use interface tailored for mobile productivity",
+        "Fast response times with zero unnecessary background battery drain",
+        "Local on-device processing prioritizing privacy and data integrity",
+        "Regular updates conforming to latest Android SDK and Google Play guidelines"
+      ],
+      "permissions": [
+        {
+          "name": "Storage / Media Access",
+          "purpose": "Required to open, edit, and save user-selected files on the device."
+        },
+        {
+          "name": "Internet & Network State",
+          "purpose": "Used strictly for license verification, critical telemetry, and security checks."
+        }
+      ],
+      "thirdPartySDKs": [
+        "Google Play Services",
+        "Google AdMob",
+        "Firebase Core"
+      ],
+      "playStoreUrl": "https://play.google.com/store/apps/details?id=com.paperknifepdf",
+      "lastUpdated": "2026-03-01",
+      "status": "Published"
+    },
+    {
+      "id": "pdf-reader-editor",
+      "slug": "pdf-reader-editor",
+      "name": "PDF Reader & Editor",
+      "packageName": "pdf.reader.pdfviewer.pdfeditor.app",
+      "category": "Productivity",
+      "shortDescription": "Read eBooks, annotate forms, sign contracts, and organize your PDF documents with smooth page navigation.",
+      "longDescription": "PDF Reader & Editor by Publixa is crafted to deliver exceptional utility, maximum convenience, and uncompromising privacy. Built adhering strictly to Google Play developer standards, PDF Reader & Editor ensures reliable performance with clear offline boundaries.",
+      "tagline": "Feature-Packed Mobile PDF Viewer, Annotator & Manager",
+      "icon": "/images/apps/pdf-reader-editor-icon.png",
+      "screenshots": [
+        "/images/apps/pdf-reader-editor-screenshot-1.png",
+        "/images/apps/pdf-reader-editor-screenshot-2.png",
+        "/images/apps/pdf-reader-editor-screenshot-3.png",
+        "/images/apps/pdf-reader-editor-screenshot-4.png",
+        "/images/apps/pdf-reader-editor-screenshot-5.png"
+      ],
+      "features": [
+        "Intuitive and easy-to-use interface tailored for mobile productivity",
+        "Fast response times with zero unnecessary background battery drain",
+        "Local on-device processing prioritizing privacy and data integrity",
+        "Regular updates conforming to latest Android SDK and Google Play guidelines"
+      ],
+      "permissions": [
+        {
+          "name": "Storage / Media Access",
+          "purpose": "Required to open, edit, and save user-selected files on the device."
+        },
+        {
+          "name": "Internet & Network State",
+          "purpose": "Used strictly for license verification, critical telemetry, and security checks."
+        }
+      ],
+      "thirdPartySDKs": [
+        "Google Play Services",
+        "Google AdMob",
+        "Firebase Core"
+      ],
+      "playStoreUrl": "https://play.google.com/store/apps/details?id=pdf.reader.pdfviewer.pdfeditor.app",
+      "lastUpdated": "2026-03-01",
+      "status": "Published"
+    },
+    {
+      "id": "ppt-to-pdf-converter",
+      "slug": "ppt-to-pdf-converter",
+      "name": "PPT and PPTX to PDF CONVERTOR",
+      "packageName": "com.ppt.pptx.to.pdf.converter.app",
+      "category": "Productivity",
+      "shortDescription": "Convert PPT slides into crisp, vector-clear PDF files ready for printing, archiving, and sharing.",
+      "longDescription": "PPT and PPTX to PDF CONVERTOR by Publixa is crafted to deliver exceptional utility, maximum convenience, and uncompromising privacy. Whether you are managing everyday workflows or seeking seamless mobile entertainment, PPT and PPTX to PDF CONVERTOR provides an intuitive, ad-friendly, and lightweight experience built adhering strictly to Google Play policy standards.",
+      "tagline": "Export Presentation Slides to PDF Documents",
+      "icon": "/images/apps/ppt-to-pdf-converter-icon.png",
+      "screenshots": [
+        "/images/apps/ppt-to-pdf-converter-screenshot-1.png",
+        "/images/apps/ppt-to-pdf-converter-screenshot-2.png",
+        "/images/apps/ppt-to-pdf-converter-screenshot-3.png",
+        "/images/apps/ppt-to-pdf-converter-screenshot-4.png"
+      ],
+      "features": [
+        "Designed for fast and responsive daily usage",
+        "Clean and modern interface with intuitive controls",
+        "Offline functionality for complete privacy and data security",
+        "Lightweight installation size optimized for all Android devices",
+        "Regular updates with continuous stability enhancements"
+      ],
+      "permissions": [
+        {
+          "name": "Storage Access (READ/WRITE_EXTERNAL_STORAGE)",
+          "purpose": "Open source PPT files and write converted PDF documents to device storage."
+        },
+        {
+          "name": "Manage External Storage (MANAGE_EXTERNAL_STORAGE)",
+          "purpose": "Save converted files in designated directories."
+        },
+        {
+          "name": "Camera (CAMERA)",
+          "purpose": "Scan physical presentation handouts to merge into converted decks."
+        },
+        {
+          "name": "Internet (INTERNET & ACCESS_NETWORK_STATE)",
+          "purpose": "Network state monitoring and security patches."
+        },
+        "android.permission.READ_EXTERNAL_STORAGE (Allows user to select documents)",
+        "android.permission.WRITE_EXTERNAL_STORAGE (Saves exported documents to device)"
+      ],
+      "thirdPartySDKs": [
+        "Google Play Services",
+        "Google AdMob",
+        "Firebase Core"
+      ],
+      "playStoreUrl": "https://play.google.com/store/apps/details?id=com.ppt.pptx.to.pdf.converter.app",
+      "lastUpdated": "2026-03-01",
+      "status": "Published"
+    },
+    {
       "id": "ppt-reader",
       "slug": "ppt-reader",
       "name": "PPT and PPTX: Read and Edit",
@@ -9,7 +1097,6 @@
       "shortDescription": "Open, view, search, and manage PowerPoint PPT & PPTX presentation slides directly on your mobile device.",
       "longDescription": "PPT and PPTX: Read and Edit by Publixa is crafted to deliver exceptional utility, maximum convenience, and uncompromising privacy. Whether you are managing everyday workflows or seeking seamless mobile entertainment, PPT and PPTX: Read and Edit provides an intuitive, ad-friendly, and lightweight experience built adhering strictly to Google Play policy standards.",
       "tagline": "Smooth PowerPoint Presentation Viewer & Editor",
-      "downloads": "500K+",
       "icon": "/images/apps/ppt-reader-icon.png",
       "screenshots": [
         "/images/apps/ppt-reader-screenshot-1.png",
@@ -59,496 +1146,21 @@
       "status": "Published"
     },
     {
-      "id": "all-in-one-tools",
-      "slug": "all-in-one-tools",
-      "name": "All in one ToolBox",
-      "packageName": "com.allinonetools",
+      "id": "qr-scanner-generator",
+      "slug": "qr-scanner-generator",
+      "name": "Qr Scanner and Generator",
+      "packageName": "com.Qrscannerandgenerator",
       "category": "Tools",
-      "shortDescription": "Comprehensive multi-utility suite featuring unit converters, daily calculators, checklists, and device tools.",
-      "longDescription": "All in one ToolBox by Publixa is crafted to deliver exceptional utility, maximum convenience, and uncompromising privacy. Whether you are managing everyday workflows or seeking seamless mobile entertainment, All in one ToolBox provides an intuitive, ad-friendly, and lightweight experience built adhering strictly to Google Play policy standards.",
-      "tagline": "Essential Everyday Utility Kit for Android",
-      "downloads": "50K+",
-      "icon": "/images/apps/all-in-one-tools-icon.png",
+      "shortDescription": "Lightning-speed barcode reader and generator for Wi-Fi passwords, contact cards, web links, and text.",
+      "longDescription": "Qr Scanner and Generator by Publixa is crafted to deliver exceptional utility, maximum convenience, and uncompromising privacy. Built adhering strictly to Google Play developer standards, Qr Scanner and Generator ensures reliable performance with clear offline boundaries.",
+      "tagline": "Instant QR Code Scanner & Custom Code Creator",
+      "icon": "/images/apps/qr-scanner-generator-icon.png",
       "screenshots": [
-        "/images/apps/all-in-one-tools-screenshot-1.png",
-        "/images/apps/all-in-one-tools-screenshot-2.png",
-        "/images/apps/all-in-one-tools-screenshot-3.png",
-        "/images/apps/all-in-one-tools-screenshot-4.png",
-        "/images/apps/all-in-one-tools-screenshot-5.png"
-      ],
-      "features": [
-        "Designed for fast and responsive daily usage",
-        "Clean and modern interface with intuitive controls",
-        "Offline functionality for complete privacy and data security",
-        "Lightweight installation size optimized for all Android devices",
-        "Regular updates with continuous stability enhancements"
-      ],
-      "permissions": [
-        {
-          "name": "Sensors (BODY_SENSORS / ACCELEROMETER)",
-          "purpose": "Calculate spirit level inclination, compass magnetic heading, and motion."
-        },
-        {
-          "name": "Flashlight (CAMERA / FLASHLIGHT)",
-          "purpose": "Activate device LED torch light when triggered by user."
-        },
-        {
-          "name": "Internet (INTERNET)",
-          "purpose": "Check for measurement calibration updates."
-        }
-      ],
-      "thirdPartySDKs": [
-        "Google Play Services",
-        "Google AdMob",
-        "Firebase Core"
-      ],
-      "playStoreUrl": "https://play.google.com/store/apps/details?id=com.allinonetools",
-      "lastUpdated": "2026-03-01",
-      "status": "Published"
-    },
-    {
-      "id": "arrows-escape-puzzle",
-      "slug": "arrows-escape-puzzle",
-      "name": "Arrow Challenge - Puzzle",
-      "packageName": "com.arrows.escape.puzzle.challenge.app",
-      "category": "Casual Games",
-      "shortDescription": "Stimulate your brain with clever arrow routing puzzles, intuitive controls, and calming ambient gameplay.",
-      "longDescription": "Arrow Challenge - Puzzle by Publixa is crafted to deliver exceptional utility, maximum convenience, and uncompromising privacy. Whether you are managing everyday workflows or seeking seamless mobile entertainment, Arrow Challenge - Puzzle provides an intuitive, ad-friendly, and lightweight experience built adhering strictly to Google Play policy standards.",
-      "tagline": "Relaxing Logic & Directional Maze Puzzle",
-      "downloads": "50K+",
-      "icon": "/images/apps/arrows-escape-puzzle-icon.png",
-      "screenshots": [
-        "/images/apps/arrows-escape-puzzle-screenshot-1.png",
-        "/images/apps/arrows-escape-puzzle-screenshot-2.png",
-        "/images/apps/arrows-escape-puzzle-screenshot-3.png",
-        "/images/apps/arrows-escape-puzzle-screenshot-4.png",
-        "/images/apps/arrows-escape-puzzle-screenshot-5.png"
-      ],
-      "features": [
-        "Designed for fast and responsive daily usage",
-        "Clean and modern interface with intuitive controls",
-        "Offline functionality for complete privacy and data security",
-        "Lightweight installation size optimized for all Android devices",
-        "Regular updates with continuous stability enhancements"
-      ],
-      "permissions": [
-        {
-          "name": "Internet (INTERNET & ACCESS_NETWORK_STATE)",
-          "purpose": "Check network connectivity and receive puzzle pack updates."
-        },
-        {
-          "name": "Advertising ID (AD_ID)",
-          "purpose": "Deliver rewarded video ads for unlocking solution steps."
-        }
-      ],
-      "thirdPartySDKs": [
-        "Google Play Services",
-        "Google AdMob",
-        "Firebase Core"
-      ],
-      "playStoreUrl": "https://play.google.com/store/apps/details?id=com.arrows.escape.puzzle.challenge.app",
-      "lastUpdated": "2026-03-01",
-      "status": "Published"
-    },
-    {
-      "id": "nebula-vpn",
-      "slug": "nebula-vpn",
-      "name": "Nebula VPN",
-      "packageName": "com.nebulaVPN.app",
-      "category": "Tools",
-      "shortDescription": "Safeguard your Wi-Fi connections, protect network privacy, and browse with encrypted tunneling.",
-      "longDescription": "Nebula VPN - Secure Proxy by Publixa is crafted to deliver exceptional utility, maximum convenience, and uncompromising privacy. Whether you are managing everyday workflows or seeking seamless mobile entertainment, Nebula VPN - Secure Proxy provides an intuitive, ad-friendly, and lightweight experience built adhering strictly to Google Play policy standards.",
-      "tagline": "Encrypted High-Speed Tunnel & Private Proxy",
-      "downloads": "100K+",
-      "icon": "/images/apps/nebula-vpn-icon.png",
-      "screenshots": [
-        "/images/apps/nebula-vpn-screenshot-1.png",
-        "/images/apps/nebula-vpn-screenshot-2.png",
-        "/images/apps/nebula-vpn-screenshot-3.png",
-        "/images/apps/nebula-vpn-screenshot-4.png",
-        "/images/apps/nebula-vpn-screenshot-5.png"
-      ],
-      "features": [
-        "Designed for fast and responsive daily usage",
-        "Clean and modern interface with intuitive controls",
-        "Offline functionality for complete privacy and data security",
-        "Lightweight installation size optimized for all Android devices",
-        "Regular updates with continuous stability enhancements"
-      ],
-      "permissions": [
-        {
-          "name": "Network & Internet (INTERNET / ACCESS_NETWORK_STATE)",
-          "purpose": "Establish secure encrypted VPN tunnels and connect to proxy routing servers."
-        },
-        {
-          "name": "VPN Service (BIND_VPN_SERVICE)",
-          "purpose": "Create operating-system level encrypted network tunnels for device traffic."
-        }
-      ],
-      "thirdPartySDKs": [
-        "Google Play Services",
-        "Google AdMob",
-        "Firebase Core"
-      ],
-      "playStoreUrl": "https://play.google.com/store/apps/details?id=com.nebulaVPN.app",
-      "lastUpdated": "2026-03-01",
-      "status": "Published"
-    },
-    {
-      "id": "excel-to-pdf-converter",
-      "slug": "excel-to-pdf-converter",
-      "name": "EXCEL TO PDF",
-      "packageName": "com.excel.xls.to.pdf.converter.app",
-      "category": "Productivity",
-      "shortDescription": "Transform complex Excel sheets and workbooks into clean, printable PDF documents directly on device.",
-      "longDescription": "EXCEL TO PDF Converter by Publixa is crafted to deliver exceptional utility, maximum convenience, and uncompromising privacy. Whether you are managing everyday workflows or seeking seamless mobile entertainment, EXCEL TO PDF Converter provides an intuitive, ad-friendly, and lightweight experience built adhering strictly to Google Play policy standards.",
-      "tagline": "Convert XLS & XLSX Spreadsheets to PDF Instantly",
-      "downloads": "100K+",
-      "icon": "/images/apps/excel-to-pdf-converter-icon.png",
-      "screenshots": [
-        "/images/apps/excel-to-pdf-converter-screenshot-1.png",
-        "/images/apps/excel-to-pdf-converter-screenshot-2.png",
-        "/images/apps/excel-to-pdf-converter-screenshot-3.png"
-      ],
-      "features": [
-        "Designed for fast and responsive daily usage",
-        "Clean and modern interface with intuitive controls",
-        "Offline functionality for complete privacy and data security",
-        "Lightweight installation size optimized for all Android devices",
-        "Regular updates with continuous stability enhancements"
-      ],
-      "permissions": [
-        {
-          "name": "Storage Access (READ/WRITE_EXTERNAL_STORAGE)",
-          "purpose": "Access spreadsheet files and save rendered PDFs to phone storage."
-        },
-        {
-          "name": "Manage External Storage (MANAGE_EXTERNAL_STORAGE)",
-          "purpose": "Save converted documents in user-specified folders."
-        },
-        {
-          "name": "Camera (CAMERA)",
-          "purpose": "Scan paper spreadsheets or receipts directly to attach with table conversions."
-        },
-        {
-          "name": "Internet (INTERNET & ACCESS_NETWORK_STATE)",
-          "purpose": "Check for security and app updates."
-        },
-        "android.permission.READ_EXTERNAL_STORAGE (Allows user to select documents)",
-        "android.permission.WRITE_EXTERNAL_STORAGE (Saves exported documents to device)"
-      ],
-      "thirdPartySDKs": [
-        "Google Play Services",
-        "Google AdMob",
-        "Firebase Core"
-      ],
-      "playStoreUrl": "https://play.google.com/store/apps/details?id=com.excel.xls.to.pdf.converter.app",
-      "lastUpdated": "2026-03-01",
-      "status": "Published"
-    },
-    {
-      "id": "doc-to-pdf-converter",
-      "slug": "doc-to-pdf-converter",
-      "name": "DOC and DOCX to PDF",
-      "packageName": "com.doc.docx.to.pdf.converter.app",
-      "category": "Productivity",
-      "shortDescription": "Convert Microsoft Word documents to professional PDF files rapidly with full offline processing.",
-      "longDescription": "DOC and DOCX to PDF by Publixa is crafted to deliver exceptional utility, maximum convenience, and uncompromising privacy. Whether you are managing everyday workflows or seeking seamless mobile entertainment, DOC and DOCX to PDF provides an intuitive, ad-friendly, and lightweight experience built adhering strictly to Google Play policy standards.",
-      "tagline": "Fast, Offline Word DOC & DOCX to PDF Conversion",
-      "downloads": "100K+",
-      "icon": "/images/apps/doc-to-pdf-converter-icon.png",
-      "screenshots": [
-        "/images/apps/doc-to-pdf-converter-screenshot-1.png",
-        "/images/apps/doc-to-pdf-converter-screenshot-2.png",
-        "/images/apps/doc-to-pdf-converter-screenshot-3.png",
-        "/images/apps/doc-to-pdf-converter-screenshot-4.png"
-      ],
-      "features": [
-        "Designed for fast and responsive daily usage",
-        "Clean and modern interface with intuitive controls",
-        "Offline functionality for complete privacy and data security",
-        "Lightweight installation size optimized for all Android devices",
-        "Regular updates with continuous stability enhancements"
-      ],
-      "permissions": [
-        {
-          "name": "Storage Access (READ/WRITE_EXTERNAL_STORAGE)",
-          "purpose": "Open source Word files and save converted PDFs to user storage."
-        },
-        {
-          "name": "Manage External Storage (MANAGE_EXTERNAL_STORAGE)",
-          "purpose": "Save converted documents in designated user directories."
-        },
-        {
-          "name": "Camera (CAMERA)",
-          "purpose": "Allow direct photo scanning of documents before converting to PDF."
-        },
-        {
-          "name": "Internet (INTERNET & ACCESS_NETWORK_STATE)",
-          "purpose": "Verify software licensing and diagnostic updates."
-        },
-        "android.permission.READ_EXTERNAL_STORAGE (Allows user to select documents)",
-        "android.permission.WRITE_EXTERNAL_STORAGE (Saves exported documents to device)"
-      ],
-      "thirdPartySDKs": [
-        "Google Play Services",
-        "Google AdMob",
-        "Firebase Core"
-      ],
-      "playStoreUrl": "https://play.google.com/store/apps/details?id=com.doc.docx.to.pdf.converter.app",
-      "lastUpdated": "2026-03-01",
-      "status": "Published"
-    },
-    {
-      "id": "ppt-to-pdf-converter",
-      "slug": "ppt-to-pdf-converter",
-      "name": "PPT and PPTX to PDF CONVERTOR",
-      "packageName": "com.ppt.pptx.to.pdf.converter.app",
-      "category": "Productivity",
-      "shortDescription": "Convert PPT slides into crisp, vector-clear PDF files ready for printing, archiving, and sharing.",
-      "longDescription": "PPT and PPTX to PDF CONVERTOR by Publixa is crafted to deliver exceptional utility, maximum convenience, and uncompromising privacy. Whether you are managing everyday workflows or seeking seamless mobile entertainment, PPT and PPTX to PDF CONVERTOR provides an intuitive, ad-friendly, and lightweight experience built adhering strictly to Google Play policy standards.",
-      "tagline": "Export Presentation Slides to PDF Documents",
-      "downloads": "50K+",
-      "icon": "/images/apps/ppt-to-pdf-converter-icon.png",
-      "screenshots": [
-        "/images/apps/ppt-to-pdf-converter-screenshot-1.png",
-        "/images/apps/ppt-to-pdf-converter-screenshot-2.png",
-        "/images/apps/ppt-to-pdf-converter-screenshot-3.png",
-        "/images/apps/ppt-to-pdf-converter-screenshot-4.png"
-      ],
-      "features": [
-        "Designed for fast and responsive daily usage",
-        "Clean and modern interface with intuitive controls",
-        "Offline functionality for complete privacy and data security",
-        "Lightweight installation size optimized for all Android devices",
-        "Regular updates with continuous stability enhancements"
-      ],
-      "permissions": [
-        {
-          "name": "Storage Access (READ/WRITE_EXTERNAL_STORAGE)",
-          "purpose": "Open source PPT files and write converted PDF documents to device storage."
-        },
-        {
-          "name": "Manage External Storage (MANAGE_EXTERNAL_STORAGE)",
-          "purpose": "Save converted files in designated directories."
-        },
-        {
-          "name": "Camera (CAMERA)",
-          "purpose": "Scan physical presentation handouts to merge into converted decks."
-        },
-        {
-          "name": "Internet (INTERNET & ACCESS_NETWORK_STATE)",
-          "purpose": "Network state monitoring and security patches."
-        },
-        "android.permission.READ_EXTERNAL_STORAGE (Allows user to select documents)",
-        "android.permission.WRITE_EXTERNAL_STORAGE (Saves exported documents to device)"
-      ],
-      "thirdPartySDKs": [
-        "Google Play Services",
-        "Google AdMob",
-        "Firebase Core"
-      ],
-      "playStoreUrl": "https://play.google.com/store/apps/details?id=com.ppt.pptx.to.pdf.converter.app",
-      "lastUpdated": "2026-03-01",
-      "status": "Published"
-    },
-    {
-      "id": "birthday-reminder",
-      "slug": "birthday-reminder",
-      "name": "Birthday Reminder",
-      "packageName": "com.birthdayReminder.app",
-      "category": "Productivity",
-      "shortDescription": "Keep track of upcoming birthdays and special milestones with customizable countdowns and reminders.",
-      "longDescription": "Birthday Reminder & Countdown by Publixa is crafted to deliver exceptional utility, maximum convenience, and uncompromising privacy. Whether you are managing everyday workflows or seeking seamless mobile entertainment, Birthday Reminder & Countdown provides an intuitive, ad-friendly, and lightweight experience built adhering strictly to Google Play policy standards.",
-      "tagline": "Never Forget a Birthday, Anniversary, or Event",
-      "downloads": "50K+",
-      "icon": "/images/apps/birthday-reminder-icon.png",
-      "screenshots": [
-        "/images/apps/birthday-reminder-screenshot-1.png",
-        "/images/apps/birthday-reminder-screenshot-2.png",
-        "/images/apps/birthday-reminder-screenshot-3.png",
-        "/images/apps/birthday-reminder-screenshot-4.png",
-        "/images/apps/birthday-reminder-screenshot-5.png"
-      ],
-      "features": [
-        "Designed for fast and responsive daily usage",
-        "Clean and modern interface with intuitive controls",
-        "Offline functionality for complete privacy and data security",
-        "Lightweight installation size optimized for all Android devices",
-        "Regular updates with continuous stability enhancements"
-      ],
-      "permissions": [
-        {
-          "name": "Alarms & Reminders (SCHEDULE_EXACT_ALARM)",
-          "purpose": "Deliver precise countdown notifications at your chosen time."
-        },
-        {
-          "name": "Boot Completed (RECEIVE_BOOT_COMPLETED)",
-          "purpose": "Restore your scheduled birthday alarms after your phone restarts."
-        },
-        {
-          "name": "Internet (INTERNET)",
-          "purpose": "Check for software stability updates."
-        }
-      ],
-      "thirdPartySDKs": [
-        "Google Play Services",
-        "Google AdMob",
-        "Firebase Core"
-      ],
-      "playStoreUrl": "https://play.google.com/store/apps/details?id=com.birthdayReminder.app",
-      "lastUpdated": "2026-03-01",
-      "status": "Published"
-    },
-    {
-      "id": "kids-piano-guitar-drums",
-      "slug": "kids-piano-guitar-drums",
-      "name": "Music World: Piano & More",
-      "packageName": "com.kidspiano.guitadrumsmusicgame",
-      "category": "Casual Games",
-      "shortDescription": "Vibrant musical instrument playground featuring piano keys, drum pads, xylophone, and catchy melodies.",
-      "longDescription": "Music World: Piano & More by Publixa is crafted to deliver exceptional utility, maximum convenience, and uncompromising privacy. Whether you are managing everyday workflows or seeking seamless mobile entertainment, Music World: Piano & More provides an intuitive, ad-friendly, and lightweight experience built adhering strictly to Google Play policy standards.",
-      "tagline": "Play Piano, Drums, Guitar & Musical Mini-Games",
-      "downloads": "100K+",
-      "icon": "/images/apps/kids-piano-guitar-drums-icon.png",
-      "screenshots": [
-        "/images/apps/kids-piano-guitar-drums-screenshot-1.png",
-        "/images/apps/kids-piano-guitar-drums-screenshot-2.png",
-        "/images/apps/kids-piano-guitar-drums-screenshot-3.png",
-        "/images/apps/kids-piano-guitar-drums-screenshot-4.png",
-        "/images/apps/kids-piano-guitar-drums-screenshot-5.png"
-      ],
-      "features": [
-        "Designed for fast and responsive daily usage",
-        "Clean and modern interface with intuitive controls",
-        "Offline functionality for complete privacy and data security",
-        "Lightweight installation size optimized for all Android devices",
-        "Regular updates with continuous stability enhancements"
-      ],
-      "permissions": [
-        {
-          "name": "Audio Recording (RECORD_AUDIO)",
-          "purpose": "Allow users to record live microphone singing or piano accompaniment onto audio tracks."
-        },
-        {
-          "name": "Internet (INTERNET)",
-          "purpose": "Download new instrument sound packs and scale libraries."
-        }
-      ],
-      "thirdPartySDKs": [
-        "Google Play Services",
-        "Google AdMob",
-        "Firebase Core"
-      ],
-      "playStoreUrl": "https://play.google.com/store/apps/details?id=com.kidspiano.guitadrumsmusicgame",
-      "lastUpdated": "2026-03-01",
-      "status": "Published"
-    },
-    {
-      "id": "liquid-color-sort",
-      "slug": "liquid-color-sort",
-      "name": "Liquid Color Sort",
-      "packageName": "com.liquidcolorsort.app",
-      "category": "Casual Games",
-      "shortDescription": "Test your logic and color coordination by pouring and sorting colorful liquids into matching test tubes.",
-      "longDescription": "Liquid Color Sort Puzzle by Publixa is crafted to deliver exceptional utility, maximum convenience, and uncompromising privacy. Whether you are managing everyday workflows or seeking seamless mobile entertainment, Liquid Color Sort Puzzle provides an intuitive, ad-friendly, and lightweight experience built adhering strictly to Google Play policy standards.",
-      "tagline": "Satisfying Water Sorting Brain Teaser",
-      "downloads": "50K+",
-      "icon": "/images/apps/liquid-color-sort-icon.png",
-      "screenshots": [
-        "/images/apps/liquid-color-sort-screenshot-1.png",
-        "/images/apps/liquid-color-sort-screenshot-2.png",
-        "/images/apps/liquid-color-sort-screenshot-3.png",
-        "/images/apps/liquid-color-sort-screenshot-4.png",
-        "/images/apps/liquid-color-sort-screenshot-5.png"
-      ],
-      "features": [
-        "Designed for fast and responsive daily usage",
-        "Clean and modern interface with intuitive controls",
-        "Offline functionality for complete privacy and data security",
-        "Lightweight installation size optimized for all Android devices",
-        "Regular updates with continuous stability enhancements"
-      ],
-      "permissions": [
-        {
-          "name": "Internet (INTERNET & ACCESS_NETWORK_STATE)",
-          "purpose": "Load leaderboard scores and deliver optional rewarded hints."
-        },
-        {
-          "name": "Advertising ID (AD_ID)",
-          "purpose": "Serve rewarded videos for level skips and hint tokens."
-        }
-      ],
-      "thirdPartySDKs": [
-        "Google Play Services",
-        "Google AdMob",
-        "Firebase Core"
-      ],
-      "playStoreUrl": "https://play.google.com/store/apps/details?id=com.liquidcolorsort.app",
-      "lastUpdated": "2026-03-01",
-      "status": "Published"
-    },
-    {
-      "id": "bubble-shooter-pop-puzzle",
-      "slug": "bubble-shooter-pop-puzzle",
-      "name": "Bubble Shooter",
-      "packageName": "com.bubblegames.bubbleshoote.app",
-      "category": "Casual Games",
-      "shortDescription": "Aim, match, and blast clusters of colorful bubbles across hundreds of dynamic, fun-filled puzzle levels.",
-      "longDescription": "Bubble Shooter: Pop & Puzzle by Publixa is crafted to deliver exceptional utility, maximum convenience, and uncompromising privacy. Whether you are managing everyday workflows or seeking seamless mobile entertainment, Bubble Shooter: Pop & Puzzle provides an intuitive, ad-friendly, and lightweight experience built adhering strictly to Google Play policy standards.",
-      "tagline": "Classic Bubble Pop & Match-3 Arcade Adventure",
-      "downloads": "200K+",
-      "icon": "/images/apps/bubble-shooter-pop-puzzle-icon.png",
-      "screenshots": [
-        "/images/apps/bubble-shooter-pop-puzzle-screenshot-1.png",
-        "/images/apps/bubble-shooter-pop-puzzle-screenshot-2.png",
-        "/images/apps/bubble-shooter-pop-puzzle-screenshot-3.png",
-        "/images/apps/bubble-shooter-pop-puzzle-screenshot-4.png",
-        "/images/apps/bubble-shooter-pop-puzzle-screenshot-5.png"
-      ],
-      "features": [
-        "Designed for fast and responsive daily usage",
-        "Clean and modern interface with intuitive controls",
-        "Offline functionality for complete privacy and data security",
-        "Lightweight installation size optimized for all Android devices",
-        "Regular updates with continuous stability enhancements"
-      ],
-      "permissions": [
-        {
-          "name": "Internet (INTERNET & ACCESS_NETWORK_STATE)",
-          "purpose": "Check network connectivity and load leaderboard updates."
-        },
-        {
-          "name": "Advertising ID (AD_ID)",
-          "purpose": "Deliver non-intrusive contextual ads to support free gaming."
-        }
-      ],
-      "thirdPartySDKs": [
-        "Google Play Services",
-        "Google AdMob",
-        "Firebase Core"
-      ],
-      "playStoreUrl": "https://play.google.com/store/apps/details?id=com.bubblegames.bubbleshoote.app",
-      "lastUpdated": "2026-03-01",
-      "status": "Published"
-    },
-    {
-      "id": "arrow-puzzle-challenge",
-      "slug": "arrow-puzzle-challenge",
-      "name": "Arrow Puzzle - Challenge",
-      "packageName": "com.arrowpuzzles.app",
-      "category": "Casual Games",
-      "shortDescription": "Guide arrows through intricate logic labyrinths without collisions in this addictive mental workout.",
-      "longDescription": "Arrow Puzzle - Challenge by Publixa is crafted to deliver exceptional utility, maximum convenience, and uncompromising privacy. Built adhering strictly to Google Play developer standards, Arrow Puzzle - Challenge ensures reliable performance with clear offline boundaries.",
-      "tagline": "Strategic Arrow Navigation & Escape Maze",
-      "downloads": "100K+",
-      "icon": "/images/apps/arrow-puzzle-challenge-icon.png",
-      "screenshots": [
-        "/images/apps/arrow-puzzle-challenge-screenshot-1.png",
-        "/images/apps/arrow-puzzle-challenge-screenshot-2.png",
-        "/images/apps/arrow-puzzle-challenge-screenshot-3.png",
-        "/images/apps/arrow-puzzle-challenge-screenshot-4.png",
-        "/images/apps/arrow-puzzle-challenge-screenshot-5.png"
+        "/images/apps/qr-scanner-generator-screenshot-1.png",
+        "/images/apps/qr-scanner-generator-screenshot-2.png",
+        "/images/apps/qr-scanner-generator-screenshot-3.png",
+        "/images/apps/qr-scanner-generator-screenshot-4.png",
+        "/images/apps/qr-scanner-generator-screenshot-5.png"
       ],
       "features": [
         "Intuitive and easy-to-use interface tailored for mobile productivity",
@@ -571,77 +1183,26 @@
         "Google AdMob",
         "Firebase Core"
       ],
-      "playStoreUrl": "https://play.google.com/store/apps/details?id=com.arrowpuzzles.app",
+      "playStoreUrl": "https://play.google.com/store/apps/details?id=com.Qrscannerandgenerator",
       "lastUpdated": "2026-03-01",
       "status": "Published"
     },
     {
-      "id": "all-in-one-document-reader",
-      "slug": "all-in-one-document-reader",
-      "name": "All Document Reader & Editor",
-      "packageName": "com.allinonedocumentreader.pdf.doc.docx.xls.xlsx.ppt.pptx.txt.editor.app",
+      "id": "quick-ai-pdf-scan-read",
+      "slug": "quick-ai-pdf-scan-read",
+      "name": "Quick AI PDF – Scan & Read",
+      "packageName": "com.quick.aipdf",
       "category": "Productivity",
-      "shortDescription": "One single lightweight application to open, view, edit, and organize all major document formats seamlessly.",
-      "longDescription": "All Document Reader & Editor by Publixa is crafted to deliver exceptional utility, maximum convenience, and uncompromising privacy. Whether you are managing everyday workflows or seeking seamless mobile entertainment, All Document Reader & Editor provides an intuitive, ad-friendly, and lightweight experience built adhering strictly to Google Play policy standards.",
-      "tagline": "Unified Office Reader for PDF, Word, Excel & Slides",
-      "downloads": "500K+",
-      "icon": "/images/apps/all-in-one-document-reader-icon.png",
+      "shortDescription": "Capture paper documents with high-clarity auto-cropping, OCR text extraction, and quick reading modes.",
+      "longDescription": "Quick AI PDF – Scan & Read by Publixa is crafted to deliver exceptional utility, maximum convenience, and uncompromising privacy. Built adhering strictly to Google Play developer standards, Quick AI PDF – Scan & Read ensures reliable performance with clear offline boundaries.",
+      "tagline": "Intelligent Document Scanner & Smart Summarizer",
+      "icon": "/images/apps/quick-ai-pdf-scan-read-icon.png",
       "screenshots": [
-        "/images/apps/all-in-one-document-reader-screenshot-1.png",
-        "/images/apps/all-in-one-document-reader-screenshot-2.png",
-        "/images/apps/all-in-one-document-reader-screenshot-3.png",
-        "/images/apps/all-in-one-document-reader-screenshot-4.png",
-        "/images/apps/all-in-one-document-reader-screenshot-5.png"
-      ],
-      "features": [
-        "Designed for fast and responsive daily usage",
-        "Clean and modern interface with intuitive controls",
-        "Offline functionality for complete privacy and data security",
-        "Lightweight installation size optimized for all Android devices",
-        "Regular updates with continuous stability enhancements"
-      ],
-      "permissions": [
-        {
-          "name": "Storage (READ_EXTERNAL_STORAGE / WRITE_EXTERNAL_STORAGE)",
-          "purpose": "Locate, display, and save document files selected by the user locally."
-        },
-        {
-          "name": "Manage Storage (MANAGE_EXTERNAL_STORAGE)",
-          "purpose": "Allow comprehensive file organization across user documents."
-        },
-        {
-          "name": "Internet (INTERNET)",
-          "purpose": "Check for software updates."
-        },
-        "android.permission.READ_EXTERNAL_STORAGE (Allows user to select documents)",
-        "android.permission.WRITE_EXTERNAL_STORAGE (Saves exported documents to device)"
-      ],
-      "thirdPartySDKs": [
-        "Google Play Services",
-        "Google AdMob",
-        "Firebase Core"
-      ],
-      "playStoreUrl": "https://play.google.com/store/apps/details?id=com.allinonedocumentreader.pdf.doc.docx.xls.xlsx.ppt.pptx.txt.editor.app",
-      "lastUpdated": "2026-03-01",
-      "status": "Published"
-    },
-    {
-      "id": "pdf-reader-editor",
-      "slug": "pdf-reader-editor",
-      "name": "PDF Reader & Editor",
-      "packageName": "pdf.reader.pdfviewer.pdfeditor.app",
-      "category": "Productivity",
-      "shortDescription": "Read eBooks, annotate forms, sign contracts, and organize your PDF documents with smooth page navigation.",
-      "longDescription": "PDF Reader & Editor by Publixa is crafted to deliver exceptional utility, maximum convenience, and uncompromising privacy. Built adhering strictly to Google Play developer standards, PDF Reader & Editor ensures reliable performance with clear offline boundaries.",
-      "tagline": "Feature-Packed Mobile PDF Viewer, Annotator & Manager",
-      "downloads": "100K+",
-      "icon": "/images/apps/pdf-reader-editor-icon.png",
-      "screenshots": [
-        "/images/apps/pdf-reader-editor-screenshot-1.png",
-        "/images/apps/pdf-reader-editor-screenshot-2.png",
-        "/images/apps/pdf-reader-editor-screenshot-3.png",
-        "/images/apps/pdf-reader-editor-screenshot-4.png",
-        "/images/apps/pdf-reader-editor-screenshot-5.png"
+        "/images/apps/quick-ai-pdf-scan-read-screenshot-1.png",
+        "/images/apps/quick-ai-pdf-scan-read-screenshot-2.png",
+        "/images/apps/quick-ai-pdf-scan-read-screenshot-3.png",
+        "/images/apps/quick-ai-pdf-scan-read-screenshot-4.png",
+        "/images/apps/quick-ai-pdf-scan-read-screenshot-5.png"
       ],
       "features": [
         "Intuitive and easy-to-use interface tailored for mobile productivity",
@@ -664,7 +1225,133 @@
         "Google AdMob",
         "Firebase Core"
       ],
-      "playStoreUrl": "https://play.google.com/store/apps/details?id=pdf.reader.pdfviewer.pdfeditor.app",
+      "playStoreUrl": "https://play.google.com/store/apps/details?id=com.quick.aipdf",
+      "lastUpdated": "2026-03-01",
+      "status": "Published"
+    },
+    {
+      "id": "sharp-pdf-tools",
+      "slug": "sharp-pdf-tools",
+      "name": "Sharp PDF -Tools",
+      "packageName": "com.sharppdf.tools",
+      "category": "Productivity",
+      "shortDescription": "Sharpen scanned pages, reorder sheets, convert images to PDF, and clean up messy documents on the go.",
+      "longDescription": "Sharp PDF -Tools by Publixa is crafted to deliver exceptional utility, maximum convenience, and uncompromising privacy. Built adhering strictly to Google Play developer standards, Sharp PDF -Tools ensures reliable performance with clear offline boundaries.",
+      "tagline": "Clean, Lightweight PDF Optimizer & Utility Kit",
+      "icon": "/images/apps/sharp-pdf-tools-icon.png",
+      "screenshots": [
+        "/images/apps/sharp-pdf-tools-screenshot-1.png",
+        "/images/apps/sharp-pdf-tools-screenshot-2.png",
+        "/images/apps/sharp-pdf-tools-screenshot-3.png",
+        "/images/apps/sharp-pdf-tools-screenshot-4.png",
+        "/images/apps/sharp-pdf-tools-screenshot-5.png"
+      ],
+      "features": [
+        "Intuitive and easy-to-use interface tailored for mobile productivity",
+        "Fast response times with zero unnecessary background battery drain",
+        "Local on-device processing prioritizing privacy and data integrity",
+        "Regular updates conforming to latest Android SDK and Google Play guidelines"
+      ],
+      "permissions": [
+        {
+          "name": "Storage / Media Access",
+          "purpose": "Required to open, edit, and save user-selected files on the device."
+        },
+        {
+          "name": "Internet & Network State",
+          "purpose": "Used strictly for license verification, critical telemetry, and security checks."
+        }
+      ],
+      "thirdPartySDKs": [
+        "Google Play Services",
+        "Google AdMob",
+        "Firebase Core"
+      ],
+      "playStoreUrl": "https://play.google.com/store/apps/details?id=com.sharppdf.tools",
+      "lastUpdated": "2026-03-01",
+      "status": "Published"
+    },
+    {
+      "id": "smart-voice-calculator",
+      "slug": "smart-voice-calculator",
+      "name": "Smart Voice Calculator",
+      "packageName": "com.smartvoicecal.app",
+      "category": "Tools",
+      "shortDescription": "Innovative voice-activated calculator that speaks back answers and simplifies rapid everyday math.",
+      "longDescription": "Smart Voice Calculator by Publixa is crafted to deliver exceptional utility, maximum convenience, and uncompromising privacy. Built adhering strictly to Google Play developer standards, Smart Voice Calculator ensures reliable performance with clear offline boundaries.",
+      "tagline": "Speak to Calculate Hands-Free Math Equations",
+      "icon": "/images/apps/smart-voice-calculator-icon.png",
+      "screenshots": [
+        "/images/apps/smart-voice-calculator-screenshot-1.png",
+        "/images/apps/smart-voice-calculator-screenshot-2.png",
+        "/images/apps/smart-voice-calculator-screenshot-3.png",
+        "/images/apps/smart-voice-calculator-screenshot-4.png",
+        "/images/apps/smart-voice-calculator-screenshot-5.png"
+      ],
+      "features": [
+        "Intuitive and easy-to-use interface tailored for mobile productivity",
+        "Fast response times with zero unnecessary background battery drain",
+        "Local on-device processing prioritizing privacy and data integrity",
+        "Regular updates conforming to latest Android SDK and Google Play guidelines"
+      ],
+      "permissions": [
+        {
+          "name": "Storage / Media Access",
+          "purpose": "Required to open, edit, and save user-selected files on the device."
+        },
+        {
+          "name": "Internet & Network State",
+          "purpose": "Used strictly for license verification, critical telemetry, and security checks."
+        }
+      ],
+      "thirdPartySDKs": [
+        "Google Play Services",
+        "Google AdMob",
+        "Firebase Core"
+      ],
+      "playStoreUrl": "https://play.google.com/store/apps/details?id=com.smartvoicecal.app",
+      "lastUpdated": "2026-03-01",
+      "status": "Published"
+    },
+    {
+      "id": "status-saver-video-downloader",
+      "slug": "status-saver-video-downloader",
+      "name": "Status Saver -Video Downloader",
+      "packageName": "app.statussaver.videodownloaderpro",
+      "category": "Tools",
+      "shortDescription": "Easily backup and organize status updates, short clips, and memorable pictures straight onto your phone.",
+      "longDescription": "Status Saver -Video Downloader by Publixa is crafted to deliver exceptional utility, maximum convenience, and uncompromising privacy. Built adhering strictly to Google Play developer standards, Status Saver -Video Downloader ensures reliable performance with clear offline boundaries.",
+      "tagline": "Save Status Videos & Photos Directly to Gallery",
+      "icon": "/images/apps/status-saver-video-downloader-icon.png",
+      "screenshots": [
+        "/images/apps/status-saver-video-downloader-screenshot-1.png",
+        "/images/apps/status-saver-video-downloader-screenshot-2.png",
+        "/images/apps/status-saver-video-downloader-screenshot-3.png",
+        "/images/apps/status-saver-video-downloader-screenshot-4.png",
+        "/images/apps/status-saver-video-downloader-screenshot-5.png"
+      ],
+      "features": [
+        "Intuitive and easy-to-use interface tailored for mobile productivity",
+        "Fast response times with zero unnecessary background battery drain",
+        "Local on-device processing prioritizing privacy and data integrity",
+        "Regular updates conforming to latest Android SDK and Google Play guidelines"
+      ],
+      "permissions": [
+        {
+          "name": "Storage / Media Access",
+          "purpose": "Required to open, edit, and save user-selected files on the device."
+        },
+        {
+          "name": "Internet & Network State",
+          "purpose": "Used strictly for license verification, critical telemetry, and security checks."
+        }
+      ],
+      "thirdPartySDKs": [
+        "Google Play Services",
+        "Google AdMob",
+        "Firebase Core"
+      ],
+      "playStoreUrl": "https://play.google.com/store/apps/details?id=app.statussaver.videodownloaderpro",
       "lastUpdated": "2026-03-01",
       "status": "Published"
     },
@@ -677,7 +1364,6 @@
       "shortDescription": "Minimalist text viewer and markdown-friendly editor engineered for rapid notes, code snippets, and logs.",
       "longDescription": "TXT Reader & Editor by Publixa is crafted to deliver exceptional utility, maximum convenience, and uncompromising privacy. Whether you are managing everyday workflows or seeking seamless mobile entertainment, TXT Reader & Editor provides an intuitive, ad-friendly, and lightweight experience built adhering strictly to Google Play policy standards.",
       "tagline": "Distraction-Free Notepad & Plain Text File Editor",
-      "downloads": "50K+",
       "icon": "/images/apps/txt-reader-icon.png",
       "screenshots": [
         "/images/apps/txt-reader-screenshot-1.png",
@@ -718,450 +1404,6 @@
       "status": "Published"
     },
     {
-      "id": "doc-and-docx-reader",
-      "slug": "doc-and-docx-reader",
-      "name": "DOC & DOCX :Read and Edit",
-      "packageName": "com.docxreader.docreader.app",
-      "category": "Productivity",
-      "shortDescription": "View and review Word DOC and DOCX files on the go with zero formatting distortion and complete privacy.",
-      "longDescription": "Doc & Docx Reader by Publixa is crafted to deliver exceptional utility, maximum convenience, and uncompromising privacy. Whether you are managing everyday workflows or seeking seamless mobile entertainment, Doc & Docx Reader provides an intuitive, ad-friendly, and lightweight experience built adhering strictly to Google Play policy standards.",
-      "tagline": "Modern Mobile Word Document Viewer & Manager",
-      "downloads": "100K+",
-      "icon": "/images/apps/doc-and-docx-reader-icon.png",
-      "screenshots": [
-        "/images/apps/doc-and-docx-reader-screenshot-1.png",
-        "/images/apps/doc-and-docx-reader-screenshot-2.png",
-        "/images/apps/doc-and-docx-reader-screenshot-3.png",
-        "/images/apps/doc-and-docx-reader-screenshot-4.png",
-        "/images/apps/doc-and-docx-reader-screenshot-5.png"
-      ],
-      "features": [
-        "Designed for fast and responsive daily usage",
-        "Clean and modern interface with intuitive controls",
-        "Offline functionality for complete privacy and data security",
-        "Lightweight installation size optimized for all Android devices",
-        "Regular updates with continuous stability enhancements"
-      ],
-      "permissions": [
-        {
-          "name": "Storage (READ_EXTERNAL_STORAGE / WRITE_EXTERNAL_STORAGE)",
-          "purpose": "Read Word docx files and save bookmarks locally."
-        },
-        {
-          "name": "Manage Storage (MANAGE_EXTERNAL_STORAGE)",
-          "purpose": "Enable users to move, delete, and organize document files into folders."
-        },
-        {
-          "name": "Internet (INTERNET & ACCESS_NETWORK_STATE)",
-          "purpose": "Check network connection and load updates."
-        },
-        "android.permission.READ_EXTERNAL_STORAGE (Allows user to select documents)",
-        "android.permission.WRITE_EXTERNAL_STORAGE (Saves exported documents to device)"
-      ],
-      "thirdPartySDKs": [
-        "Google Play Services",
-        "Google AdMob",
-        "Firebase Core"
-      ],
-      "playStoreUrl": "https://play.google.com/store/apps/details?id=com.docxreader.docreader.app",
-      "lastUpdated": "2026-03-01",
-      "status": "Published"
-    },
-    {
-      "id": "excel-reader-xls-file",
-      "slug": "excel-reader-xls-file",
-      "name": "Excel Reader : XLS File Edit",
-      "packageName": "com.xlsxreader.excelreader.app",
-      "category": "Productivity",
-      "shortDescription": "Open, calculate, and inspect complex Excel XLS/XLSX workbooks with fluid zooming and clear table layout.",
-      "longDescription": "Excel Reader : XLS File by Publixa is crafted to deliver exceptional utility, maximum convenience, and uncompromising privacy. Whether you are managing everyday workflows or seeking seamless mobile entertainment, Excel Reader : XLS File provides an intuitive, ad-friendly, and lightweight experience built adhering strictly to Google Play policy standards.",
-      "tagline": "High-Performance Spreadsheet & Table Inspector",
-      "downloads": "250K+",
-      "icon": "/images/apps/excel-reader-xls-file-icon.png",
-      "screenshots": [
-        "/images/apps/excel-reader-xls-file-screenshot-1.png",
-        "/images/apps/excel-reader-xls-file-screenshot-2.png",
-        "/images/apps/excel-reader-xls-file-screenshot-3.png",
-        "/images/apps/excel-reader-xls-file-screenshot-4.png",
-        "/images/apps/excel-reader-xls-file-screenshot-5.png"
-      ],
-      "features": [
-        "Designed for fast and responsive daily usage",
-        "Clean and modern interface with intuitive controls",
-        "Offline functionality for complete privacy and data security",
-        "Lightweight installation size optimized for all Android devices",
-        "Regular updates with continuous stability enhancements"
-      ],
-      "permissions": [
-        {
-          "name": "Storage (READ_EXTERNAL_STORAGE / WRITE_EXTERNAL_STORAGE)",
-          "purpose": "Open spreadsheets and save worksheets locally."
-        },
-        {
-          "name": "Manage External Storage (MANAGE_EXTERNAL_STORAGE)",
-          "purpose": "Organize workbooks across storage."
-        },
-        {
-          "name": "Internet (INTERNET)",
-          "purpose": "Check for security patches."
-        },
-        "android.permission.READ_EXTERNAL_STORAGE (Allows user to select documents)",
-        "android.permission.WRITE_EXTERNAL_STORAGE (Saves exported documents to device)"
-      ],
-      "thirdPartySDKs": [
-        "Google Play Services",
-        "Google AdMob",
-        "Firebase Core"
-      ],
-      "playStoreUrl": "https://play.google.com/store/apps/details?id=com.xlsxreader.excelreader.app",
-      "lastUpdated": "2026-03-01",
-      "status": "Published"
-    },
-    {
-      "id": "smart-voice-calculator",
-      "slug": "smart-voice-calculator",
-      "name": "Smart Voice Calculator",
-      "packageName": "com.smartvoicecal.app",
-      "category": "Tools",
-      "shortDescription": "Innovative voice-activated calculator that speaks back answers and simplifies rapid everyday math.",
-      "longDescription": "Smart Voice Calculator by Publixa is crafted to deliver exceptional utility, maximum convenience, and uncompromising privacy. Built adhering strictly to Google Play developer standards, Smart Voice Calculator ensures reliable performance with clear offline boundaries.",
-      "tagline": "Speak to Calculate Hands-Free Math Equations",
-      "downloads": "100K+",
-      "icon": "/images/apps/smart-voice-calculator-icon.png",
-      "screenshots": [
-        "/images/apps/smart-voice-calculator-screenshot-1.png",
-        "/images/apps/smart-voice-calculator-screenshot-2.png",
-        "/images/apps/smart-voice-calculator-screenshot-3.png",
-        "/images/apps/smart-voice-calculator-screenshot-4.png",
-        "/images/apps/smart-voice-calculator-screenshot-5.png"
-      ],
-      "features": [
-        "Intuitive and easy-to-use interface tailored for mobile productivity",
-        "Fast response times with zero unnecessary background battery drain",
-        "Local on-device processing prioritizing privacy and data integrity",
-        "Regular updates conforming to latest Android SDK and Google Play guidelines"
-      ],
-      "permissions": [
-        {
-          "name": "Storage / Media Access",
-          "purpose": "Required to open, edit, and save user-selected files on the device."
-        },
-        {
-          "name": "Internet & Network State",
-          "purpose": "Used strictly for license verification, critical telemetry, and security checks."
-        }
-      ],
-      "thirdPartySDKs": [
-        "Google Play Services",
-        "Google AdMob",
-        "Firebase Core"
-      ],
-      "playStoreUrl": "https://play.google.com/store/apps/details?id=com.smartvoicecal.app",
-      "lastUpdated": "2026-03-01",
-      "status": "Published"
-    },
-    {
-      "id": "ghostx-vpn",
-      "slug": "ghostx-vpn",
-      "name": "GhostX VPN",
-      "packageName": "com.GhostXVPN.app",
-      "category": "Tools",
-      "shortDescription": "Ultra-fast proxy servers designed to defend your digital privacy and secure public Wi-Fi hotspots.",
-      "longDescription": "GhostX VPN by Publixa is crafted to deliver exceptional utility, maximum convenience, and uncompromising privacy. Built adhering strictly to Google Play developer standards, GhostX VPN ensures reliable performance with clear offline boundaries.",
-      "tagline": "Stealth Virtual Private Network & Encryption Tunnel",
-      "downloads": "100K+",
-      "icon": "/images/apps/ghostx-vpn-icon.png",
-      "screenshots": [
-        "/images/apps/ghostx-vpn-screenshot-1.png",
-        "/images/apps/ghostx-vpn-screenshot-2.png",
-        "/images/apps/ghostx-vpn-screenshot-3.png",
-        "/images/apps/ghostx-vpn-screenshot-4.png",
-        "/images/apps/ghostx-vpn-screenshot-5.png"
-      ],
-      "features": [
-        "Intuitive and easy-to-use interface tailored for mobile productivity",
-        "Fast response times with zero unnecessary background battery drain",
-        "Local on-device processing prioritizing privacy and data integrity",
-        "Regular updates conforming to latest Android SDK and Google Play guidelines"
-      ],
-      "permissions": [
-        {
-          "name": "Storage / Media Access",
-          "purpose": "Required to open, edit, and save user-selected files on the device."
-        },
-        {
-          "name": "Internet & Network State",
-          "purpose": "Used strictly for license verification, critical telemetry, and security checks."
-        }
-      ],
-      "thirdPartySDKs": [
-        "Google Play Services",
-        "Google AdMob",
-        "Firebase Core"
-      ],
-      "playStoreUrl": "https://play.google.com/store/apps/details?id=com.GhostXVPN.app",
-      "lastUpdated": "2026-03-01",
-      "status": "Published"
-    },
-    {
-      "id": "expense-checklist",
-      "slug": "expense-checklist",
-      "name": "Expense Checklist",
-      "packageName": "com.expense.checklist",
-      "category": "Productivity",
-      "shortDescription": "Simple and intuitive expense organizer to manage recurring bills, daily outlays, and budget goals.",
-      "longDescription": "Expense Checklist by Publixa is crafted to deliver exceptional utility, maximum convenience, and uncompromising privacy. Built adhering strictly to Google Play developer standards, Expense Checklist ensures reliable performance with clear offline boundaries.",
-      "tagline": "Daily Budget & Personal Expense Tracker",
-      "downloads": "100K+",
-      "icon": "/images/apps/expense-checklist-icon.png",
-      "screenshots": [
-        "/images/apps/expense-checklist-screenshot-1.png",
-        "/images/apps/expense-checklist-screenshot-2.png",
-        "/images/apps/expense-checklist-screenshot-3.png",
-        "/images/apps/expense-checklist-screenshot-4.png",
-        "/images/apps/expense-checklist-screenshot-5.png"
-      ],
-      "features": [
-        "Intuitive and easy-to-use interface tailored for mobile productivity",
-        "Fast response times with zero unnecessary background battery drain",
-        "Local on-device processing prioritizing privacy and data integrity",
-        "Regular updates conforming to latest Android SDK and Google Play guidelines"
-      ],
-      "permissions": [
-        {
-          "name": "Storage / Media Access",
-          "purpose": "Required to open, edit, and save user-selected files on the device."
-        },
-        {
-          "name": "Internet & Network State",
-          "purpose": "Used strictly for license verification, critical telemetry, and security checks."
-        }
-      ],
-      "thirdPartySDKs": [
-        "Google Play Services",
-        "Google AdMob",
-        "Firebase Core"
-      ],
-      "playStoreUrl": "https://play.google.com/store/apps/details?id=com.expense.checklist",
-      "lastUpdated": "2026-03-01",
-      "status": "Published"
-    },
-    {
-      "id": "grocery-checklist",
-      "slug": "grocery-checklist",
-      "name": "Grocery Checklist",
-      "packageName": "com.GroceryChecklist.app",
-      "category": "Productivity",
-      "shortDescription": "Build organized grocery checklists categorized by aisle so you never miss an ingredient at the store.",
-      "longDescription": "Grocery Checklist by Publixa is crafted to deliver exceptional utility, maximum convenience, and uncompromising privacy. Built adhering strictly to Google Play developer standards, Grocery Checklist ensures reliable performance with clear offline boundaries.",
-      "tagline": "Smart Shopping List & Pantry Organizer",
-      "downloads": "100K+",
-      "icon": "/images/apps/grocery-checklist-icon.png",
-      "screenshots": [
-        "/images/apps/grocery-checklist-screenshot-1.png",
-        "/images/apps/grocery-checklist-screenshot-2.png",
-        "/images/apps/grocery-checklist-screenshot-3.png",
-        "/images/apps/grocery-checklist-screenshot-4.png",
-        "/images/apps/grocery-checklist-screenshot-5.png"
-      ],
-      "features": [
-        "Intuitive and easy-to-use interface tailored for mobile productivity",
-        "Fast response times with zero unnecessary background battery drain",
-        "Local on-device processing prioritizing privacy and data integrity",
-        "Regular updates conforming to latest Android SDK and Google Play guidelines"
-      ],
-      "permissions": [
-        {
-          "name": "Storage / Media Access",
-          "purpose": "Required to open, edit, and save user-selected files on the device."
-        },
-        {
-          "name": "Internet & Network State",
-          "purpose": "Used strictly for license verification, critical telemetry, and security checks."
-        }
-      ],
-      "thirdPartySDKs": [
-        "Google Play Services",
-        "Google AdMob",
-        "Firebase Core"
-      ],
-      "playStoreUrl": "https://play.google.com/store/apps/details?id=com.GroceryChecklist.app",
-      "lastUpdated": "2026-03-01",
-      "status": "Published"
-    },
-    {
-      "id": "fff-diamond-guide",
-      "slug": "fff-diamond-guide",
-      "name": "FFF Daimond and Guide",
-      "packageName": "com.ffdiamond.app",
-      "category": "Tools",
-      "shortDescription": "Discover expert loadout tips, character tactics, weapon statistics, and companion guides for mobile gaming.",
-      "longDescription": "FFF Daimond and Guide by Publixa is crafted to deliver exceptional utility, maximum convenience, and uncompromising privacy. Built adhering strictly to Google Play developer standards, FFF Daimond and Guide ensures reliable performance with clear offline boundaries.",
-      "tagline": "Gaming Tips, Strategies & Companion Guide",
-      "downloads": "100K+",
-      "icon": "/images/apps/fff-diamond-guide-icon.png",
-      "screenshots": [
-        "/images/apps/fff-diamond-guide-screenshot-1.png",
-        "/images/apps/fff-diamond-guide-screenshot-2.png",
-        "/images/apps/fff-diamond-guide-screenshot-3.png",
-        "/images/apps/fff-diamond-guide-screenshot-4.png",
-        "/images/apps/fff-diamond-guide-screenshot-5.png"
-      ],
-      "features": [
-        "Intuitive and easy-to-use interface tailored for mobile productivity",
-        "Fast response times with zero unnecessary background battery drain",
-        "Local on-device processing prioritizing privacy and data integrity",
-        "Regular updates conforming to latest Android SDK and Google Play guidelines"
-      ],
-      "permissions": [
-        {
-          "name": "Storage / Media Access",
-          "purpose": "Required to open, edit, and save user-selected files on the device."
-        },
-        {
-          "name": "Internet & Network State",
-          "purpose": "Used strictly for license verification, critical telemetry, and security checks."
-        }
-      ],
-      "thirdPartySDKs": [
-        "Google Play Services",
-        "Google AdMob",
-        "Firebase Core"
-      ],
-      "playStoreUrl": "https://play.google.com/store/apps/details?id=com.ffdiamond.app",
-      "lastUpdated": "2026-03-01",
-      "status": "Published"
-    },
-    {
-      "id": "status-saver-video-downloader",
-      "slug": "status-saver-video-downloader",
-      "name": "Status Saver -Video Downloader",
-      "packageName": "app.statussaver.videodownloaderpro",
-      "category": "Tools",
-      "shortDescription": "Easily backup and organize status updates, short clips, and memorable pictures straight onto your phone.",
-      "longDescription": "Status Saver -Video Downloader by Publixa is crafted to deliver exceptional utility, maximum convenience, and uncompromising privacy. Built adhering strictly to Google Play developer standards, Status Saver -Video Downloader ensures reliable performance with clear offline boundaries.",
-      "tagline": "Save Status Videos & Photos Directly to Gallery",
-      "downloads": "100K+",
-      "icon": "/images/apps/status-saver-video-downloader-icon.png",
-      "screenshots": [
-        "/images/apps/status-saver-video-downloader-screenshot-1.png",
-        "/images/apps/status-saver-video-downloader-screenshot-2.png",
-        "/images/apps/status-saver-video-downloader-screenshot-3.png",
-        "/images/apps/status-saver-video-downloader-screenshot-4.png",
-        "/images/apps/status-saver-video-downloader-screenshot-5.png"
-      ],
-      "features": [
-        "Intuitive and easy-to-use interface tailored for mobile productivity",
-        "Fast response times with zero unnecessary background battery drain",
-        "Local on-device processing prioritizing privacy and data integrity",
-        "Regular updates conforming to latest Android SDK and Google Play guidelines"
-      ],
-      "permissions": [
-        {
-          "name": "Storage / Media Access",
-          "purpose": "Required to open, edit, and save user-selected files on the device."
-        },
-        {
-          "name": "Internet & Network State",
-          "purpose": "Used strictly for license verification, critical telemetry, and security checks."
-        }
-      ],
-      "thirdPartySDKs": [
-        "Google Play Services",
-        "Google AdMob",
-        "Firebase Core"
-      ],
-      "playStoreUrl": "https://play.google.com/store/apps/details?id=app.statussaver.videodownloaderpro",
-      "lastUpdated": "2026-03-01",
-      "status": "Published"
-    },
-    {
-      "id": "paper-ai-pdf-tts",
-      "slug": "paper-ai-pdf-tts",
-      "name": "Paper AI PDF - APP (TTS)",
-      "packageName": "com.paperknifeapp",
-      "category": "Productivity",
-      "shortDescription": "Turn lengthy PDFs, articles, and documents into natural human audio so you can listen while multitasking.",
-      "longDescription": "Paper AI PDF - APP (TTS) by Publixa is crafted to deliver exceptional utility, maximum convenience, and uncompromising privacy. Built adhering strictly to Google Play developer standards, Paper AI PDF - APP (TTS) ensures reliable performance with clear offline boundaries.",
-      "tagline": "Listen to Documents with AI Text-to-Speech Voice",
-      "downloads": "100K+",
-      "icon": "/images/apps/paper-ai-pdf-tts-icon.png",
-      "screenshots": [
-        "/images/apps/paper-ai-pdf-tts-screenshot-1.png",
-        "/images/apps/paper-ai-pdf-tts-screenshot-2.png",
-        "/images/apps/paper-ai-pdf-tts-screenshot-3.png",
-        "/images/apps/paper-ai-pdf-tts-screenshot-4.png",
-        "/images/apps/paper-ai-pdf-tts-screenshot-5.png"
-      ],
-      "features": [
-        "Intuitive and easy-to-use interface tailored for mobile productivity",
-        "Fast response times with zero unnecessary background battery drain",
-        "Local on-device processing prioritizing privacy and data integrity",
-        "Regular updates conforming to latest Android SDK and Google Play guidelines"
-      ],
-      "permissions": [
-        {
-          "name": "Storage / Media Access",
-          "purpose": "Required to open, edit, and save user-selected files on the device."
-        },
-        {
-          "name": "Internet & Network State",
-          "purpose": "Used strictly for license verification, critical telemetry, and security checks."
-        }
-      ],
-      "thirdPartySDKs": [
-        "Google Play Services",
-        "Google AdMob",
-        "Firebase Core"
-      ],
-      "playStoreUrl": "https://play.google.com/store/apps/details?id=com.paperknifeapp",
-      "lastUpdated": "2026-03-01",
-      "status": "Published"
-    },
-    {
-      "id": "paperflow-pdf-tools",
-      "slug": "paperflow-pdf-tools",
-      "name": "PaperFlow PDF Tools",
-      "packageName": "com.paperknifepdf",
-      "category": "Productivity",
-      "shortDescription": "Powerful all-in-one PDF utility station to compress file size, combine chapters, and password-protect pages.",
-      "longDescription": "PaperFlow PDF Tools by Publixa is crafted to deliver exceptional utility, maximum convenience, and uncompromising privacy. Built adhering strictly to Google Play developer standards, PaperFlow PDF Tools ensures reliable performance with clear offline boundaries.",
-      "tagline": "Merge, Split, Compress & Secure PDF Documents",
-      "downloads": "100K+",
-      "icon": "/images/apps/paperflow-pdf-tools-icon.png",
-      "screenshots": [
-        "/images/apps/paperflow-pdf-tools-screenshot-1.png",
-        "/images/apps/paperflow-pdf-tools-screenshot-2.png",
-        "/images/apps/paperflow-pdf-tools-screenshot-3.png",
-        "/images/apps/paperflow-pdf-tools-screenshot-4.png",
-        "/images/apps/paperflow-pdf-tools-screenshot-5.png"
-      ],
-      "features": [
-        "Intuitive and easy-to-use interface tailored for mobile productivity",
-        "Fast response times with zero unnecessary background battery drain",
-        "Local on-device processing prioritizing privacy and data integrity",
-        "Regular updates conforming to latest Android SDK and Google Play guidelines"
-      ],
-      "permissions": [
-        {
-          "name": "Storage / Media Access",
-          "purpose": "Required to open, edit, and save user-selected files on the device."
-        },
-        {
-          "name": "Internet & Network State",
-          "purpose": "Used strictly for license verification, critical telemetry, and security checks."
-        }
-      ],
-      "thirdPartySDKs": [
-        "Google Play Services",
-        "Google AdMob",
-        "Firebase Core"
-      ],
-      "playStoreUrl": "https://play.google.com/store/apps/details?id=com.paperknifepdf",
-      "lastUpdated": "2026-03-01",
-      "status": "Published"
-    },
-    {
       "id": "wallpaper-pro-4k",
       "slug": "wallpaper-pro-4k",
       "name": "Wallpaper Pro 4K",
@@ -1170,7 +1412,6 @@
       "shortDescription": "Explore thousands of curated 4K backgrounds, artistic aesthetics, and battery-friendly AMOLED wallpapers.",
       "longDescription": "Wallpaper Pro 4K by Publixa is crafted to deliver exceptional utility, maximum convenience, and uncompromising privacy. Built adhering strictly to Google Play developer standards, Wallpaper Pro 4K ensures reliable performance with clear offline boundaries.",
       "tagline": "Ultra-HD 4K Wallpapers & AMOLED Backgrounds",
-      "downloads": "100K+",
       "icon": "/images/apps/wallpaper-pro-4k-icon.png",
       "screenshots": [
         "/images/apps/wallpaper-pro-4k-screenshot-1.png",
@@ -1205,37 +1446,41 @@
       "status": "Published"
     },
     {
-      "id": "qr-scanner-generator",
-      "slug": "qr-scanner-generator",
-      "name": "Qr Scanner and Generator",
-      "packageName": "com.Qrscannerandgenerator",
-      "category": "Tools",
-      "shortDescription": "Lightning-speed barcode reader and generator for Wi-Fi passwords, contact cards, web links, and text.",
-      "longDescription": "Qr Scanner and Generator by Publixa is crafted to deliver exceptional utility, maximum convenience, and uncompromising privacy. Built adhering strictly to Google Play developer standards, Qr Scanner and Generator ensures reliable performance with clear offline boundaries.",
-      "tagline": "Instant QR Code Scanner & Custom Code Creator",
-      "downloads": "100K+",
-      "icon": "/images/apps/qr-scanner-generator-icon.png",
+      "id": "word-search-and-connect-game",
+      "slug": "word-search-and-connect-game",
+      "name": "Word Search & Connect Game",
+      "packageName": "com.wordsearchandconnectgame",
+      "category": "Casual Games",
+      "shortDescription": "Find hidden words, connect letter tiles, and expand your vocabulary across hundreds of relaxing brain puzzles.",
+      "longDescription": "Word Search & Connect Game by Publixa is a beautifully designed vocabulary and brain-training puzzle game. Hunt for hidden words, swipe to connect letters, and solve challenging crossword layouts at your own pace. With vibrant visuals, soothing music, hundreds of themed levels, and complete offline capability, Word Search & Connect Game delivers an ad-friendly, relaxing puzzle experience adhering to strict Google Play user safety standards.",
+      "tagline": "Engaging Word Hunt & Crossword Vocabulary Puzzle",
+      "icon": "/images/apps/word-search-and-connect-game-icon.png",
       "screenshots": [
-        "/images/apps/qr-scanner-generator-screenshot-1.png",
-        "/images/apps/qr-scanner-generator-screenshot-2.png",
-        "/images/apps/qr-scanner-generator-screenshot-3.png",
-        "/images/apps/qr-scanner-generator-screenshot-4.png",
-        "/images/apps/qr-scanner-generator-screenshot-5.png"
+        "/images/apps/word-search-and-connect-game-screenshot-1.png",
+        "/images/apps/word-search-and-connect-game-screenshot-2.png",
+        "/images/apps/word-search-and-connect-game-screenshot-3.png",
+        "/images/apps/word-search-and-connect-game-screenshot-4.png",
+        "/images/apps/word-search-and-connect-game-screenshot-5.png"
       ],
       "features": [
-        "Intuitive and easy-to-use interface tailored for mobile productivity",
-        "Fast response times with zero unnecessary background battery drain",
-        "Local on-device processing prioritizing privacy and data integrity",
-        "Regular updates conforming to latest Android SDK and Google Play guidelines"
+        "Thousands of handcrafted word search and letter connect puzzle levels",
+        "Engaging daily word challenges with bonus rewards and streaks",
+        "Full offline support — play anywhere without needing an internet connection",
+        "Smooth modern interface with clean typography and calming themes",
+        "Built-in dictionary hints to expand vocabulary while sharpening memory"
       ],
       "permissions": [
         {
-          "name": "Storage / Media Access",
-          "purpose": "Required to open, edit, and save user-selected files on the device."
+          "name": "Internet & Network State",
+          "purpose": "Used solely for optional bonus rewards and policy compliance verification."
         },
         {
-          "name": "Internet & Network State",
-          "purpose": "Used strictly for license verification, critical telemetry, and security checks."
+          "name": "Vibration / Haptic Feedback",
+          "purpose": "Provides tactile feedback when connecting words and completing levels."
+        },
+        {
+          "name": "Advertising ID (AD_ID)",
+          "purpose": "Supports development through non-intrusive, family-compliant advertising."
         }
       ],
       "thirdPartySDKs": [
@@ -1243,50 +1488,7 @@
         "Google AdMob",
         "Firebase Core"
       ],
-      "playStoreUrl": "https://play.google.com/store/apps/details?id=com.Qrscannerandgenerator",
-      "lastUpdated": "2026-03-01",
-      "status": "Published"
-    },
-    {
-      "id": "sharp-pdf-tools",
-      "slug": "sharp-pdf-tools",
-      "name": "Sharp PDF -Tools",
-      "packageName": "com.sharppdf.tools",
-      "category": "Productivity",
-      "shortDescription": "Sharpen scanned pages, reorder sheets, convert images to PDF, and clean up messy documents on the go.",
-      "longDescription": "Sharp PDF -Tools by Publixa is crafted to deliver exceptional utility, maximum convenience, and uncompromising privacy. Built adhering strictly to Google Play developer standards, Sharp PDF -Tools ensures reliable performance with clear offline boundaries.",
-      "tagline": "Clean, Lightweight PDF Optimizer & Utility Kit",
-      "downloads": "100K+",
-      "icon": "/images/apps/sharp-pdf-tools-icon.png",
-      "screenshots": [
-        "/images/apps/sharp-pdf-tools-screenshot-1.png",
-        "/images/apps/sharp-pdf-tools-screenshot-2.png",
-        "/images/apps/sharp-pdf-tools-screenshot-3.png",
-        "/images/apps/sharp-pdf-tools-screenshot-4.png",
-        "/images/apps/sharp-pdf-tools-screenshot-5.png"
-      ],
-      "features": [
-        "Intuitive and easy-to-use interface tailored for mobile productivity",
-        "Fast response times with zero unnecessary background battery drain",
-        "Local on-device processing prioritizing privacy and data integrity",
-        "Regular updates conforming to latest Android SDK and Google Play guidelines"
-      ],
-      "permissions": [
-        {
-          "name": "Storage / Media Access",
-          "purpose": "Required to open, edit, and save user-selected files on the device."
-        },
-        {
-          "name": "Internet & Network State",
-          "purpose": "Used strictly for license verification, critical telemetry, and security checks."
-        }
-      ],
-      "thirdPartySDKs": [
-        "Google Play Services",
-        "Google AdMob",
-        "Firebase Core"
-      ],
-      "playStoreUrl": "https://play.google.com/store/apps/details?id=com.sharppdf.tools",
+      "playStoreUrl": "https://play.google.com/store/apps/details?id=com.wordsearchandconnectgame",
       "lastUpdated": "2026-03-01",
       "status": "Published"
     },
@@ -1299,7 +1501,6 @@
       "shortDescription": "Protect sensitive data with military-grade encryption and access your favorite global web services securely.",
       "longDescription": "Zolex VPN: Fast & Secure Proxy by Publixa is crafted to deliver exceptional utility, maximum convenience, and uncompromising privacy. Whether you are managing everyday workflows or seeking seamless mobile entertainment, Zolex VPN: Fast & Secure Proxy provides an intuitive, ad-friendly, and lightweight experience built adhering strictly to Google Play policy standards.",
       "tagline": "Private Virtual Network with Zero Log Architecture",
-      "downloads": "100K+",
       "icon": "/images/apps/zolex-vpn-icon.png",
       "screenshots": [
         "/images/apps/zolex-vpn-screenshot-1.png",
@@ -1330,49 +1531,6 @@
       "status": "Published"
     },
     {
-      "id": "quick-ai-pdf-scan-read",
-      "slug": "quick-ai-pdf-scan-read",
-      "name": "Quick AI PDF – Scan & Read",
-      "packageName": "com.quick.aipdf",
-      "category": "Productivity",
-      "shortDescription": "Capture paper documents with high-clarity auto-cropping, OCR text extraction, and quick reading modes.",
-      "longDescription": "Quick AI PDF – Scan & Read by Publixa is crafted to deliver exceptional utility, maximum convenience, and uncompromising privacy. Built adhering strictly to Google Play developer standards, Quick AI PDF – Scan & Read ensures reliable performance with clear offline boundaries.",
-      "tagline": "Intelligent Document Scanner & Smart Summarizer",
-      "downloads": "100K+",
-      "icon": "/images/apps/quick-ai-pdf-scan-read-icon.png",
-      "screenshots": [
-        "/images/apps/quick-ai-pdf-scan-read-screenshot-1.png",
-        "/images/apps/quick-ai-pdf-scan-read-screenshot-2.png",
-        "/images/apps/quick-ai-pdf-scan-read-screenshot-3.png",
-        "/images/apps/quick-ai-pdf-scan-read-screenshot-4.png",
-        "/images/apps/quick-ai-pdf-scan-read-screenshot-5.png"
-      ],
-      "features": [
-        "Intuitive and easy-to-use interface tailored for mobile productivity",
-        "Fast response times with zero unnecessary background battery drain",
-        "Local on-device processing prioritizing privacy and data integrity",
-        "Regular updates conforming to latest Android SDK and Google Play guidelines"
-      ],
-      "permissions": [
-        {
-          "name": "Storage / Media Access",
-          "purpose": "Required to open, edit, and save user-selected files on the device."
-        },
-        {
-          "name": "Internet & Network State",
-          "purpose": "Used strictly for license verification, critical telemetry, and security checks."
-        }
-      ],
-      "thirdPartySDKs": [
-        "Google Play Services",
-        "Google AdMob",
-        "Firebase Core"
-      ],
-      "playStoreUrl": "https://play.google.com/store/apps/details?id=com.quick.aipdf",
-      "lastUpdated": "2026-03-01",
-      "status": "Published"
-    },
-    {
       "id": "zolex-vpn-pro-max",
       "slug": "zolex-vpn-pro-max",
       "name": "Zolex VPN Pro-Security&Privacy₹1,499.00",
@@ -1381,7 +1539,6 @@
       "shortDescription": "Ultra-low latency dedicated VIP tunneling routes engineered for maximum throughput and ultimate privacy.",
       "longDescription": "Zolex VPN Pro-Security&Privacy₹1,499.00 by Publixa is crafted to deliver exceptional utility, maximum convenience, and uncompromising privacy. Built adhering strictly to Google Play developer standards, Zolex VPN Pro-Security&Privacy₹1,499.00 ensures reliable performance with clear offline boundaries.",
       "tagline": "Premium High-Bandwidth Dedicated Proxy Nodes",
-      "downloads": "100K+",
       "icon": "/images/apps/zolex-vpn-pro-max-icon.png",
       "screenshots": [
         "/images/apps/zolex-vpn-pro-max-screenshot-1.png",
@@ -1412,54 +1569,6 @@
         "Firebase Core"
       ],
       "playStoreUrl": "https://play.google.com/store/apps/details?id=com.zolex.vpnpromax",
-      "lastUpdated": "2026-03-01",
-      "status": "Published"
-    },
-    {
-      "id": "id-and-passport-photo-maker",
-      "slug": "id-and-passport-photo-maker",
-      "name": "ID & Passport Photo Maker",
-      "packageName": "com.idcardmaker.passportphotomaker",
-      "category": "Productivity",
-      "shortDescription": "Create custom ID cards, student badges, staff passes, and passport-size photo layouts directly on your phone.",
-      "longDescription": "ID & Passport Photo Maker is a simple and powerful design app for creating custom ID cards, badges, passes, and passport-size photo layouts directly on your phone. Whether you need a student card, staff badge, library card, event pass, or a Schengen/US Visa passport photo sheet, you can start with a ready-made template or design from a blank canvas with complete on-device privacy.",
-      "tagline": "Custom ID Card Maker, Badge Designer & Passport Photo Studio",
-      "downloads": "100K+",
-      "icon": "/images/apps/id-and-passport-photo-maker-icon.png",
-      "screenshots": [
-        "/images/apps/id-and-passport-photo-maker-screenshot-1.png",
-        "/images/apps/id-and-passport-photo-maker-screenshot-2.png",
-        "/images/apps/id-and-passport-photo-maker-screenshot-3.png",
-        "/images/apps/id-and-passport-photo-maker-screenshot-4.png",
-        "/images/apps/id-and-passport-photo-maker-screenshot-5.png"
-      ],
-      "features": [
-        "95+ customizable ID card templates for students, staff, libraries, and events",
-        "Passport & pass-size photo studio supporting US/Visa, India, Schengen & custom sizes",
-        "Multi-photo print layout creator (1, 2, 4, 6, 8 photos on 4x6 print sheets)",
-        "Built-in Card Studio with custom backgrounds, barcodes, QR codes & signatures",
-        "100% on-device photo cropping and high-resolution export ready for printing"
-      ],
-      "permissions": [
-        {
-          "name": "Camera Access (CAMERA)",
-          "purpose": "Used only when capturing live photos for custom ID cards or passport photo layouts."
-        },
-        {
-          "name": "Storage & Media Access (READ_MEDIA_IMAGES)",
-          "purpose": "Required to pick photos from device gallery and save exported print sheets locally."
-        },
-        {
-          "name": "Internet & Network State",
-          "purpose": "Used strictly for license verification, Google AdMob, and crash telemetry."
-        }
-      ],
-      "thirdPartySDKs": [
-        "Google Play Services",
-        "Google AdMob",
-        "Firebase Core"
-      ],
-      "playStoreUrl": "https://play.google.com/store/apps/details?id=com.idcardmaker.passportphotomaker",
       "lastUpdated": "2026-03-01",
       "status": "Published"
     }

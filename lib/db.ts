@@ -31,7 +31,7 @@ export function saveStoreData(data: StoreData): void {
 
 // App helpers
 export function getAllApps(): PublixaApp[] {
-  return getStoreData().apps;
+  return [...getStoreData().apps].sort((a, b) => a.name.localeCompare(b.name, undefined, { sensitivity: 'base' }));
 }
 
 export function getAppBySlug(slug: string): PublixaApp | undefined {

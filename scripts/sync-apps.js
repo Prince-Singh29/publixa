@@ -259,6 +259,30 @@ const userApps = [
     category: "Productivity",
     tagline: "Custom ID Card Maker, Badge Designer & Passport Photo Studio",
     shortDescription: "Create custom ID cards, student badges, staff passes, and passport-size photo layouts directly on your phone."
+  },
+  {
+    name: "Word Search & Connect Game",
+    packageName: "com.wordsearchandconnectgame",
+    slug: "word-search-and-connect-game",
+    category: "Casual Games",
+    tagline: "Engaging Word Hunt & Crossword Vocabulary Puzzle",
+    shortDescription: "Find hidden words, connect letter tiles, and expand your vocabulary across hundreds of relaxing brain puzzles."
+  },
+  {
+    name: "Net Go VPN",
+    packageName: "com.netgovpn",
+    slug: "net-go-vpn",
+    category: "Tools",
+    tagline: "Fast & Encrypted WireGuard VPN Tunnel",
+    shortDescription: "Secure your connection with modern WireGuard tunneling, worldwide servers, and zero-log private browsing."
+  },
+  {
+    name: "Aim Headshot Sensitivity",
+    packageName: "com.aim.headshot.sensitivity.tool",
+    slug: "aim-headshot-sensitivity",
+    category: "Tools",
+    tagline: "Gaming Sensitivity, DPI & Pro Esports Tag Studio",
+    shortDescription: "Optimize weapon sensitivity, screen DPI, and HUD button layouts, plus generate stylish esports gamertags."
   }
 ];
 

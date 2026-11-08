@@ -20,16 +20,18 @@ export default function HomeAppGrid({ apps }: HomeAppGridProps) {
   }, [apps]);
 
   const filteredApps = useMemo(() => {
-    return apps.filter((app) => {
-      const matchesCat = selectedCategory === 'All' || app.category === selectedCategory;
-      const q = searchQuery.toLowerCase().trim();
-      const matchesSearch =
-        !q ||
-        app.name.toLowerCase().includes(q) ||
-        app.packageName.toLowerCase().includes(q) ||
-        app.shortDescription.toLowerCase().includes(q);
-      return matchesCat && matchesSearch;
-    });
+    return apps
+      .filter((app) => {
+        const matchesCat = selectedCategory === 'All' || app.category === selectedCategory;
+        const q = searchQuery.toLowerCase().trim();
+        const matchesSearch =
+          !q ||
+          app.name.toLowerCase().includes(q) ||
+          app.packageName.toLowerCase().includes(q) ||
+          app.shortDescription.toLowerCase().includes(q);
+        return matchesCat && matchesSearch;
+      })
+      .sort((a, b) => a.name.localeCompare(b.name, undefined, { sensitivity: 'base' }));
   }, [apps, selectedCategory, searchQuery]);
 
   return (

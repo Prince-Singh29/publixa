@@ -37,7 +37,7 @@ export default function ScreenshotGallery({ appName, screenshots }: ScreenshotGa
   }
 
   return (
-    <div className="relative group">
+    <div className="relative group" suppressHydrationWarning>
       {/* Navigation Arrow Left */}
       <button
         onClick={() => scroll('left')}

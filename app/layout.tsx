@@ -58,8 +58,34 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${plusJakarta.variable} ${jetbrainsMono.variable} scroll-smooth`}>
-      <body className="min-h-screen flex flex-col bg-[#FFFAF6] text-[#1A0F0A] font-sans antialiased selection:bg-[#D94F1D] selection:text-white">
+    <html lang="en" className={`${plusJakarta.variable} ${jetbrainsMono.variable} scroll-smooth`} suppressHydrationWarning>
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function() {
+                if (typeof window === 'undefined') return;
+                var blocked = { 'bis_skin_checked': 1, 'bis_register': 1 };
+                var origSetAttr = Element.prototype.setAttribute;
+                Element.prototype.setAttribute = function(name, val) {
+                  if (blocked[name] || (typeof name === 'string' && name.indexOf('__processed_') === 0)) {
+                    return;
+                  }
+                  return origSetAttr.apply(this, arguments);
+                };
+                window.addEventListener('error', function(e) {
+                  if (e.filename && (e.filename.indexOf('chrome-extension://') !== -1 || e.filename.indexOf('moz-extension://') !== -1)) {
+                    e.stopImmediatePropagation();
+                    e.preventDefault();
+                    return true;
+                  }
+                }, true);
+              })();
+            `,
+          }}
+        />
+      </head>
+      <body className="min-h-screen flex flex-col bg-[#FFFAF6] text-[#1A0F0A] font-sans antialiased selection:bg-[#D94F1D] selection:text-white" suppressHydrationWarning>
         <Navbar />
         <main className="flex-grow w-full">{children}</main>
         <Footer />

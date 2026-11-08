@@ -22,17 +22,19 @@ export default function AppsDirectoryPage() {
   }, [apps]);
 
   const filteredApps = useMemo(() => {
-    return apps.filter((app) => {
-      const matchesSearch =
-        !searchTerm ||
-        app.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        app.packageName.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        app.shortDescription.toLowerCase().includes(searchTerm.toLowerCase());
+    return apps
+      .filter((app) => {
+        const matchesSearch =
+          !searchTerm ||
+          app.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+          app.packageName.toLowerCase().includes(searchTerm.toLowerCase()) ||
+          app.shortDescription.toLowerCase().includes(searchTerm.toLowerCase());
 
-      const matchesCategory = selectedCategory === 'All' || app.category === selectedCategory;
+        const matchesCategory = selectedCategory === 'All' || app.category === selectedCategory;
 
-      return matchesSearch && matchesCategory;
-    });
+        return matchesSearch && matchesCategory;
+      })
+      .sort((a, b) => a.name.localeCompare(b.name, undefined, { sensitivity: 'base' }));
   }, [apps, searchTerm, selectedCategory]);
 
   return (
