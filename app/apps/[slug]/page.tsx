@@ -1,10 +1,12 @@
 import React from 'react';
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
 import { assetPath } from '@/lib/paths';
 import { getAppBySlug, getAllApps } from '@/lib/db';
 import ScreenshotGallery from '@/components/ScreenshotGallery';
+import WebAppWorkbench from '@/components/webapp/WebAppWorkbench';
 import {
   ShieldCheck,
   ExternalLink,
@@ -18,7 +20,8 @@ import {
   Info,
   Sparkles,
   Award,
-  ChevronRight
+  ChevronRight,
+  Globe
 } from 'lucide-react';
 
 interface AppPageProps {
@@ -30,6 +33,36 @@ export async function generateStaticParams() {
   return apps.map((app) => ({
     slug: app.slug,
   }));
+}
+
+export async function generateMetadata({ params }: AppPageProps): Promise<Metadata> {
+  const { slug } = await params;
+  const app = getAppBySlug(slug);
+  if (!app) {
+    return {
+      title: 'Application Not Found | Publixa',
+    };
+  }
+  const description = app.shortDescription || app.longDescription?.slice(0, 160) || `${app.name} web tool and Android app by Publixa. Runs 100% locally in your browser with zero server uploads.`;
+  return {
+    title: `${app.name} — Free Online Web App & Android Guide | Publixa`,
+    description,
+    keywords: [
+      app.name,
+      `${app.name} online`,
+      `${app.name} web app`,
+      app.category,
+      'Publixa',
+      'client-side office tools',
+      'no account',
+      'privacy-first',
+    ],
+    openGraph: {
+      title: `${app.name} | Publixa`,
+      description,
+      type: 'website',
+    },
+  };
 }
 
 // Helper to provide natural, contextual headlines matching the bizcraftapps style
@@ -148,6 +181,10 @@ export default async function AppPage({ params }: AppPageProps) {
 
             {/* Desktop Navigation */}
             <nav className="hidden md:flex items-center space-x-8 text-sm font-semibold text-[#1A0F0A]">
+              <a href="#web-app" className="text-[#D94F1D] hover:text-[#C4461A] transition-colors flex items-center gap-1.5">
+                <Globe className="w-3.5 h-3.5" />
+                <span>Web App</span>
+              </a>
               <a href="#features" className="hover:text-[#D94F1D] transition-colors">Features</a>
               <a href="#screenshots" className="hover:text-[#D94F1D] transition-colors">Screenshots</a>
               <a href="#about" className="hover:text-[#D94F1D] transition-colors">About</a>
@@ -251,6 +288,14 @@ export default async function AppPage({ params }: AppPageProps) {
                 </div>
               )}
 
+              <a
+                href="#web-app"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full font-heading font-bold text-base text-white bg-[#1A0F0A] hover:bg-[#3D2315] shadow-lg transition-all duration-300 transform-gpu hover:scale-105"
+              >
+                <Globe className="w-4 h-4 text-[#FF9F6E]" />
+                <span>Use Web Version</span>
+              </a>
+
               <Link
                 href={`/privacy/${app.slug}`}
                 className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full font-heading font-semibold text-base text-[#1A0F0A] bg-white hover:bg-orange-50/60 border border-[rgba(61,35,21,0.15)] shadow-sm transition"
@@ -270,12 +315,32 @@ export default async function AppPage({ params }: AppPageProps) {
         </div>
       </section>
 
-      {/* 3. FEATURES SECTION - Matching Bizcraft #FFF4ED gradient & giant watermark numbers */}
+      {/* 2B. INTERACTIVE WEB APP VERSION SECTION */}
+      <section
+        id="web-app"
+        className="relative py-12 md:py-20 scroll-mt-20"
+        style={{
+          background: 'linear-gradient(135deg, #FFF4ED 0%, #FFDFC8 100%)',
+        }}
+      >
+        <div className="w-full max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8">
+          <WebAppWorkbench slug={app.slug} appName={app.name} />
+        </div>
+
+        {/* Wave Divider to Features Section */}
+        <div className="w-full overflow-hidden leading-none pt-16">
+          <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-auto block">
+            <path d="M0,40 C320,110 640,30 960,70 C1280,110 1360,50 1440,60 L1440,120 L0,120 Z" fill="#FFFAF6" />
+          </svg>
+        </div>
+      </section>
+
+      {/* 3. FEATURES SECTION */}
       <section
         id="features"
         className="relative py-16 md:py-24 scroll-mt-20"
         style={{
-          background: 'linear-gradient(135deg, #FFF4ED 0%, #FFDFC8 100%)',
+          background: 'linear-gradient(135deg, #FFFAF6 0%, #FFE8DC 100%)',
         }}
       >
         <div className="w-full max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8">
@@ -319,7 +384,7 @@ export default async function AppPage({ params }: AppPageProps) {
         {/* Wave Divider to Screenshots Section */}
         <div className="w-full overflow-hidden leading-none pt-16">
           <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-auto block">
-            <path d="M0,40 C320,110 640,30 960,70 C1280,110 1360,50 1440,60 L1440,120 L0,120 Z" fill="#FFFAF6" />
+            <path d="M0,40 C320,110 640,30 960,70 C1280,110 1360,50 1440,60 L1440,120 L0,120 Z" fill="#FFF4ED" />
           </svg>
         </div>
       </section>
@@ -330,7 +395,7 @@ export default async function AppPage({ params }: AppPageProps) {
           id="screenshots"
           className="relative py-16 md:py-24 scroll-mt-20"
           style={{
-            background: 'linear-gradient(135deg, #FFFAF6 0%, #FFE8DC 100%)',
+            background: 'linear-gradient(135deg, #FFF4ED 0%, #FFDFC8 100%)',
           }}
         >
           <div className="w-full max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8">

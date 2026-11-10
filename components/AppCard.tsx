@@ -2,7 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { PublixaApp } from '@/lib/types';
-import { Lock, ExternalLink } from 'lucide-react';
+import { Lock, ExternalLink, Globe } from 'lucide-react';
 import { assetPath } from '@/lib/paths';
 
 interface AppCardProps {
@@ -49,7 +49,7 @@ export default function AppCard({ app }: AppCardProps) {
       </Link>
 
       {/* Action Footer */}
-      <div className="mt-4 pt-3 border-t border-[#F0DFD5] flex items-center justify-between gap-2 text-xs">
+      <div className="mt-4 pt-3 border-t border-[#F0DFD5] flex items-center justify-between gap-1.5 text-xs">
         <Link
           href={`/privacy/${app.slug}`}
           className="inline-flex items-center gap-1 text-[11px] font-semibold text-[#8C7A70] hover:text-[#D94F1D] transition-colors"
@@ -59,17 +59,28 @@ export default function AppCard({ app }: AppCardProps) {
           <span>Privacy</span>
         </Link>
 
-        {app.playStoreUrl && (
-          <a
-            href={app.playStoreUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-1 px-3 py-1 rounded-full text-[11px] font-bold text-white bg-[#D94F1D] hover:bg-[#C4461A] transition shadow-xs"
+        <div className="flex items-center gap-1.5">
+          <Link
+            href={`/apps/${app.slug}#web-app`}
+            className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[11px] font-bold text-[#1A0F0A] bg-[#FFF0E6] hover:bg-[#1A0F0A] hover:text-white border border-[#FFDFC8] transition"
+            title="Open Web App Version"
           >
-            <span>Play</span>
-            <ExternalLink className="w-2.5 h-2.5" />
-          </a>
-        )}
+            <Globe className="w-2.5 h-2.5" />
+            <span>Web</span>
+          </Link>
+
+          {app.playStoreUrl && (
+            <a
+              href={app.playStoreUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[11px] font-bold text-white bg-[#D94F1D] hover:bg-[#C4461A] transition shadow-xs"
+            >
+              <span>Play</span>
+              <ExternalLink className="w-2.5 h-2.5" />
+            </a>
+          )}
+        </div>
       </div>
     </div>
   );

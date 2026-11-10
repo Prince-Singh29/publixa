@@ -1,8 +1,10 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { assetPath } from '@/lib/paths';
 import { getAllApps } from '@/lib/db';
 import HomeAppGrid from '@/components/HomeAppGrid';
+import SuiteSeoSection from '@/components/webapp/SuiteSeoSection';
 import {
   ShieldCheck,
   Smartphone,
@@ -12,7 +14,13 @@ import {
   ArrowRight,
   CheckCircle2,
   ExternalLink,
-  FolderOpen
+  FolderOpen,
+  Globe,
+  Sparkles,
+  FileText,
+  Presentation,
+  FileSpreadsheet,
+  FileEdit
 } from 'lucide-react';
 
 export default function HomePage() {
@@ -20,7 +28,7 @@ export default function HomePage() {
 
   return (
     <div className="w-full bg-[#FFFAF6] min-h-screen text-[#1A0F0A] overflow-x-hidden" suppressHydrationWarning>
-      {/* 1. HERO SECTION - Styled like bizcraftapps.com */}
+      {/* 1. HERO SECTION - Ambient Peach Ribbon Video Background */}
       <section
         id="home-hero"
         className="relative pt-20 pb-28 md:pt-28 md:pb-36 overflow-hidden"
@@ -28,12 +36,24 @@ export default function HomePage() {
           background: 'linear-gradient(135deg, #FFFAF6 0%, #FFE8DC 100%)',
         }}
       >
-        {/* Subtle warm halo glow */}
-        <div className="absolute inset-0 -z-10 overflow-hidden pointer-events-none">
-          <div className="absolute -top-24 left-1/2 -translate-x-1/2 w-[800px] h-[350px] bg-gradient-to-tr from-[#D94F1D]/15 via-[#F59E0B]/10 to-transparent blur-3xl rounded-full" />
+        {/* Flowing peach wave video background + readability veil */}
+        <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            preload="auto"
+            aria-hidden="true"
+            className="w-full h-full object-cover opacity-85"
+          >
+            <source src={assetPath('/videos/hero-bg.mp4')} type="video/mp4" />
+          </video>
+          <div className="absolute inset-0 bg-gradient-to-b from-[#FFFAF6]/55 via-[#FFFAF6]/35 to-[#FFFAF6]/85" />
+          <div className="absolute -top-24 left-1/2 -translate-x-1/2 w-[800px] h-[350px] bg-gradient-to-tr from-[#D94F1D]/10 via-[#F59E0B]/10 to-transparent blur-3xl rounded-full" />
         </div>
 
-        <div className="w-full max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="relative z-10 w-full max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col items-center text-center space-y-6 max-w-4xl mx-auto">
             {/* Developer pill badge */}
             <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-white/80 border border-[#FFDFC8] text-xs font-bold text-[#D94F1D] shadow-xs">
@@ -62,6 +82,14 @@ export default function HomePage() {
                 <Smartphone className="w-4 h-4" />
                 <span>Explore Android Apps ({apps.length})</span>
               </a>
+
+              <Link
+                href="/tools"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full bg-[#1A0F0A] hover:bg-[#3D2315] text-white font-bold transition text-sm transform-gpu hover:scale-105 shadow-lg"
+              >
+                <Globe className="w-4 h-4 text-[#FF9F6E]" />
+                <span>Open Free Web Tools (65+)</span>
+              </Link>
 
               <a
                 href="https://play.google.com/store/apps/dev?id=8039529252659159135"
@@ -120,8 +148,63 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 2. ANDROID APPS GRID (6 Columns, Responsive, Full Width) */}
+      {/* 2. WEB TOOLS QUICK-LAUNCH + ANDROID APPS GRID */}
       <section className="bg-[#FFF4ED] border-b border-[#F0DFD5]">
+        <div className="w-full max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-2">
+          <div className="rounded-3xl bg-white border border-[#EED9CD] p-6 sm:p-8 shadow-sm">
+            <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6">
+              <div>
+                <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#FFF0E6] text-[#D94F1D] text-[11px] font-bold uppercase tracking-wider mb-1.5">
+                  <Sparkles className="w-3.5 h-3.5" />
+                  <span>Try Instant Web Versions</span>
+                </div>
+                <h2 className="font-heading font-extrabold text-xl sm:text-2xl text-[#1A0F0A]">
+                  Use Publixa Tools Directly on the Website
+                </h2>
+              </div>
+              <Link
+                href="/tools"
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#D94F1D] hover:bg-[#C4461A] text-white text-xs font-bold transition shadow-xs self-start md:self-auto"
+              >
+                <span>Open All 65+ Web Tools</span>
+                <ArrowRight className="w-3.5 h-3.5" />
+              </Link>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3">
+              {[
+                { title: 'Stylish Name Creator', desc: '24+ Fonts, Wings & Clan Badges', href: '/tools/stylish-name-generator', icon: Sparkles, color: '#D94F1D' },
+                { title: '24-in-1 PDF Studio', desc: 'Merge, Sign, Redact, Bates & Compress', href: '/pdf', icon: FileText, color: '#E5322D' },
+                { title: 'Publixa Slides (PPT)', desc: 'Create .PPTX, Charts & Slideshows', href: '/slides', icon: Presentation, color: '#F4B400' },
+                { title: 'Publixa Sheets (Excel)', desc: 'Formulas, Charts & .XLSX / PDF', href: '/excel', icon: FileSpreadsheet, color: '#0F9D58' },
+                { title: 'Publixa Docs (Word)', desc: 'WYSIWYG Editor, Outline, .DOCX/PDF', href: '/docs', icon: FileEdit, color: '#1A73E8' },
+              ].map((tool) => {
+                const Icon = tool.icon;
+                return (
+                  <Link
+                    key={tool.href}
+                    href={tool.href}
+                    className="group p-4 rounded-2xl bg-[#FFF9F5] hover:bg-white border border-[#F0DFD5] hover:border-[#D94F1D] hover:shadow-md transition flex items-start gap-3"
+                  >
+                    <div
+                      className="w-9 h-9 rounded-xl text-white flex items-center justify-center shrink-0 shadow-2xs"
+                      style={{ backgroundColor: tool.color }}
+                    >
+                      <Icon className="w-4 h-4" />
+                    </div>
+                    <div className="min-w-0">
+                      <h3 className="font-bold text-xs sm:text-sm text-[#1A0F0A] group-hover:text-[#D94F1D] transition truncate">
+                        {tool.title}
+                      </h3>
+                      <p className="text-[11px] text-[#665349] mt-0.5 line-clamp-2">{tool.desc}</p>
+                    </div>
+                  </Link>
+                );
+              })}
+            </div>
+          </div>
+        </div>
+
         <HomeAppGrid apps={apps} />
       </section>
 
@@ -278,6 +361,11 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* 3B. COMPLETE WEB TOOLS SEO DIRECTORY & FAQ */}
+      <div className="bg-[#FFFAF6] border-t border-[#F0DFD5]">
+        <SuiteSeoSection focus="all" />
+      </div>
 
       {/* 4. BOTTOM CTA */}
       <section className="border-t border-[#F0DFD5] py-16" style={{ background: 'linear-gradient(135deg, #FFF4ED 0%, #FFDFC8 100%)' }}>

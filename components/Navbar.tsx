@@ -14,11 +14,13 @@ export default function Navbar() {
   const navLinks = [
     { name: 'Home', href: '/' },
     { name: 'Our Apps', href: '/apps' },
-    { name: 'Privacy Policies', href: '/privacy' },
-    { name: 'Terms & Conditions', href: '/terms' },
-    { name: 'Data Deletion', href: '/data-deletion' },
-    { name: 'Contact & Support', href: '/contact' },
-    { name: 'About Publixa', href: '/about' },
+    { name: 'Docs', href: '/docs' },
+    { name: 'Sheets', href: '/excel' },
+    { name: 'Slides', href: '/slides' },
+    { name: 'PDF', href: '/pdf' },
+    { name: 'Web Tools', href: '/tools' },
+    { name: 'Privacy', href: '/privacy' },
+    { name: 'Support', href: '/contact' },
   ];
 
   const isAppLandingPage = pathname.startsWith('/apps/') && pathname !== '/apps' && !pathname.endsWith('/privacy');
