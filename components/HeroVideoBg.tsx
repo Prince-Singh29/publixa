@@ -2,7 +2,13 @@
 
 import React, { useEffect, useRef } from 'react';
 
-export default function HeroVideoBg({ src }: { src: string }) {
+export default function HeroVideoBg({
+  src,
+  fixedFullPage = false,
+}: {
+  src: string;
+  fixedFullPage?: boolean;
+}) {
   const videoRef = useRef<HTMLVideoElement | null>(null);
 
   useEffect(() => {
@@ -35,7 +41,11 @@ export default function HeroVideoBg({ src }: { src: string }) {
   }, []);
 
   return (
-    <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none select-none">
+    <div
+      className={`${
+        fixedFullPage ? 'fixed inset-0 z-0' : 'absolute inset-0 z-0'
+      } overflow-hidden pointer-events-none select-none bg-gradient-to-br from-[#FFFAF6] via-[#FFE8DC] to-[#FFD8C2]`}
+    >
       <video
         ref={videoRef}
         autoPlay
@@ -48,9 +58,9 @@ export default function HeroVideoBg({ src }: { src: string }) {
       >
         <source src={src} type="video/mp4" />
       </video>
-      {/* Subtle warm edge fade into the next section without washing out the animated waves */}
-      <div className="absolute inset-0 bg-gradient-to-b from-[#FFFAF6]/15 via-transparent to-[#FFF4ED]/75" />
+      {!fixedFullPage && (
+        <div className="absolute inset-0 bg-gradient-to-b from-[#FFFAF6]/15 via-transparent to-[#FFF4ED]/75" />
+      )}
     </div>
   );
 }
-

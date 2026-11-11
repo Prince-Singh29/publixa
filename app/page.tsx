@@ -28,17 +28,15 @@ export default function HomePage() {
   const apps = getAllApps();
 
   return (
-    <div className="w-full bg-[#FFFAF6] min-h-screen text-[#1A0F0A] overflow-x-hidden" suppressHydrationWarning>
-      {/* 1. HERO SECTION - Compact on Mobile + Vivid Ambient Ribbon Video Background */}
+    <div className="relative w-full min-h-screen text-[#1A0F0A] overflow-x-hidden" suppressHydrationWarning>
+      {/* Full-Page Fixed Ambient Flowing Peach Ribbon Video Background */}
+      <HeroVideoBg src={assetPath('/videos/hero-bg.mp4')} fixedFullPage={true} />
+
+      {/* 1. HERO SECTION - Compact on Mobile + Floating Frosted Card Over Full-Page Video */}
       <section
         id="home-hero"
-        className="relative pt-7 pb-14 sm:pt-14 sm:pb-20 lg:pt-20 lg:pb-28 overflow-hidden"
-        style={{
-          background: 'linear-gradient(135deg, #FFFAF6 0%, #FFE8DC 100%)',
-        }}
+        className="relative z-10 pt-7 pb-14 sm:pt-14 sm:pb-20 lg:pt-20 lg:pb-28 overflow-hidden"
       >
-        {/* Flowing peach wave video background */}
-        <HeroVideoBg src={assetPath('/videos/hero-bg.mp4')} />
 
         <div className="relative z-10 w-full max-w-[1600px] mx-auto px-3 sm:px-6 lg:px-8">
           <div className="flex flex-col items-center text-center space-y-4 sm:space-y-5 max-w-4xl mx-auto rounded-3xl bg-white/55 sm:bg-white/45 backdrop-blur-md border border-white/80 px-4 py-5 sm:px-8 sm:py-8 shadow-xl shadow-[#D94F1D]/10">
@@ -129,16 +127,16 @@ export default function HomePage() {
           >
             <path
               d="M0,64 C240,100 480,80 720,64 C960,48 1200,68 1440,84 L1440,120 L0,120 Z"
-              fill="#FFF4ED"
+              fill="rgba(255, 244, 237, 0.55)"
             />
           </svg>
         </div>
       </section>
 
       {/* 2. WEB TOOLS QUICK-LAUNCH + ANDROID APPS GRID */}
-      <section className="bg-[#FFF4ED] border-b border-[#F0DFD5]">
+      <section className="relative z-10 bg-[#FFF4ED]/55 backdrop-blur-[2px] border-b border-[#F0DFD5]">
         <div className="w-full max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-2">
-          <div className="rounded-3xl bg-white border border-[#EED9CD] p-6 sm:p-8 shadow-sm">
+          <div className="rounded-3xl bg-white/92 border border-[#EED9CD] p-6 sm:p-8 shadow-sm">
             <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6">
               <div>
                 <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#FFF0E6] text-[#D94F1D] text-[11px] font-bold uppercase tracking-wider mb-1.5">
@@ -223,7 +221,8 @@ export default function HomePage() {
       </section>
 
       {/* 3. VERIFICATION & TRUST SECTION */}
-      <section className="w-full max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 py-20 bg-[#FFFAF6]">
+      <section className="relative z-10 bg-[#FFFAF6]/60 backdrop-blur-[2px]">
+      <div className="w-full max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 py-20">
         <div className="text-center max-w-3xl mx-auto mb-14">
           <h2 className="text-xs font-bold uppercase tracking-wider text-[#D94F1D] mb-2">
             Transparency &amp; Legal Compliance
@@ -374,15 +373,16 @@ export default function HomePage() {
             </a>
           </div>
         </div>
+      </div>
       </section>
 
       {/* 3B. COMPLETE WEB TOOLS SEO DIRECTORY & FAQ */}
-      <div className="bg-[#FFFAF6] border-t border-[#F0DFD5]">
+      <div className="relative z-10 bg-[#FFFAF6]/60 backdrop-blur-[2px] border-t border-[#F0DFD5]">
         <SuiteSeoSection focus="all" />
       </div>
 
       {/* 4. BOTTOM CTA */}
-      <section className="border-t border-[#F0DFD5] py-16" style={{ background: 'linear-gradient(135deg, #FFF4ED 0%, #FFDFC8 100%)' }}>
+      <section className="relative z-10 border-t border-[#F0DFD5] py-16 bg-gradient-to-br from-[#FFF4ED]/70 to-[#FFDFC8]/75 backdrop-blur-xs">
         <div className="w-full max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6">
           <h2 className="text-3xl sm:text-4xl font-extrabold text-[#1A0F0A] tracking-tight">
             Discover the Publixa Mobile Suite

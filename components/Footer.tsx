@@ -6,7 +6,7 @@ import { assetPath } from '@/lib/paths';
 
 export default function Footer() {
   return (
-    <footer className="bg-[#FFF4ED] text-[#665349] border-t border-[#F0DFD5]">
+    <footer className="relative z-10 bg-[#FFF4ED]/88 backdrop-blur-sm text-[#665349] border-t border-[#F0DFD5]">
       <div className="w-full max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-12">
           {/* Brand Col */}
