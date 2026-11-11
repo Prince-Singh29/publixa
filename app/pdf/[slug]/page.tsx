@@ -175,7 +175,7 @@ export default async function DedicatedPdfToolPage({ params }: PdfToolPageProps)
         <div className="flex flex-wrap items-center justify-between gap-3 px-2 text-xs text-[#665349]">
           <span>Processed 100% offline inside your browser — files never leave your device.</span>
           <Link href="/pdf" className="font-bold text-[#D94F1D] hover:underline">
-            ← Browse All 24 PDF Tools
+            ← Browse All 34 PDF Tools
           </Link>
         </div>
       </div>

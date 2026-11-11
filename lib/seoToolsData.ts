@@ -24,7 +24,17 @@ export type PdfToolId =
   | 'img2pdf'
   | 'create'
   | 'reader'
-  | 'scan';
+  | 'scan'
+  | 'crop'
+  | 'reverse'
+  | 'splitzip'
+  | 'highlighter'
+  | 'extractlinks'
+  | 'extractimages'
+  | 'securityaudit'
+  | 'dictation'
+  | 'csv2pdf'
+  | 'json2pdf';
 
 export interface PdfToolMeta {
   id: PdfToolId;
@@ -340,6 +350,136 @@ export const ALL_PDF_TOOLS: PdfToolMeta[] = [
     features: ['Crushed B&W Document, Magic Color, Grayscale & Original presets', 'Live interactive Canvas preview', 'Fits scanned shot onto crisp A4 PDF sheet', 'Ideal for invoices & receipts'],
     howToSteps: ['Upload a smartphone photo of a receipt or document.', 'Select B&W Document or Magic Color enhancement.', 'Export the clean high-contrast scan directly as a PDF.'],
   },
+  {
+    id: 'crop',
+    slug: 'crop-pdf',
+    title: 'Crop PDF Margins',
+    category: 'Organize',
+    badge: 'New',
+    shortDesc: 'Trim white borders or headers cleanly from all pages.',
+    seoDescription:
+      'Crop top, bottom, left, and right margins from every page of a PDF by adjusting CropBox and MediaBox coordinates directly inside browser memory.',
+    keywords: ['crop pdf margins online free', 'trim pdf borders offline'],
+    features: ['Independent Top, Bottom, Left & Right trim points', 'Safety clamp prevents invalid negative boxes', 'Preserves crisp selectable vector text', '100% browser RAM processing'],
+    howToSteps: ['Upload your PDF file.', 'Set Top, Bottom, Left, and Right crop points.', 'Click Crop & Save PDF to export trimmed pages cleanly.'],
+  },
+  {
+    id: 'reverse',
+    slug: 'reverse-pdf',
+    title: 'Reverse PDF Pages',
+    category: 'Organize',
+    badge: 'New',
+    shortDesc: 'Flip entire PDF order back-to-front in 1 click.',
+    seoDescription:
+      'Invert multi-page PDF documents from last page to first page in a single click—ideal for fixing reverse-fed ADF scanner batches and upside-down exports.',
+    keywords: ['reverse pdf page order', 'flip pdf last to first'],
+    features: ['1-click back-to-front page inversion', 'Preserves page sizes, annotations & fonts', 'Instant processing for multi-page documents', 'Zero uploads or account wall'],
+    howToSteps: ['Upload your multi-page PDF.', 'Click Reverse All Pages & Download.', 'Save your properly ordered PDF immediately.'],
+  },
+  {
+    id: 'splitzip',
+    slug: 'split-pdf-zip',
+    title: 'Split PDF Into ZIP',
+    category: 'Organize',
+    badge: 'New',
+    shortDesc: 'Burst every 1 or N pages into separate PDFs inside a ZIP.',
+    seoDescription:
+      'Split a multi-page PDF into dozens of individual standalone PDF documents grouped by every 1 or N pages, packed automatically into a single downloadable .ZIP archive.',
+    keywords: ['burst pdf into single pages zip', 'split pdf every page zip'],
+    features: ['Configurable pages per chunk (1 = 1 PDF per page)', 'Client-side ZIP bundling via JSZip', 'Sequential numbered filenames inside archive', 'Unlimited page splitting in browser RAM'],
+    howToSteps: ['Upload a multi-page PDF document.', 'Choose how many pages go into each split PDF (e.g., 1).', 'Download the clean .ZIP archive of all separated PDFs.'],
+  },
+  {
+    id: 'highlighter',
+    slug: 'pdf-highlighter',
+    title: 'PDF Highlighter',
+    category: 'Edit & Markup',
+    badge: 'New',
+    shortDesc: 'Add translucent Yellow, Cyan, Green or Pink highlights.',
+    seoDescription:
+      'Stamp vivid translucent highlighter bands onto chosen PDF pages at adjustable vertical heights and widths—great for marking contracts, study handouts, and invoices.',
+    keywords: ['highlight pdf online free', 'add highlighter bar to pdf'],
+    features: ['4 high-contrast highlighter ink colors', 'Adjustable Y position, width & band height', 'Select specific pages or page ranges', 'Non-destructive vector overlay'],
+    howToSteps: ['Upload your PDF document.', 'Choose highlighter color, vertical Y height, and target pages.', 'Apply Highlight & Download PDF immediately.'],
+  },
+  {
+    id: 'extractlinks',
+    slug: 'pdf-link-extractor',
+    title: 'PDF Link Extractor',
+    category: 'Security & Clean',
+    badge: 'New',
+    shortDesc: 'Audit and export all clickable URLs inside any PDF.',
+    seoDescription:
+      'Scan every page annotation and link dictionary inside a PDF document to uncover embedded external HTTP/HTTPS URLs, phishing links, and clickable citations offline.',
+    keywords: ['extract links from pdf online', 'audit pdf urls offline'],
+    features: ['Reads /URI action dictionaries across all objects', 'Deduplicates & lists every clickable URL found', '1-click Copy All or Download .TXT report', '100% private local inspection'],
+    howToSteps: ['Load any PDF file into the analyzer.', 'View the list of extracted embedded URLs immediately.', 'Copy URLs or download the text report.'],
+  },
+  {
+    id: 'extractimages',
+    slug: 'extract-pdf-images',
+    title: 'Extract PDF Images',
+    category: 'Create & Read',
+    badge: 'New',
+    shortDesc: 'Inspect embedded XObject images & save JPEG assets.',
+    seoDescription:
+      'Inspect embedded image XObjects inside any PDF document, check pixel dimensions and compression filters, and download embedded JPEG (DCTDecode) images directly to your device.',
+    keywords: ['extract images from pdf free', 'rip photos from pdf offline'],
+    features: ['Enumerates all /Subtype /Image XObjects in RAM', 'Displays width, height, and filter encoding', 'Direct 1-click download for embedded JPEG assets', 'No cloud file exposure'],
+    howToSteps: ['Upload a PDF containing embedded images.', 'Review every detected image stream and its dimensions.', 'Click Download JPG on any extractable image.'],
+  },
+  {
+    id: 'securityaudit',
+    slug: 'pdf-security-audit',
+    title: 'PDF Password & Risk Audit',
+    category: 'Security & Clean',
+    badge: 'New',
+    shortDesc: 'Check encryption flags, JS scripts & tracking actions.',
+    seoDescription:
+      'Run a quick local security inspection on incoming PDFs before trusting them—detecting encryption status, embedded JavaScript (/JS) actions, AcroForm count, and external links.',
+    keywords: ['check pdf for javascript viruses', 'pdf password audit tool'],
+    features: ['Detects password protection & encryption state', 'Scans object streams for /JS & /JavaScript triggers', 'Counts form fields & embedded /URI links', 'Zero cloud execution'],
+    howToSteps: ['Select an untrusted or client PDF file.', 'Read the instant encryption, JavaScript & link report.', 'Verify document safety cleanly offline.'],
+  },
+  {
+    id: 'dictation',
+    slug: 'pdf-dictation',
+    title: 'Voice Dictation to PDF',
+    category: 'Create & Read',
+    badge: 'New',
+    shortDesc: 'Speak naturally into your mic & export directly to PDF.',
+    seoDescription:
+      'Turn live microphone speech dictation into clean multi-page formatted PDF notes using browser Web Speech Recognition—perfect for hands-free essays, memos, and transcripts.',
+    keywords: ['voice to pdf dictation online', 'speech to pdf converter free'],
+    features: ['Live Web Speech microphone transcription', 'Editable transcript & custom PDF title', 'Automatic A4 wrapping & pagination', 'Private browser processing'],
+    howToSteps: ['Click Start Voice Mic (or type/edit notes directly).', 'Speak clearly to append sentences live.', 'Click Export Dictation PDF to download your document.'],
+  },
+  {
+    id: 'csv2pdf',
+    slug: 'csv-to-pdf',
+    title: 'CSV Table to PDF',
+    category: 'Create & Read',
+    badge: 'New',
+    shortDesc: 'Convert CSV data tables into styled striped A4 PDFs.',
+    seoDescription:
+      'Transform comma-separated `.csv` exports or pasted spreadsheets into crisp styled header-banded PDF tables directly in browser memory using SheetJS and pdf-lib.',
+    keywords: ['csv to pdf converter free offline', 'convert csv table to pdf'],
+    features: ['Upload .CSV or paste raw comma rows', 'Styled accent header row & alternating zebra rows', 'Auto-sizes columns cleanly on A4 landscape/portrait', '100% private conversion'],
+    howToSteps: ['Upload a .CSV file or paste sample rows.', 'Preview row & column counts cleanly.', 'Download your formatted table PDF instantly.'],
+  },
+  {
+    id: 'json2pdf',
+    slug: 'json-to-pdf',
+    title: 'JSON / Code to PDF',
+    category: 'Create & Read',
+    badge: 'New',
+    shortDesc: 'Format JSON, XML, or plain logs into clean monospace PDFs.',
+    seoDescription:
+      'Pretty-print JSON payloads, API specs, XML configs, or developer logs and render them onto clean Courier monospace multi-page A4 PDF sheets locally.',
+    keywords: ['json to pdf converter offline', 'code snippet to pdf'],
+    features: ['Auto-beautifies valid JSON with 2-space indent', 'Monospace Courier typography for aligned keys', 'Supports multi-page pagination cleanly', 'Safe for confidential API payloads'],
+    howToSteps: ['Upload a .JSON/.XML file or paste code text.', 'Optionally click Auto-Format JSON.', 'Click Generate PDF to export clean pages.'],
+  },
 ];
 
 export type WebToolComponentKey =
@@ -374,7 +514,17 @@ export type WebToolComponentKey =
   | 'vpn_tracker'
   | 'game_word'
   | 'game_sort'
-  | 'game_music';
+  | 'game_music'
+  | 'img_compress'
+  | 'img_convert'
+  | 'img_resize'
+  | 'img_strip'
+  | 'img_palette'
+  | 'word_case'
+  | 'text_diff'
+  | 'hash_uuid'
+  | 'finance_calc'
+  | 'age_date';
 
 export interface WebToolMeta {
   slug: string;
@@ -793,6 +943,128 @@ export const ALL_WEB_TOOLS: WebToolMeta[] = [
     howToSteps: ['Choose Piano, Guitar, or Drum Pad tabs.', 'Click keys, chords, or drum pads directly with mouse or touch.', 'Layer rhythms and melodies live!'],
     componentKey: 'game_music',
   },
+
+  // Knife PDF-Inspired Image, Developer & Finance Tools
+  {
+    slug: 'image-compressor',
+    title: 'Image Compressor (JPG / WebP)',
+    category: 'Creator & Media',
+    shortDesc: 'Shrink photo sizes locally with adjustable quality slider.',
+    seoDescription:
+      'Compress large PNG, JPG, and WebP photos in browser memory with real-time quality adjustment, exact Before/After KB savings readout, and zero server uploads.',
+    keywords: ['compress image online free offline', 'reduce jpg size kb browser'],
+    features: ['Adjustable compression quality slider (10%–95%)', 'Live KB & % size savings readout', 'Supports JPEG & WebP export', '100% browser Canvas privacy'],
+    howToSteps: ['Upload any JPG, PNG, or WebP image.', 'Adjust target quality slider and output format.', 'Click Download Compressed Image immediately.'],
+    componentKey: 'img_compress',
+  },
+  {
+    slug: 'image-converter',
+    title: 'Image & SVG Format Converter',
+    category: 'Creator & Media',
+    shortDesc: 'Convert PNG, JPG, WebP & SVG cleanly at 1x/2x/3x scale.',
+    seoDescription:
+      'Convert images effortlessly between PNG, JPEG, and WebP formats—plus rasterize vector SVG artwork into crisp high-DPI PNG assets directly in your browser.',
+    keywords: ['svg to png high dpi online', 'webp to jpg png converter offline'],
+    features: ['PNG ↔ JPG ↔ WebP & SVG rasterizer', '1x, 2x, and 3x resolution multiplier', 'Handles transparent alpha backgrounds cleanly', 'Zero external image hosting'],
+    howToSteps: ['Drop in a PNG, JPG, WebP, or SVG file.', 'Select desired output format and resolution multiplier.', 'Download your converted file immediately.'],
+    componentKey: 'img_convert',
+  },
+  {
+    slug: 'image-resizer',
+    title: 'Image Resizer & Dimension Scaler',
+    category: 'Creator & Media',
+    shortDesc: 'Resize images to exact pixel dimensions with aspect lock.',
+    seoDescription:
+      'Scale photos to exact pixel widths and heights or quick social presets while optionally locking original aspect ratio cleanly in browser Canvas RAM.',
+    keywords: ['resize image pixels online free', 'bulk photo dimension changer'],
+    features: ['Custom Width & Height inputs with Aspect Ratio Lock', 'Quick presets (1080px Square, 1920px HD, 512px Icon)', 'Real-time scaled preview', 'Lossless PNG or crisp JPEG download'],
+    howToSteps: ['Upload any image from your device.', 'Set desired Width & Height or tap a quick preset.', 'Download your newly resized image instantly.'],
+    componentKey: 'img_resize',
+  },
+  {
+    slug: 'image-strip-metadata',
+    title: 'Photo EXIF Metadata Stripper',
+    category: 'Privacy & Security',
+    shortDesc: 'Scrub hidden GPS location & camera EXIF data before sharing.',
+    seoDescription:
+      'Strip sensitive GPS coordinates, smartphone camera serial numbers, timestamps, and EXIF metadata from photos by cleanly re-rendering pixel buffers in Canvas RAM.',
+    keywords: ['remove exif gps from photo online', 'strip image metadata privacy'],
+    features: ['Wipes all EXIF, IPTC, XMP & GPS tags permanently', 'Preserves full visual resolution cleanly', 'Essential before posting photos publicly', 'Runs 100% offline'],
+    howToSteps: ['Select a smartphone photo to sanitize.', 'Click Strip EXIF & Download Clean Image.', 'Share the metadata-free PNG/JPG safely.'],
+    componentKey: 'img_strip',
+  },
+  {
+    slug: 'image-palette-extractor',
+    title: 'Image Color & Palette Extractor',
+    category: 'Creator & Media',
+    shortDesc: 'Click any pixel for HEX/RGB & extract dominant swatches.',
+    seoDescription:
+      'Inspect exact pixel HEX and RGB color values directly on uploaded images and extract dominant aesthetic color palettes with 1-tap clipboard copy for UI & graphic design.',
+    keywords: ['image color picker hex online', 'extract color palette from photo'],
+    features: ['Click anywhere on canvas to sample exact pixel color', 'Auto-extracts top dominant color swatches', '1-click HEX code clipboard copy', 'Zero external uploads'],
+    howToSteps: ['Upload an artwork or UI screenshot.', 'Click any spot on the image or inspect extracted palette swatches.', 'Tap any HEX badge to copy to clipboard.'],
+    componentKey: 'img_palette',
+  },
+  {
+    slug: 'word-counter-case',
+    title: 'Word Counter & Text Case Converter',
+    category: 'Everyday Utilities',
+    shortDesc: 'Live word/char stats + UPPER, Title, camelCase & slug tool.',
+    seoDescription:
+      'Count words, characters, sentences, paragraphs, and estimated reading time in real time—plus transform text between UPPERCASE, lowercase, Title Case, camelCase, snake_case, and URL slugs.',
+    keywords: ['word counter reading time free', 'case converter title camelcase'],
+    features: ['Real-time word, char, sentence & reading-time metrics', '6 instant case transformers + URL slugify', '1-tap copy transformed output', 'Runs cleanly offline'],
+    howToSteps: ['Paste or type text into the editor box.', 'Check instant word & character metrics above.', 'Click any Case button to transform and copy text.'],
+    componentKey: 'word_case',
+  },
+  {
+    slug: 'text-diff-compare',
+    title: 'Text & Code Diff Compare Tool',
+    category: 'Everyday Utilities',
+    shortDesc: 'Compare two text blocks line-by-line to highlight edits.',
+    seoDescription:
+      'Spot added, removed, and changed lines between original and revised drafts, contracts, or config files instantaneously in browser memory.',
+    keywords: ['compare two texts diff online', 'line by line text diff checker'],
+    features: ['Side-by-side Original vs Revised editors', 'Color-coded + Added / - Removed line diff view', 'Shows exact change summary count', 'Safe for confidential code or legal drafts'],
+    howToSteps: ['Paste Original text on the left and Revised text on the right.', 'Inspect highlighted Added and Removed lines below.', 'Verify changes cleanly without uploading files.'],
+    componentKey: 'text_diff',
+  },
+  {
+    slug: 'hash-uuid-generator',
+    title: 'UUID v4 & SHA-256 Hash Generator',
+    category: 'Everyday Utilities',
+    shortDesc: 'Generate RFC 4122 UUIDs & SHA-1/256/512 WebCrypto hashes.',
+    seoDescription:
+      'Compute cryptographic SHA-1, SHA-256, SHA-384, and SHA-512 checksums using Web Crypto SubtleCrypto alongside bulk RFC 4122 v4 UUID generation cleanly in RAM.',
+    keywords: ['sha256 hash generator online', 'bulk uuid v4 generator'],
+    features: ['Real SubtleCrypto SHA-1, SHA-256 & SHA-512 digests', 'Bulk 1/5/10/25 UUID v4 generator', '1-click copy for hashes & UUID lists', '100% browser execution'],
+    howToSteps: ['Type input text for hashing or choose UUID batch count.', 'Read real-time hexadecimal hashes below.', 'Copy any digest or UUID list cleanly.'],
+    componentKey: 'hash_uuid',
+  },
+  {
+    slug: 'finance-emi-sip-calculator',
+    title: 'EMI, SIP & Discount Calculator',
+    category: 'Everyday Utilities',
+    shortDesc: 'Calculate monthly Loan EMIs, SIP wealth returns & discounts.',
+    seoDescription:
+      'Plan loans, investments, and shopping discounts accurately in seconds—covering monthly Loan EMI & interest totals, Mutual Fund SIP maturity projections, and % discount math.',
+    keywords: ['loan emi calculator online', 'sip investment return calculator'],
+    features: ['3 modes: Loan EMI, Mutual Fund SIP & Discount %', 'Real-time Principal vs Interest breakdown', 'Works cleanly offline with zero sign-up', 'Mobile-friendly sliders & inputs'],
+    howToSteps: ['Pick Loan EMI, Investment SIP, or Discount mode.', 'Adjust amount, interest rate, and tenure.', 'Read monthly EMI, total interest, or maturity value immediately.'],
+    componentKey: 'finance_calc',
+  },
+  {
+    slug: 'age-date-calculator',
+    title: 'Exact Age & Date Difference Calc',
+    category: 'Everyday Utilities',
+    shortDesc: 'Calculate exact Age (Y/M/D), weekday & days between dates.',
+    seoDescription:
+      'Find your exact age in years, months, and days, discover your birth weekday, count days until your next birthday, and measure exact durations between any two calendar dates.',
+    keywords: ['exact age calculator dob', 'days between two dates calculator'],
+    features: ['Exact Years, Months & Days age calculation', 'Shows next birthday countdown & birth weekday', 'Date-to-Date difference in days, weeks & months', 'Instant browser math'],
+    howToSteps: ['Enter your Date of Birth or two calendar dates.', 'Inspect exact breakdown of years, months, and days.', 'Check weekday & upcoming birthday countdown.'],
+    componentKey: 'age_date',
+  },
 ];
 
 export function getPdfToolBySlug(slug: string): PdfToolMeta | undefined {
@@ -812,10 +1084,10 @@ export interface SeoToolShowcaseItem {
 
 export const SUITE_SEO_DIRECTORY: SeoToolShowcaseItem[] = [
   {
-    name: 'Publixa PDF Studio (24 Dedicated Tools)',
+    name: 'Publixa PDF Studio (34 Dedicated Tools)',
     category: 'PDF Workbench',
     description:
-      'Merge, split, delete pages, rearrange, N-up imposition, electronic signature pad, Bates legal numbering, redact, flatten forms, sanitize metadata, compress, and scan photos to PDF 100% locally in browser memory.',
+      'Merge, split, ZIP burst, crop, reverse, delete pages, rearrange, N-up imposition, electronic signature pad, highlighter, Bates numbering, redact, flatten forms, sanitize metadata, link/image extractors, dictation, CSV/JSON to PDF & scanner 100% locally in browser memory.',
     href: '/pdf',
   },
   {
@@ -858,7 +1130,7 @@ export const SUITE_SEO_DIRECTORY: SeoToolShowcaseItem[] = [
 export const SUITE_FAQS = [
   {
     q: 'Does every Publixa PDF and Web tool have its own dedicated page?',
-    a: 'Yes. All 24 PDF tools under /pdf/[tool] and all 32 Office, Creator, Utility, Privacy, and Game tools under /tools/[tool] have dedicated pages with direct URLs, step-by-step instructions, and full descriptions.',
+    a: 'Yes. All 34 PDF tools under /pdf/[tool] and all 42 Office, Image, Creator, Utility, Privacy, and Game tools under /tools/[tool] have dedicated pages with direct URLs, step-by-step instructions, and full descriptions.',
   },
   {
     q: 'Do Publixa PDF, Docs, Sheets, and Slides require an account or login?',
@@ -866,7 +1138,7 @@ export const SUITE_FAQS = [
   },
   {
     q: 'Are my confidential PDF, Word, or Excel files uploaded to a server?',
-    a: 'Never. All 24 PDF utilities, DOCX parsing, XLSX formula evaluation, and PPTX slide exports execute 100% client-side in your browser RAM using WebAssembly and modern Web APIs.',
+    a: 'Never. All 34 PDF utilities, Image tools, DOCX parsing, XLSX formula evaluation, and PPTX slide exports execute 100% client-side in your browser RAM using WebAssembly and modern Web APIs.',
   },
   {
     q: 'Can I edit downloaded documents and re-export them cleanly?',

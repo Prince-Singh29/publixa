@@ -30,6 +30,15 @@ import {
   Search,
   ArrowRight,
   ShieldCheck,
+  Crop,
+  ArrowLeftRight,
+  Archive,
+  Highlighter,
+  Link2,
+  FileImage,
+  Mic,
+  Table,
+  Braces,
 } from 'lucide-react';
 import { ALL_PDF_TOOLS, PdfCategory, PdfToolId } from '@/lib/seoToolsData';
 
@@ -58,6 +67,16 @@ const ICON_MAP: Record<PdfToolId, React.ComponentType<{ className?: string }>> =
   create: FilePlus2,
   reader: Volume2,
   scan: ScanLine,
+  crop: Crop,
+  reverse: ArrowLeftRight,
+  splitzip: Archive,
+  highlighter: Highlighter,
+  extractlinks: Link2,
+  extractimages: FileImage,
+  securityaudit: ShieldCheck,
+  dictation: Mic,
+  csv2pdf: Table,
+  json2pdf: Braces,
 };
 
 export default function PdfDirectoryClient() {

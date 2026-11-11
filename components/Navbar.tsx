@@ -35,12 +35,12 @@ export default function Navbar() {
   };
 
   return (
-    <header className="sticky top-0 z-50 bg-[#FFFAF6]/90 backdrop-blur-md border-b border-[#F0DFD5] shadow-xs transition-all">
-      <div className="w-full max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-20">
+    <header className="sticky top-0 z-50 bg-[#FFFAF6]/92 backdrop-blur-md border-b border-[#F0DFD5] shadow-xs transition-all">
+      <div className="w-full max-w-[1600px] mx-auto px-3 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between h-14 sm:h-16 lg:h-20">
           {/* Official Logo Brand */}
-          <Link href="/" className="flex items-center gap-3.5 group">
-            <div className="relative w-11 h-11 rounded-2xl bg-white border border-[#F0DFD5] p-1 flex items-center justify-center shadow-xs group-hover:border-[#D94F1D] transition-colors overflow-hidden shrink-0">
+          <Link href="/" className="flex items-center gap-2.5 sm:gap-3.5 group">
+            <div className="relative w-9 h-9 sm:w-10 sm:h-10 lg:w-11 lg:h-11 rounded-xl sm:rounded-2xl bg-white border border-[#F0DFD5] p-1 flex items-center justify-center shadow-xs group-hover:border-[#D94F1D] transition-colors overflow-hidden shrink-0">
               <Image
                 src={assetPath('/images/publixa-logo.png')}
                 alt="Publixa Official Logo"
@@ -51,10 +51,10 @@ export default function Navbar() {
               />
             </div>
             <div className="flex flex-col">
-              <span className="text-2xl font-extrabold tracking-tight text-[#1A0F0A] leading-none font-heading">
+              <span className="text-lg sm:text-xl lg:text-2xl font-extrabold tracking-tight text-[#1A0F0A] leading-none font-heading">
                 Publixa<span className="text-[#D94F1D]">.</span>
               </span>
-              <span className="text-[10px] font-bold text-[#8C7A70] uppercase tracking-widest mt-1">
+              <span className="hidden sm:block text-[10px] font-bold text-[#8C7A70] uppercase tracking-widest mt-1">
                 Apps • Privacy • Trust
               </span>
             </div>

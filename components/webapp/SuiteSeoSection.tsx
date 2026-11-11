@@ -92,7 +92,7 @@ export default function SuiteSeoSection({ focus = 'all' }: SuiteSeoSectionProps)
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-[#F0DFD5] pb-4">
             <div>
               <h2 className="font-heading font-extrabold text-xl sm:text-2xl text-[#1A0F0A]">
-                All 24 Dedicated PDF Tool Pages — Features &amp; Descriptions
+                All {ALL_PDF_TOOLS.length} Dedicated PDF Tool Pages — Features &amp; Descriptions
               </h2>
               <p className="text-xs sm:text-sm text-[#665349] mt-1">
                 Click any tool card to open its dedicated standalone workbench and full step-by-step guide.

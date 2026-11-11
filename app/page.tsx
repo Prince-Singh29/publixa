@@ -4,6 +4,7 @@ import Image from 'next/image';
 import { assetPath } from '@/lib/paths';
 import { getAllApps } from '@/lib/db';
 import HomeAppGrid from '@/components/HomeAppGrid';
+import HeroVideoBg from '@/components/HeroVideoBg';
 import SuiteSeoSection from '@/components/webapp/SuiteSeoSection';
 import {
   ShieldCheck,
@@ -28,105 +29,91 @@ export default function HomePage() {
 
   return (
     <div className="w-full bg-[#FFFAF6] min-h-screen text-[#1A0F0A] overflow-x-hidden" suppressHydrationWarning>
-      {/* 1. HERO SECTION - Ambient Peach Ribbon Video Background */}
+      {/* 1. HERO SECTION - Compact on Mobile + Vivid Ambient Ribbon Video Background */}
       <section
         id="home-hero"
-        className="relative pt-20 pb-28 md:pt-28 md:pb-36 overflow-hidden"
+        className="relative pt-7 pb-14 sm:pt-14 sm:pb-20 lg:pt-20 lg:pb-28 overflow-hidden"
         style={{
           background: 'linear-gradient(135deg, #FFFAF6 0%, #FFE8DC 100%)',
         }}
       >
-        {/* Flowing peach wave video background + readability veil */}
-        <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
-          <video
-            autoPlay
-            loop
-            muted
-            playsInline
-            preload="auto"
-            aria-hidden="true"
-            className="w-full h-full object-cover opacity-85"
-          >
-            <source src={assetPath('/videos/hero-bg.mp4')} type="video/mp4" />
-          </video>
-          <div className="absolute inset-0 bg-gradient-to-b from-[#FFFAF6]/55 via-[#FFFAF6]/35 to-[#FFFAF6]/85" />
-          <div className="absolute -top-24 left-1/2 -translate-x-1/2 w-[800px] h-[350px] bg-gradient-to-tr from-[#D94F1D]/10 via-[#F59E0B]/10 to-transparent blur-3xl rounded-full" />
-        </div>
+        {/* Flowing peach wave video background */}
+        <HeroVideoBg src={assetPath('/videos/hero-bg.mp4')} />
 
-        <div className="relative z-10 w-full max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col items-center text-center space-y-6 max-w-4xl mx-auto">
+        <div className="relative z-10 w-full max-w-[1600px] mx-auto px-3 sm:px-6 lg:px-8">
+          <div className="flex flex-col items-center text-center space-y-4 sm:space-y-5 max-w-4xl mx-auto rounded-3xl bg-white/55 sm:bg-white/45 backdrop-blur-md border border-white/80 px-4 py-5 sm:px-8 sm:py-8 shadow-xl shadow-[#D94F1D]/10">
             {/* Developer pill badge */}
-            <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-white/80 border border-[#FFDFC8] text-xs font-bold text-[#D94F1D] shadow-xs">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/95 border border-[#FFDFC8] text-[11px] sm:text-xs font-bold text-[#D94F1D] shadow-xs">
               <span className="w-2 h-2 rounded-full bg-[#D94F1D] animate-pulse" />
-              <span>Official Google Play Developer</span>
+              <span>Google Play Developer</span>
               <span className="text-[#8C7A70]">•</span>
               <span className="font-mono text-[#D94F1D]">Prince Developer</span>
             </div>
 
-            {/* Huge bold title */}
-            <h1 className="font-heading font-extrabold text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-tight text-[#1A0F0A] tracking-tight">
-              Publixa Apps
+            {/* Crisp bold title */}
+            <h1 className="font-heading font-extrabold text-3xl sm:text-5xl lg:text-6xl leading-tight text-[#1A0F0A] tracking-tight">
+              Publixa Apps &amp; Web Tools
             </h1>
 
-            {/* Tagline matching reference style */}
-            <p className="font-body text-base sm:text-xl md:text-2xl max-w-3xl text-[#3D2315] font-normal leading-relaxed">
-              Reliable apps designed to make everyday tasks easier. Simple tools, polished experience, real value.
+            {/* Concise tagline */}
+            <p className="font-body text-xs sm:text-base lg:text-xl max-w-2xl text-[#3D2315] font-medium leading-relaxed">
+              Reliable Android apps and 75+ free private browser tools — PDF, Docs, Sheets, Slides &amp; Image tools with zero uploads.
             </p>
 
-            {/* Hero Action Buttons */}
-            <div className="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto">
+            {/* Hero Action Buttons (Compact 2-col on mobile, inline flex on desktop) */}
+            <div className="pt-1 grid grid-cols-2 sm:flex sm:flex-wrap items-center justify-center gap-2.5 sm:gap-3.5 w-full sm:w-auto">
               <a
                 href="#android-grid"
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-full bg-[#D94F1D] hover:bg-[#C4461A] text-white font-bold transition shadow-lg shadow-[#D94F1D]/25 hover:shadow-[#D94F1D]/35 text-sm transform-gpu hover:scale-105"
+                className="inline-flex items-center justify-center gap-1.5 sm:gap-2 px-3 sm:px-7 py-2.5 sm:py-3.5 rounded-full bg-[#D94F1D] hover:bg-[#C4461A] text-white font-bold transition shadow-lg shadow-[#D94F1D]/25 text-xs sm:text-sm transform-gpu hover:scale-105"
               >
-                <Smartphone className="w-4 h-4" />
-                <span>Explore Android Apps ({apps.length})</span>
+                <Smartphone className="w-3.5 h-3.5 sm:w-4 sm:h-4 shrink-0" />
+                <span className="truncate">Android Apps ({apps.length})</span>
               </a>
 
               <Link
                 href="/tools"
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full bg-[#1A0F0A] hover:bg-[#3D2315] text-white font-bold transition text-sm transform-gpu hover:scale-105 shadow-lg"
+                className="inline-flex items-center justify-center gap-1.5 sm:gap-2 px-3 sm:px-7 py-2.5 sm:py-3.5 rounded-full bg-[#1A0F0A] hover:bg-[#3D2315] text-white font-bold transition text-xs sm:text-sm transform-gpu hover:scale-105 shadow-lg"
               >
-                <Globe className="w-4 h-4 text-[#FF9F6E]" />
-                <span>Open Free Web Tools (65+)</span>
+                <Globe className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#FF9F6E] shrink-0" />
+                <span className="truncate">Free Web Tools (75+)</span>
               </Link>
 
               <a
                 href="https://play.google.com/store/apps/dev?id=8039529252659159135"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full bg-white hover:bg-[#FFF0E6] text-[#1A0F0A] font-bold border border-[#F0DFD5] transition text-sm transform-gpu hover:scale-105 shadow-xs"
+                className="inline-flex items-center justify-center gap-1.5 sm:gap-2 px-3 sm:px-6 py-2.5 sm:py-3 rounded-full bg-white/95 hover:bg-[#FFF0E6] text-[#1A0F0A] font-bold border border-[#F0DFD5] transition text-xs sm:text-sm shadow-xs"
               >
-                <span>View on Google Play</span>
-                <ExternalLink className="w-4 h-4 text-[#D94F1D]" />
+                <span className="truncate">Google Play</span>
+                <ExternalLink className="w-3.5 h-3.5 text-[#D94F1D] shrink-0" />
               </a>
 
               <Link
                 href="/privacy"
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full bg-white/80 hover:bg-white text-[#3D2315] font-bold border border-[#F0DFD5] transition text-sm shadow-xs"
+                className="inline-flex items-center justify-center gap-1.5 sm:gap-2 px-3 sm:px-6 py-2.5 sm:py-3 rounded-full bg-white/90 hover:bg-white text-[#3D2315] font-bold border border-[#F0DFD5] transition text-xs sm:text-sm shadow-xs"
               >
-                <Lock className="w-4 h-4 text-[#D94F1D]" />
-                <span>Privacy Directory</span>
+                <Lock className="w-3.5 h-3.5 text-[#D94F1D] shrink-0" />
+                <span className="truncate">Privacy Policy</span>
               </Link>
             </div>
 
-            {/* Metrics Bar */}
-            <div className="pt-10 border-t border-[#F0DFD5] w-full grid grid-cols-2 sm:grid-cols-4 gap-6 text-center" suppressHydrationWarning>
+            {/* Compact Metrics Bar */}
+            <div className="pt-4 sm:pt-6 border-t border-[#EED9CD] w-full grid grid-cols-4 gap-2 sm:gap-6 text-center" suppressHydrationWarning>
               <div>
-                <div className="text-2xl sm:text-3xl font-black text-[#1A0F0A]">{`${apps.length} Verified`}</div>
-                <div className="text-xs font-semibold text-[#8C7A70] uppercase mt-1">Published Apps</div>
+                <div className="text-sm sm:text-2xl font-black text-[#1A0F0A]">{`${apps.length} Apps`}</div>
+                <div className="text-[9px] sm:text-xs font-semibold text-[#665349] uppercase mt-0.5">Published</div>
               </div>
               <div>
-                <div className="text-2xl sm:text-3xl font-black text-[#1A0F0A]">100% Offline</div>
-                <div className="text-xs font-semibold text-[#8C7A70] uppercase mt-1">Private Processing</div>
+                <div className="text-sm sm:text-2xl font-black text-[#1A0F0A]">100% RAM</div>
+                <div className="text-[9px] sm:text-xs font-semibold text-[#665349] uppercase mt-0.5">Zero Uploads</div>
               </div>
               <div>
-                <div className="text-2xl sm:text-3xl font-black text-[#1A0F0A]">Play Protect</div>
-                <div className="text-xs font-semibold text-[#8C7A70] uppercase mt-1">Verified &amp; Safe</div>
+                <div className="text-sm sm:text-2xl font-black text-[#1A0F0A]">76+ Tools</div>
+                <div className="text-[9px] sm:text-xs font-semibold text-[#665349] uppercase mt-0.5">Browser Suite</div>
               </div>
               <div>
-                <div className="text-2xl sm:text-3xl font-black text-[#1A0F0A]">Prince Developer</div>
-                <div className="text-xs font-semibold text-[#8C7A70] uppercase mt-1">Verified Developer</div>
+                <div className="text-sm sm:text-2xl font-black text-[#1A0F0A]">Verified</div>
+                <div className="text-[9px] sm:text-xs font-semibold text-[#665349] uppercase mt-0.5">Play Protect</div>
               </div>
             </div>
           </div>
@@ -166,7 +153,7 @@ export default function HomePage() {
                 href="/tools"
                 className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#D94F1D] hover:bg-[#C4461A] text-white text-xs font-bold transition shadow-xs self-start md:self-auto"
               >
-                <span>Open All 65+ Web Tools</span>
+                <span>Open All 76+ Web Tools</span>
                 <ArrowRight className="w-3.5 h-3.5" />
               </Link>
             </div>
@@ -174,7 +161,7 @@ export default function HomePage() {
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3">
               {[
                 { title: 'Stylish Name Creator', desc: '24+ Fonts, Wings & Clan Badges', href: '/tools/stylish-name-generator', icon: Sparkles, color: '#D94F1D' },
-                { title: '24-in-1 PDF Studio', desc: 'Merge, Sign, Redact, Bates & Compress', href: '/pdf', icon: FileText, color: '#E5322D' },
+                { title: '34-in-1 PDF Studio', desc: 'Merge, Crop, Split, Sign & Redact', href: '/pdf', icon: FileText, color: '#E5322D' },
                 { title: 'Publixa Slides (PPT)', desc: 'Create .PPTX, Charts & Slideshows', href: '/slides', icon: Presentation, color: '#F4B400' },
                 { title: 'Publixa Sheets (Excel)', desc: 'Formulas, Charts & .XLSX / PDF', href: '/excel', icon: FileSpreadsheet, color: '#0F9D58' },
                 { title: 'Publixa Docs (Word)', desc: 'WYSIWYG Editor, Outline, .DOCX/PDF', href: '/docs', icon: FileEdit, color: '#1A73E8' },
@@ -201,6 +188,33 @@ export default function HomePage() {
                   </Link>
                 );
               })}
+            </div>
+
+            {/* Direct Standalone Tool Quick Pills */}
+            <div className="mt-4 pt-4 border-t border-[#F0DFD5] flex flex-wrap items-center gap-2">
+              <span className="text-[11px] font-extrabold uppercase tracking-wider text-[#8C7A70] mr-1">
+                Direct Tools:
+              </span>
+              {[
+                { label: 'Merge PDF', href: '/pdf/merge-pdf' },
+                { label: 'Split PDF', href: '/pdf/split-pdf' },
+                { label: 'Crop PDF', href: '/pdf/crop-pdf' },
+                { label: 'Compress PDF', href: '/pdf/compress-pdf' },
+                { label: 'Sign PDF', href: '/pdf/sign-pdf' },
+                { label: 'Images to PDF', href: '/pdf/images-to-pdf' },
+                { label: 'Image Compressor', href: '/tools/image-compressor' },
+                { label: 'QR Code Studio', href: '/tools/qr-code-studio' },
+                { label: 'Passport Photo', href: '/tools/passport-photo-maker' },
+                { label: 'EMI / SIP Calc', href: '/tools/finance-emi-sip-calculator' },
+              ].map((pill) => (
+                <Link
+                  key={pill.href}
+                  href={pill.href}
+                  className="px-3 py-1 rounded-full bg-[#FFF0E6] hover:bg-[#D94F1D] text-[#3D2315] hover:text-white text-[11px] font-bold transition"
+                >
+                  {pill.label}
+                </Link>
+              ))}
             </div>
           </div>
         </div>

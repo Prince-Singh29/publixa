@@ -17,6 +17,18 @@ import {
   AllInOneToolbox,
 } from './UtilityPlannerTools';
 import { WordConnectGame, LiquidColorSortGame, MusicStudioGame } from './CasualGamesSuite';
+import {
+  ImageCompressorTool,
+  ImageConverterTool,
+  ImageResizerTool,
+  ImageStripExifTool,
+  ImagePalettePickerTool,
+  WordCounterCaseTool,
+  TextDiffCompareTool,
+  HashUuidGeneratorTool,
+  FinanceEmiSipTool,
+  AgeDateCalculatorTool,
+} from './KnifeImageAndDevTools';
 
 export default function DedicatedWebToolRunner({
   componentKey,
@@ -90,6 +102,26 @@ export default function DedicatedWebToolRunner({
       return <LiquidColorSortGame />;
     case 'game_music':
       return <MusicStudioGame />;
+    case 'img_compress':
+      return <ImageCompressorTool />;
+    case 'img_convert':
+      return <ImageConverterTool />;
+    case 'img_resize':
+      return <ImageResizerTool />;
+    case 'img_strip':
+      return <ImageStripExifTool />;
+    case 'img_palette':
+      return <ImagePalettePickerTool />;
+    case 'word_case':
+      return <WordCounterCaseTool />;
+    case 'text_diff':
+      return <TextDiffCompareTool />;
+    case 'hash_uuid':
+      return <HashUuidGeneratorTool />;
+    case 'finance_calc':
+      return <FinanceEmiSipTool />;
+    case 'age_date':
+      return <AgeDateCalculatorTool />;
     default:
       return <AllInOneToolbox defaultTab="stylish" standalone={true} />;
   }

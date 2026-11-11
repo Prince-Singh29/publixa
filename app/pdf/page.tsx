@@ -5,9 +5,9 @@ import PdfDirectoryClient from '@/components/webapp/PdfDirectoryClient';
 import SuiteSeoSection from '@/components/webapp/SuiteSeoSection';
 
 export const metadata: Metadata = {
-  title: 'Publixa PDF Studio — 24 Free Offline Browser PDF Tools',
+  title: 'Publixa PDF Studio — 34 Free Offline Browser PDF Tools',
   description:
-    'Merge, split, delete pages, rearrange, N-up grid, electronic signature pad, Bates numbering, redact, flatten forms, sanitize metadata, compress, stamp images, add margins, and scan photos to PDF — 100% locally with zero uploads.',
+    'Merge, split, crop margins, reverse, ZIP burst, delete pages, rearrange, N-up grid, electronic signature, highlighter, Bates numbering, redact, flatten forms, sanitize metadata, extract links/images, dictation, CSV/JSON to PDF & scanner — 100% locally with zero uploads.',
   keywords: [
     'merge pdf online free',
     'split pdf',
@@ -33,7 +33,7 @@ export default function PdfStudioPage() {
             </div>
             <div>
               <h1 className="font-heading font-extrabold text-lg sm:text-2xl text-[#1A0F0A]">
-                Publixa PDF Studio — All 24 Offline PDF Tools
+                Publixa PDF Studio — All 34 Offline PDF Tools
               </h1>
               <p className="text-xs sm:text-sm text-[#665349]">
                 Click any PDF tool below to open its clean, standalone page — Merge, Split, Sign, Bates, Redact, Compress &amp; more.

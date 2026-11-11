@@ -145,7 +145,7 @@ export default function WebToolsHubClient() {
             type="text"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
-            placeholder="Search 56 tools (merge pdf, excel, qr, json...)"
+            placeholder="Search 76+ tools (merge pdf, crop, compress image, excel, qr...)"
             className="w-full pl-10 pr-4 py-2.5 rounded-full bg-white border border-[#E5CEC0] focus:border-[#D94F1D] focus:outline-none text-xs font-semibold"
           />
         </div>

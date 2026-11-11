@@ -38,8 +38,19 @@ import {
   Image as ImageIcon,
   PanelTop,
   ExternalLink,
+  Crop,
+  ArrowLeftRight,
+  Archive,
+  Highlighter,
+  Link2,
+  FileImage,
+  ShieldCheck,
+  Mic,
+  Table,
+  Braces,
+  Copy,
 } from 'lucide-react';
-import { downloadBytes, parsePageRanges, toWinAnsiSafe } from './downloadBlob';
+import { downloadBytes, downloadText, parsePageRanges, toWinAnsiSafe } from './downloadBlob';
 import { ALL_PDF_TOOLS, PdfCategory, PdfToolId } from '@/lib/seoToolsData';
 
 export type PdfToolTab = PdfToolId;
@@ -95,6 +106,16 @@ const ICON_MAP: Record<PdfToolId, React.ComponentType<{ className?: string }>> =
   create: FilePlus2,
   reader: Volume2,
   scan: ScanLine,
+  crop: Crop,
+  reverse: ArrowLeftRight,
+  splitzip: Archive,
+  highlighter: Highlighter,
+  extractlinks: Link2,
+  extractimages: FileImage,
+  securityaudit: ShieldCheck,
+  dictation: Mic,
+  csv2pdf: Table,
+  json2pdf: Braces,
 };
 
 export default function PdfToolsSuite({ defaultTab = 'merge', appName = 'Publixa PDF', linkNavigation = false, standalone = false }: PdfToolsSuiteProps) {
@@ -187,6 +208,37 @@ export default function PdfToolsSuite({ defaultTab = 'merge', appName = 'Publixa
   const [scanFilter, setScanFilter] = useState<'bw' | 'contrast' | 'grayscale' | 'original'>('bw');
   const scanCanvasRef = useRef<HTMLCanvasElement | null>(null);
 
+  // Crop & Split ZIP & Highlighter
+  const [cropTop, setCropTop] = useState(24);
+  const [cropBottom, setCropBottom] = useState(24);
+  const [cropLeft, setCropLeft] = useState(18);
+  const [cropRight, setCropRight] = useState(18);
+  const [splitChunkSize, setSplitChunkSize] = useState(1);
+  const [hlColor, setHlColor] = useState<'yellow' | 'cyan' | 'pink' | 'green'>('yellow');
+  const [hlPages, setHlPages] = useState('1');
+  const [hlY, setHlY] = useState(500);
+  const [hlHeight, setHlHeight] = useState(28);
+
+  // Link Extractor / Image Extractor / Security Audit
+  const [foundLinks, setFoundLinks] = useState<string[] | null>(null);
+  const [extractedImgs, setExtractedImgs] = useState<{ id: string; width: number; height: number; filter: string; isJpeg: boolean; bytes: Uint8Array }[] | null>(null);
+  const [auditReport, setAuditReport] = useState<{
+    encrypted: boolean;
+    pages: number;
+    formFields: number;
+    hasJavaScript: boolean;
+    linkCount: number;
+    imageObjects: number;
+    metadataLeaks: string[];
+  } | null>(null);
+
+  // Dictation, CSV to PDF, JSON to PDF
+  const [dictTitle, setDictTitle] = useState('Voice Dictation Note');
+  const [dictText, setDictText] = useState('Tap Start Voice Mic to dictate paragraphs hands-free, or edit this note before exporting to PDF.');
+  const [dictListening, setDictListening] = useState(false);
+  const [csvInput, setCsvInput] = useState('Item,Category,Qty,Total\nCloud Server,Infra,1,1200\nDesign License,Software,2,650\nMobile Test Kit,Hardware,1,3500');
+  const [jsonInput, setJsonInput] = useState('{\n  "brand": "Publixa",\n  "suite": "Browser PDF & Web Workstation",\n  "privacy": "100% Local RAM",\n  "toolsCount": 76\n}');
+
   useEffect(() => {
     if (typeof window !== 'undefined' && 'speechSynthesis' in window) {
       const loadVoices = () => {
@@ -244,7 +296,7 @@ export default function PdfToolsSuite({ defaultTab = 'merge', appName = 'Publixa
     });
   }, [catFilter, toolSearch]);
 
-  const singlePdfNeeded = !['merge', 'img2pdf', 'create', 'reader', 'scan'].includes(tab);
+  const singlePdfNeeded = !['merge', 'img2pdf', 'create', 'reader', 'scan', 'dictation', 'csv2pdf', 'json2pdf'].includes(tab);
   const notify = (type: 'ok' | 'err', msg: string) => setStatus({ type, msg });
 
   // Signature pad helpers
@@ -869,6 +921,347 @@ export default function PdfToolsSuite({ defaultTab = 'merge', appName = 'Publixa
     }
   };
 
+  // --- New 10 Knife PDF-inspired Handlers ---
+  const handleCropDownload = async () => {
+    if (!singlePdf) return;
+    setBusy(true);
+    try {
+      const { PDFDocument } = await import('pdf-lib');
+      const doc = await PDFDocument.load(singlePdf.bytes);
+      for (const page of doc.getPages()) {
+        const { width, height } = page.getSize();
+        const x = Math.min(width - 40, Math.max(0, cropLeft));
+        const y = Math.min(height - 40, Math.max(0, cropBottom));
+        const newW = Math.max(36, width - cropLeft - cropRight);
+        const newH = Math.max(36, height - cropTop - cropBottom);
+        page.setCropBox(x, y, newW, newH);
+        page.setMediaBox(x, y, newW, newH);
+      }
+      downloadBytes(await doc.save(), `cropped-${singlePdf.name}`, 'application/pdf');
+      notify('ok', `Cropped ${singlePdf.pageCount} page(s) cleanly!`);
+    } catch {
+      notify('err', 'Failed cropping PDF pages.');
+    } finally {
+      setBusy(false);
+    }
+  };
+
+  const handleSplitZipDownload = async () => {
+    if (!singlePdf) return;
+    setBusy(true);
+    try {
+      const { PDFDocument } = await import('pdf-lib');
+      const JSZip = (await import('jszip')).default;
+      const src = await PDFDocument.load(singlePdf.bytes);
+      const zip = new JSZip();
+      const step = Math.max(1, splitChunkSize);
+      const base = singlePdf.name.replace(/\.pdf$/i, '');
+      let part = 1;
+      for (let i = 0; i < src.getPageCount(); i += step) {
+        const chunkDoc = await PDFDocument.create();
+        const indices: number[] = [];
+        for (let k = i; k < Math.min(src.getPageCount(), i + step); k++) indices.push(k);
+        (await chunkDoc.copyPages(src, indices)).forEach((p) => chunkDoc.addPage(p));
+        zip.file(`${base}-part-${String(part).padStart(2, '0')}.pdf`, await chunkDoc.save());
+        part++;
+      }
+      const zipBytes = await zip.generateAsync({ type: 'uint8array' });
+      downloadBytes(zipBytes, `${base}-split-parts.zip`, 'application/zip');
+      notify('ok', `Packed ${part - 1} split PDF file(s) into a .ZIP archive!`);
+    } catch {
+      notify('err', 'Failed splitting PDF into ZIP.');
+    } finally {
+      setBusy(false);
+    }
+  };
+
+  const handleHighlightDownload = async () => {
+    if (!singlePdf) return;
+    const indices = parsePageRanges(hlPages, singlePdf.pageCount);
+    if (indices.length === 0) return notify('err', 'Enter valid page numbers to highlight (e.g. 1, 2-3).');
+    setBusy(true);
+    try {
+      const { PDFDocument, rgb } = await import('pdf-lib');
+      const doc = await PDFDocument.load(singlePdf.bytes);
+      const colorMap = {
+        yellow: rgb(1, 0.92, 0.2),
+        cyan: rgb(0.25, 0.9, 1),
+        pink: rgb(1, 0.5, 0.8),
+        green: rgb(0.45, 0.95, 0.5),
+      } as const;
+      for (const idx of indices) {
+        const page = doc.getPage(idx);
+        const { width, height } = page.getSize();
+        page.drawRectangle({
+          x: 42,
+          y: Math.min(height - 30, Math.max(20, hlY)),
+          width: width - 84,
+          height: hlHeight,
+          color: colorMap[hlColor],
+          opacity: 0.38,
+        });
+      }
+      downloadBytes(await doc.save(), `highlighted-${singlePdf.name}`, 'application/pdf');
+      notify('ok', `Applied ${hlColor} highlight bar onto ${indices.length} page(s)!`);
+    } catch {
+      notify('err', 'Failed applying PDF highlight.');
+    } finally {
+      setBusy(false);
+    }
+  };
+
+  const handleExtractLinksRun = async () => {
+    if (!singlePdf) return;
+    setBusy(true);
+    try {
+      const { PDFDocument, PDFName, PDFDict, PDFString, PDFHexString } = await import('pdf-lib');
+      const doc = await PDFDocument.load(singlePdf.bytes, { ignoreEncryption: true });
+      const urls = new Set<string>();
+      for (const [, obj] of doc.context.enumerateIndirectObjects()) {
+        if (obj instanceof PDFDict) {
+          const uriObj = obj.get(PDFName.of('URI'));
+          if (uriObj instanceof PDFString || uriObj instanceof PDFHexString) {
+            urls.add(uriObj.decodeText());
+          }
+        }
+      }
+      const list = Array.from(urls);
+      setFoundLinks(list);
+      notify('ok', `Scanned document: found ${list.length} unique embedded URI link(s).`);
+    } catch {
+      notify('err', 'Failed scanning PDF links.');
+    } finally {
+      setBusy(false);
+    }
+  };
+
+  const handleExtractImagesRun = async () => {
+    if (!singlePdf) return;
+    setBusy(true);
+    try {
+      const { PDFDocument, PDFName, PDFRawStream } = await import('pdf-lib');
+      const doc = await PDFDocument.load(singlePdf.bytes, { ignoreEncryption: true });
+      const imgs: { id: string; width: number; height: number; filter: string; isJpeg: boolean; bytes: Uint8Array }[] = [];
+      let count = 0;
+      for (const [, obj] of doc.context.enumerateIndirectObjects()) {
+        if (obj instanceof PDFRawStream) {
+          const subtype = obj.dict.get(PDFName.of('Subtype'));
+          if (subtype && subtype.toString() === '/Image') {
+            count++;
+            const wObj = obj.dict.get(PDFName.of('Width'));
+            const hObj = obj.dict.get(PDFName.of('Height'));
+            const fObj = obj.dict.get(PDFName.of('Filter'));
+            const filterStr = fObj ? fObj.toString() : 'Raw';
+            const isJpeg = filterStr.includes('DCTDecode');
+            imgs.push({
+              id: `img-${count}`,
+              width: Number(wObj?.toString() || 0),
+              height: Number(hObj?.toString() || 0),
+              filter: filterStr,
+              isJpeg,
+              bytes: obj.contents,
+            });
+          }
+        }
+      }
+      setExtractedImgs(imgs);
+      notify('ok', `Detected ${imgs.length} embedded image stream(s) inside PDF!`);
+    } catch {
+      notify('err', 'Failed scanning embedded images.');
+    } finally {
+      setBusy(false);
+    }
+  };
+
+  const handleSecurityAuditRun = async () => {
+    if (!singlePdf) return;
+    setBusy(true);
+    try {
+      const { PDFDocument, PDFName, PDFDict, PDFRawStream } = await import('pdf-lib');
+      const doc = await PDFDocument.load(singlePdf.bytes, { ignoreEncryption: true });
+      let hasJavaScript = false;
+      let linkCount = 0;
+      let imageObjects = 0;
+      for (const [, obj] of doc.context.enumerateIndirectObjects()) {
+        if (obj instanceof PDFDict) {
+          if (obj.get(PDFName.of('JS')) || obj.get(PDFName.of('JavaScript'))) hasJavaScript = true;
+          if (obj.get(PDFName.of('URI'))) linkCount++;
+        } else if (obj instanceof PDFRawStream) {
+          const sub = obj.dict.get(PDFName.of('Subtype'));
+          if (sub && sub.toString() === '/Image') imageObjects++;
+        }
+      }
+      let formFields = 0;
+      try { formFields = doc.getForm().getFields().length; } catch { formFields = 0; }
+      const metadataLeaks: string[] = [];
+      if (doc.getAuthor()) metadataLeaks.push(`Author: ${doc.getAuthor()}`);
+      if (doc.getCreator()) metadataLeaks.push(`Creator: ${doc.getCreator()}`);
+      if (doc.getProducer()) metadataLeaks.push(`Producer: ${doc.getProducer()}`);
+
+      setAuditReport({
+        encrypted: doc.isEncrypted,
+        pages: doc.getPageCount(),
+        formFields,
+        hasJavaScript,
+        linkCount,
+        imageObjects,
+        metadataLeaks,
+      });
+      notify('ok', 'Completed PDF security & risk audit!');
+    } catch {
+      notify('err', 'Failed auditing PDF.');
+    } finally {
+      setBusy(false);
+    }
+  };
+
+  const startDictationMic = () => {
+    const win = window as unknown as {
+      SpeechRecognition?: new () => { lang: string; continuous: boolean; interimResults: boolean; onresult: (ev: { results: ArrayLike<{ 0: { transcript: string } }> }) => void; onend: () => void; start: () => void };
+      webkitSpeechRecognition?: new () => { lang: string; continuous: boolean; interimResults: boolean; onresult: (ev: { results: ArrayLike<{ 0: { transcript: string } }> }) => void; onend: () => void; start: () => void };
+    };
+    const SR = win.SpeechRecognition || win.webkitSpeechRecognition;
+    if (!SR) {
+      notify('err', 'Voice Speech Recognition is not supported in this browser — type or paste text below.');
+      return;
+    }
+    try {
+      const rec = new SR();
+      rec.lang = 'en-US';
+      rec.continuous = false;
+      rec.interimResults = false;
+      rec.onresult = (ev) => {
+        let spoken = '';
+        for (let i = 0; i < ev.results.length; i++) spoken += ev.results[i][0].transcript + ' ';
+        setDictText((prev) => (prev.trim() ? `${prev.trim()}\n${spoken.trim()}` : spoken.trim()));
+      };
+      rec.onend = () => setDictListening(false);
+      setDictListening(true);
+      rec.start();
+    } catch {
+      setDictListening(false);
+      notify('err', 'Microphone access was blocked or unavailable.');
+    }
+  };
+
+  const handleExportDictationPdf = async () => {
+    setBusy(true);
+    try {
+      const { PDFDocument, StandardFonts, rgb } = await import('pdf-lib');
+      const doc = await PDFDocument.create();
+      const font = await doc.embedFont(StandardFonts.Helvetica);
+      const bold = await doc.embedFont(StandardFonts.HelveticaBold);
+      let page = doc.addPage([595, 842]);
+      let y = 790;
+      page.drawText(toWinAnsiSafe(dictTitle || 'Voice Dictation'), { x: 48, y, size: 18, font: bold, color: rgb(0.1, 0.06, 0.04) });
+      y -= 30;
+      for (const para of dictText.split('\n')) {
+        const clean = toWinAnsiSafe(para);
+        let line = '';
+        for (const word of clean.split(/\s+/)) {
+          const test = line ? `${line} ${word}` : word;
+          if (font.widthOfTextAtSize(test, 11.5) <= 499) line = test;
+          else {
+            if (y < 60) { page = doc.addPage([595, 842]); y = 790; }
+            page.drawText(line, { x: 48, y, size: 11.5, font, color: rgb(0.15, 0.1, 0.08) });
+            y -= 17;
+            line = word;
+          }
+        }
+        if (line) {
+          if (y < 60) { page = doc.addPage([595, 842]); y = 790; }
+          page.drawText(line, { x: 48, y, size: 11.5, font, color: rgb(0.15, 0.1, 0.08) });
+          y -= 20;
+        }
+      }
+      downloadBytes(await doc.save(), 'publixa-dictation.pdf', 'application/pdf');
+      notify('ok', 'Exported voice dictation note cleanly to PDF!');
+    } catch {
+      notify('err', 'Failed exporting dictation PDF.');
+    } finally {
+      setBusy(false);
+    }
+  };
+
+  const handleCsvToPdf = async () => {
+    setBusy(true);
+    try {
+      const XLSX = await import('xlsx');
+      const { PDFDocument, StandardFonts, rgb } = await import('pdf-lib');
+      const wb = XLSX.read(csvInput, { type: 'string' });
+      const rows = XLSX.utils.sheet_to_json<string[]>(wb.Sheets[wb.SheetNames[0]], { header: 1, defval: '' });
+      const doc = await PDFDocument.create();
+      const font = await doc.embedFont(StandardFonts.Helvetica);
+      const bold = await doc.embedFont(StandardFonts.HelveticaBold);
+      const pageW = 842;
+      const pageH = 595;
+      let page = doc.addPage([pageW, pageH]);
+      let y = pageH - 48;
+      const maxCols = Math.max(1, ...rows.map((r) => r.length));
+      const colW = (pageW - 80) / Math.min(maxCols, 10);
+
+      rows.forEach((row, rIdx) => {
+        if (y < 52) { page = doc.addPage([pageW, pageH]); y = pageH - 48; }
+        const isHead = rIdx === 0;
+        page.drawRectangle({
+          x: 40,
+          y: y - 16,
+          width: pageW - 80,
+          height: 22,
+          color: isHead ? rgb(0.85, 0.31, 0.11) : rIdx % 2 === 1 ? rgb(1, 0.98, 0.96) : rgb(1, 1, 1),
+        });
+        row.slice(0, 10).forEach((cell, cIdx) => {
+          page.drawText(toWinAnsiSafe(String(cell ?? '').slice(0, 26)), {
+            x: 46 + cIdx * colW,
+            y: y - 10,
+            size: 9.5,
+            font: isHead ? bold : font,
+            color: isHead ? rgb(1, 1, 1) : rgb(0.15, 0.1, 0.08),
+          });
+        });
+        y -= 22;
+      });
+      downloadBytes(await doc.save(), 'publixa-csv-table.pdf', 'application/pdf');
+      notify('ok', `Converted ${rows.length} CSV row(s) into a styled landscape PDF table!`);
+    } catch {
+      notify('err', 'Failed converting CSV to PDF.');
+    } finally {
+      setBusy(false);
+    }
+  };
+
+  const handleJsonToPdf = async () => {
+    setBusy(true);
+    try {
+      let textOut = jsonInput;
+      try {
+        textOut = JSON.stringify(JSON.parse(jsonInput), null, 2);
+      } catch {
+        // allow XML or code text as-is
+      }
+      const { PDFDocument, StandardFonts, rgb } = await import('pdf-lib');
+      const doc = await PDFDocument.create();
+      const mono = await doc.embedFont(StandardFonts.Courier);
+      let page = doc.addPage([595, 842]);
+      let y = 795;
+      for (const rawLine of textOut.split('\n')) {
+        const line = toWinAnsiSafe(rawLine);
+        const chunks = line.match(/.{1,82}/g) || [''];
+        for (const ch of chunks) {
+          if (y < 48) { page = doc.addPage([595, 842]); y = 795; }
+          page.drawText(ch, { x: 40, y, size: 9.5, font: mono, color: rgb(0.12, 0.12, 0.15) });
+          y -= 14;
+        }
+      }
+      downloadBytes(await doc.save(), 'publixa-code-document.pdf', 'application/pdf');
+      notify('ok', 'Generated formatted monospace PDF cleanly!');
+    } catch {
+      notify('err', 'Failed generating Code/JSON PDF.');
+    } finally {
+      setBusy(false);
+    }
+  };
+
   return (
     <div className="space-y-6">
       {!standalone && (
@@ -898,7 +1291,7 @@ export default function PdfToolsSuite({ defaultTab = 'merge', appName = 'Publixa
             type="text"
             value={toolSearch}
             onChange={(e) => setToolSearch(e.target.value)}
-            placeholder="Search 24 PDF tools..."
+            placeholder={`Search ${ALL_PDF_TOOLS.length} PDF tools...`}
             className="w-full pl-9 pr-3.5 py-2 rounded-full bg-[#FFF9F5] border border-[#E5CEC0] focus:border-[#D94F1D] focus:outline-none text-xs font-semibold"
           />
         </div>
@@ -1359,6 +1752,204 @@ export default function PdfToolsSuite({ defaultTab = 'merge', appName = 'Publixa
               <div className="rounded-2xl border border-[#F0DFD5] bg-slate-900/5 p-4 flex justify-center"><canvas ref={scanCanvasRef} className="max-w-full max-h-[380px] rounded-xl" /></div>
             </div>
           )}
+        </div>
+      )}
+
+      {/* CROP PDF */}
+      {tab === 'crop' && singlePdf && (
+        <div className="bg-[#FFF9F5] border border-[#F0DFD5] rounded-2xl p-5 space-y-4">
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+            {[
+              { label: 'Top Trim (pt)', val: cropTop, set: setCropTop },
+              { label: 'Bottom Trim (pt)', val: cropBottom, set: setCropBottom },
+              { label: 'Left Trim (pt)', val: cropLeft, set: setCropLeft },
+              { label: 'Right Trim (pt)', val: cropRight, set: setCropRight },
+            ].map((item) => (
+              <label key={item.label} className="block space-y-1 text-xs font-bold text-[#3D2315]">
+                <span>{item.label}: {item.val}pt</span>
+                <input type="range" min={0} max={180} value={item.val} onChange={(e) => item.set(Number(e.target.value))} className="w-full accent-[#D94F1D]" />
+              </label>
+            ))}
+          </div>
+          <button type="button" disabled={busy} onClick={handleCropDownload} className="px-7 py-3 rounded-full bg-[#D94F1D] text-white font-bold text-sm">
+            Crop Margins &amp; Save PDF
+          </button>
+        </div>
+      )}
+
+      {/* REVERSE PDF */}
+      {tab === 'reverse' && singlePdf && (
+        <div className="bg-[#FFF9F5] border border-[#F0DFD5] rounded-2xl p-5 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <div>
+            <p className="font-bold text-sm text-[#1A0F0A]">Ready to invert {singlePdf.pageCount} pages from back to front.</p>
+            <p className="text-xs text-[#665349]">Fixes reverse-ordered scans while keeping text and graphics untouched.</p>
+          </div>
+          <button type="button" disabled={busy} onClick={() => handleRearrangeDownload(true)} className="px-7 py-3 rounded-full bg-[#D94F1D] text-white font-bold text-sm shrink-0">
+            Reverse All Pages &amp; Save
+          </button>
+        </div>
+      )}
+
+      {/* SPLIT INTO ZIP */}
+      {tab === 'splitzip' && singlePdf && (
+        <div className="bg-[#FFF9F5] border border-[#F0DFD5] rounded-2xl p-5 space-y-4">
+          <div className="flex flex-wrap items-center gap-3">
+            <label className="text-xs font-bold text-[#3D2315]">Pages per Split PDF File:</label>
+            <input type="number" min={1} max={singlePdf.pageCount} value={splitChunkSize} onChange={(e) => setSplitChunkSize(Math.max(1, Number(e.target.value)))} className="w-24 px-3 py-2 rounded-xl bg-white border border-[#E5CEC0] text-sm font-bold" />
+            <span className="text-xs text-[#665349]">Generates ~{Math.ceil(singlePdf.pageCount / Math.max(1, splitChunkSize))} separate PDF files inside 1 .ZIP</span>
+          </div>
+          <button type="button" disabled={busy} onClick={handleSplitZipDownload} className="px-7 py-3 rounded-full bg-[#D94F1D] text-white font-bold text-sm">
+            Burst Split &amp; Download .ZIP
+          </button>
+        </div>
+      )}
+
+      {/* HIGHLIGHTER */}
+      {tab === 'highlighter' && singlePdf && (
+        <div className="bg-[#FFF9F5] border border-[#F0DFD5] rounded-2xl p-5 space-y-4">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            <div className="space-y-1">
+              <label className="text-xs font-bold">Pages (e.g. 1, 2-3)</label>
+              <input type="text" value={hlPages} onChange={(e) => setHlPages(e.target.value)} className="w-full px-3 py-2 rounded-xl bg-white border border-[#E5CEC0] text-sm font-mono" />
+            </div>
+            <div className="space-y-1">
+              <label className="text-xs font-bold">Vertical Y Position ({hlY}pt)</label>
+              <input type="range" min={60} max={780} value={hlY} onChange={(e) => setHlY(Number(e.target.value))} className="w-full accent-[#D94F1D]" />
+            </div>
+            <div className="space-y-1">
+              <label className="text-xs font-bold">Band Height ({hlHeight}pt)</label>
+              <input type="range" min={14} max={90} value={hlHeight} onChange={(e) => setHlHeight(Number(e.target.value))} className="w-full accent-[#D94F1D]" />
+            </div>
+          </div>
+          <div className="flex flex-wrap gap-2">
+            {(['yellow', 'cyan', 'pink', 'green'] as const).map((c) => (
+              <button key={c} type="button" onClick={() => setHlColor(c)} className={`px-4 py-1.5 rounded-full text-xs font-bold capitalize border ${hlColor === c ? 'bg-[#1A0F0A] text-white border-[#1A0F0A]' : 'bg-white border-[#E5CEC0]'}`}>{c}</button>
+            ))}
+          </div>
+          <button type="button" disabled={busy} onClick={handleHighlightDownload} className="px-7 py-3 rounded-full bg-[#D94F1D] text-white font-bold text-sm">
+            Apply Highlight Bar &amp; Save PDF
+          </button>
+        </div>
+      )}
+
+      {/* EXTRACT LINKS */}
+      {tab === 'extractlinks' && singlePdf && (
+        <div className="bg-[#FFF9F5] border border-[#F0DFD5] rounded-2xl p-5 space-y-4">
+          <div className="flex flex-wrap items-center gap-3">
+            <button type="button" disabled={busy} onClick={handleExtractLinksRun} className="px-6 py-3 rounded-full bg-[#D94F1D] text-white font-bold text-sm">
+              Scan &amp; Extract All Links
+            </button>
+            {foundLinks && foundLinks.length > 0 && (
+              <button type="button" onClick={() => downloadText(foundLinks.join('\n'), `links-${singlePdf.name}.txt`)} className="inline-flex items-center gap-1.5 px-5 py-2.5 rounded-full bg-white border border-[#E5CEC0] text-xs font-bold">
+                <Copy className="w-3.5 h-3.5" />
+                <span>Download Links .TXT</span>
+              </button>
+            )}
+          </div>
+          {foundLinks && (
+            <div className="bg-white border border-[#F0DFD5] rounded-xl p-4 max-h-72 overflow-y-auto text-xs space-y-1.5 font-mono">
+              {foundLinks.length === 0 ? <p className="text-[#665349]">No external /URI links found in this PDF.</p> : foundLinks.map((u) => <div key={u} className="break-all text-[#1A0F0A] border-b border-[#FFF0E6] pb-1">{u}</div>)}
+            </div>
+          )}
+        </div>
+      )}
+
+      {/* EXTRACT IMAGES */}
+      {tab === 'extractimages' && singlePdf && (
+        <div className="bg-[#FFF9F5] border border-[#F0DFD5] rounded-2xl p-5 space-y-4">
+          <button type="button" disabled={busy} onClick={handleExtractImagesRun} className="px-6 py-3 rounded-full bg-[#D94F1D] text-white font-bold text-sm">
+            Scan Embedded Image Streams
+          </button>
+          {extractedImgs && (
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
+              {extractedImgs.length === 0 && <p className="text-xs text-[#665349] col-span-full">No embedded XObject image streams detected in this PDF.</p>}
+              {extractedImgs.map((img, i) => (
+                <div key={img.id} className="bg-white border border-[#F0DFD5] rounded-xl p-3.5 flex items-center justify-between gap-2 text-xs">
+                  <div>
+                    <div className="font-bold text-[#1A0F0A]">Image #{i + 1} ({img.width}×{img.height})</div>
+                    <div className="text-[11px] text-[#665349]">{img.filter} • {(img.bytes.length / 1024).toFixed(1)} KB</div>
+                  </div>
+                  {img.isJpeg && (
+                    <button type="button" onClick={() => downloadBytes(img.bytes, `extracted-${i + 1}.jpg`, 'image/jpeg')} className="px-3 py-1.5 rounded-full bg-[#D94F1D] text-white font-bold text-[11px]">
+                      Save JPG
+                    </button>
+                  )}
+                </div>
+              ))}
+            </div>
+          )}
+        </div>
+      )}
+
+      {/* SECURITY AUDIT */}
+      {tab === 'securityaudit' && singlePdf && (
+        <div className="bg-[#FFF9F5] border border-[#F0DFD5] rounded-2xl p-5 space-y-4">
+          <button type="button" disabled={busy} onClick={handleSecurityAuditRun} className="px-6 py-3 rounded-full bg-[#D94F1D] text-white font-bold text-sm">
+            Run Privacy &amp; Encryption Audit
+          </button>
+          {auditReport && (
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 text-xs">
+              <div className="bg-white border border-[#F0DFD5] rounded-xl p-3"><div className="text-[#8C7A70] font-bold">Encrypted</div><div className="text-sm font-black mt-0.5">{auditReport.encrypted ? 'Yes (Protected)' : 'No (Unencrypted)'}</div></div>
+              <div className="bg-white border border-[#F0DFD5] rounded-xl p-3"><div className="text-[#8C7A70] font-bold">JavaScript Actions</div><div className={`text-sm font-black mt-0.5 ${auditReport.hasJavaScript ? 'text-rose-600' : 'text-emerald-700'}`}>{auditReport.hasJavaScript ? 'Detected (/JS)' : 'Clean (None)'}</div></div>
+              <div className="bg-white border border-[#F0DFD5] rounded-xl p-3"><div className="text-[#8C7A70] font-bold">External Links / Forms</div><div className="text-sm font-black mt-0.5">{auditReport.linkCount} Links • {auditReport.formFields} Forms</div></div>
+              <div className="col-span-full bg-white border border-[#F0DFD5] rounded-xl p-3">
+                <div className="font-bold text-[#8C7A70] mb-1">Metadata Leaks ({auditReport.metadataLeaks.length})</div>
+                {auditReport.metadataLeaks.length === 0 ? <span className="text-emerald-700 font-semibold">Zero Author/Creator/Producer tags found.</span> : <span className="font-mono">{auditReport.metadataLeaks.join(' | ')}</span>}
+              </div>
+            </div>
+          )}
+        </div>
+      )}
+
+      {/* DICTATION TO PDF */}
+      {tab === 'dictation' && (
+        <div className="bg-[#FFF9F5] border border-[#F0DFD5] rounded-2xl p-5 space-y-4">
+          <div className="flex flex-wrap items-center gap-3">
+            <input type="text" value={dictTitle} onChange={(e) => setDictTitle(e.target.value)} className="flex-1 min-w-[200px] px-3.5 py-2.5 rounded-xl bg-white border border-[#E5CEC0] text-sm font-bold" />
+            <button type="button" onClick={startDictationMic} className={`inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-xs font-bold text-white ${dictListening ? 'bg-rose-600 animate-pulse' : 'bg-[#1A0F0A]'}`}>
+              <Mic className="w-4 h-4" />
+              <span>{dictListening ? 'Listening...' : 'Start Voice Mic'}</span>
+            </button>
+          </div>
+          <textarea rows={7} value={dictText} onChange={(e) => setDictText(e.target.value)} className="w-full p-4 rounded-xl bg-white border border-[#E5CEC0] text-sm leading-relaxed" />
+          <button type="button" disabled={busy} onClick={handleExportDictationPdf} className="px-7 py-3 rounded-full bg-[#D94F1D] text-white font-bold text-sm">
+            Export Dictation PDF
+          </button>
+        </div>
+      )}
+
+      {/* CSV TO PDF */}
+      {tab === 'csv2pdf' && (
+        <div className="bg-[#FFF9F5] border border-[#F0DFD5] rounded-2xl p-5 space-y-4">
+          <label className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-[#E5CEC0] text-xs font-bold cursor-pointer">
+            <Upload className="w-3.5 h-3.5 text-[#D94F1D]" />
+            <span>Load .CSV File</span>
+            <input type="file" accept=".csv,text/csv" className="hidden" onChange={async (e) => { const f = e.target.files?.[0]; if (f) setCsvInput(await f.text()); }} />
+          </label>
+          <textarea rows={7} value={csvInput} onChange={(e) => setCsvInput(e.target.value)} className="w-full p-4 rounded-xl bg-white border border-[#E5CEC0] font-mono text-xs" />
+          <button type="button" disabled={busy} onClick={handleCsvToPdf} className="px-7 py-3 rounded-full bg-[#D94F1D] text-white font-bold text-sm">
+            Convert CSV Table to PDF
+          </button>
+        </div>
+      )}
+
+      {/* JSON / CODE TO PDF */}
+      {tab === 'json2pdf' && (
+        <div className="bg-[#FFF9F5] border border-[#F0DFD5] rounded-2xl p-5 space-y-4">
+          <div className="flex flex-wrap gap-2">
+            <label className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-[#E5CEC0] text-xs font-bold cursor-pointer">
+              <Upload className="w-3.5 h-3.5 text-[#D94F1D]" />
+              <span>Load .JSON / .XML / .TXT</span>
+              <input type="file" accept=".json,.xml,.txt" className="hidden" onChange={async (e) => { const f = e.target.files?.[0]; if (f) setJsonInput(await f.text()); }} />
+            </label>
+            <button type="button" onClick={() => { try { setJsonInput(JSON.stringify(JSON.parse(jsonInput), null, 2)); notify('ok', 'Pretty-formatted JSON!'); } catch { notify('err', 'Not valid JSON — will export raw code cleanly.'); } }} className="px-4 py-2 rounded-full bg-white border border-[#E5CEC0] text-xs font-bold">
+              Pretty-Format JSON
+            </button>
+          </div>
+          <textarea rows={8} value={jsonInput} onChange={(e) => setJsonInput(e.target.value)} className="w-full p-4 rounded-xl bg-white border border-[#E5CEC0] font-mono text-xs" />
+          <button type="button" disabled={busy} onClick={handleJsonToPdf} className="px-7 py-3 rounded-full bg-[#D94F1D] text-white font-bold text-sm">
+            Export Formatted Code PDF
+          </button>
         </div>
       )}
     </div>

@@ -5,9 +5,9 @@ import WebToolsHubClient from '@/components/webapp/WebToolsHubClient';
 import SuiteSeoSection from '@/components/webapp/SuiteSeoSection';
 
 export const metadata: Metadata = {
-  title: 'Publixa Web Tools Suite | 65+ Free Browser PDF, Docs, Sheets, Slides & Creator Tools',
+  title: 'Publixa Web Tools Suite | 76+ Free Browser PDF, Image, Office & Creator Tools',
   description:
-    'Run Publixa 24 PDF tools, Docs editor, Sheets spreadsheets, Slides presentation builder, Stylish Name generator, QR Studio, Passport Photo & 4K Wallpaper tools directly in browser RAM with zero server uploads.',
+    'Run Publixa 34 PDF tools, Docs, Sheets, Slides, Image Compressor, SVG/PNG Converter, EXIF Stripper, EMI/SIP Calculator, QR Studio, Passport Photo & 4K Wallpaper tools directly in browser RAM with zero server uploads.',
   keywords: [
     'free online pdf tools offline',
     'google docs alternative no login',
@@ -31,7 +31,7 @@ export default function ToolsHubPage() {
             <span>Publixa Web Edition</span>
             <span>•</span>
             <Sparkles className="w-3.5 h-3.5" />
-            <span>65+ Instant Browser Tools</span>
+            <span>76+ Standalone Browser Tools</span>
           </div>
 
           <h1 className="font-heading font-extrabold text-3xl sm:text-5xl text-[#1A0F0A] tracking-tight">
